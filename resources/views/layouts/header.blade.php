@@ -8,6 +8,8 @@
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
+
+
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -17,6 +19,9 @@
 
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="/css/mystyle.css" >
 
     <style>
         .bd-placeholder-img {
@@ -39,6 +44,7 @@
             }
         }
     </style>
+
 
     <!-- Custom styles for this template -->
     <link href="/css/carousel.css" rel="stylesheet">

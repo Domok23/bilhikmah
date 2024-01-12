@@ -37,7 +37,7 @@
                     <div class="col">
                         <div class="card shadow-sm">
                             <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="{{ $item->link }}" allowfullscreen></iframe>
+                                <iframe class="embed-responsive-item" src="{{ $item->link }}" allowfullscreen style="width: 100%; height: 80%;"></iframe>
                             </div>
                             <div class="card-body">
                                 <p class="card-text">{{ Str::limit($item->judul, 50) }}</p>

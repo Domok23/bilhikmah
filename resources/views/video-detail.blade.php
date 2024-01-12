@@ -15,14 +15,14 @@
         <div class="col-md-8">
             <div class="col-md-6 px-0">
                 <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="{{ $video->link }}" style="width: 180%; height: 50%;"
-                        allowfullscreen></iframe>
+                    <iframe class="embed-responsive-item" src="{{ $video->link }}" allowfullscreen></iframe>
                 </div>
             </div>
             <br>
             <article class="blog-post">
                 <h2 class="blog-post-title">{{ $video->judul }}</h2>
-                <p class="blog-post-meta">{{ $video->created_at }}<a href="#" class="text-decoration-none text-success"> Admin</a></p>
+                <p class="blog-post-meta">{{ $video->created_at }}<a href="#" class="text-decoration-none text-success">
+                        Admin</a></p>
                 <p>{{ $video->judul }}</p>
             </article>
 

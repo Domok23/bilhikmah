@@ -1,0 +1,22 @@
+/* Stil responsif untuk iframe pada layar berukuran lebih besar */
+@media (min-width: 768px) {
+  .embed-responsive-16by9 iframe {
+    width: 180%;
+    height: 50%;
+  }
+}
+
+/* Stil responsif untuk iframe pada layar berukuran lebih kecil */
+@media (max-width: 767px) {
+  .embed-responsive-16by9 iframe {
+    width: 100%;
+    height: 100%;
+    /* Atur tinggi sesuai kebutuhan pada layar berukuran lebih kecil */
+  }
+
+  .blog-post {
+    display: inline;
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+}
