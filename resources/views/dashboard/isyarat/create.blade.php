@@ -20,34 +20,37 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="card card-primary">
-                      <div class="card-header">
-                        <h3 class="card-title">Tambah Data Isyarat</h3>
-                      </div>
-                      <form method="post" action="/dashboard/isyarat" class="mb-5" enctype="multipart/form-data">
-                        @csrf
-                        <div class="card-body">
-                          <div class="form-group">
-                            <label for="deskripsi">Deskripsi</label>
-                            <input type="text" class="form-control" id="deskripsi" name="deskripsi" placeholder="Masukan deskripsi isyarat">
-                          </div>
-                          <div class="form-group">
-                            <label for="gambar">Gambar</label>
-                            <div class="input-group">
-                              <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="gambar" name="gambar" onchange="previewImage()">
-                                <label class="custom-file-label" for="gambar">Choose file</label>
-                              </div>
+                    <div class="card card-success">
+                        <div class="card-header">
+                            <h3 class="card-title">Tambah Data Isyarat</h3>
+                        </div>
+                        <form method="post" action="/dashboard/isyarat" class="mb-5" enctype="multipart/form-data">
+                            @csrf
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="deskripsi">Deskripsi</label>
+                                    <input type="text" class="form-control" id="deskripsi" name="deskripsi"
+                                        placeholder="Masukan deskripsi isyarat">
+                                </div>
+                                <div class="form-group">
+                                    <label for="gambar">Gambar</label>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="gambar" name="gambar"
+                                                onchange="previewImage()">
+                                            <label class="custom-file-label" id="file-label" for="gambar">Pilih
+                                                File</label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="/dashboard/isyarat" class="btn btn-default">Kembali</a>
-                          <button type="submit" class="btn btn-primary">Simpan</button>
-                        </div>
-                      </form>
+                            <div class="card-footer">
+                                <a href="/dashboard/isyarat" class="btn btn-default">Kembali</a>
+                                <button type="submit" class="btn btn-success">Simpan</button>
+                            </div>
+                        </form>
                     </div>
-                  </div>
+                </div>
             </div>
         </div>
     </section>

@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <a href="/" class="brand-link">
+    <a href="/dashboard" class="brand-link">
         <img src="/img/logo.png" alt="logo-sidebar" class="brand-image">
-        <span class="brand-text font-weight-light">BilHikmah</span>
+        <span class="brand-text font-weight-light">Bilhikmah</span>
     </a>
     <div class="sidebar">
         <nav class="mt-2">
@@ -51,7 +51,7 @@
                     <a class="nav-link {{ Request::is('dashboard/user*') ? 'active bg-success' : '' }}"
                         href="/dashboard/user">
                         <i class="nav-icon fas fa-user"></i>
-                        <p>User</p>
+                        <p>Data Admin</p>
                     </a>
                 </li>
             </ul>

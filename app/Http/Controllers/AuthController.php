@@ -28,9 +28,7 @@ class AuthController extends Controller
             return redirect()->intended('/dashboard');
         }
 
-        return back()->withInput($request->only('email'))->withErrors([
-            'email' => 'Invalid credentials'
-        ]);
+        return back()->with('loginError', 'Gagal Login, Email/Password Salah!');
     }
 
     public function logout(Request $request)

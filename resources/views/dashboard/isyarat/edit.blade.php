@@ -20,7 +20,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="card card-primary">
+                    <div class="card card-success">
                       <div class="card-header">
                         <h3 class="card-title">Edit Data isyarat</h3>
                       </div>
@@ -36,15 +36,15 @@
                             <label for="gambar">Gambar</label>
                             <div class="input-group">
                               <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="gambar" name="gambar">
-                                <label class="custom-file-label" for="gambar">Choose file</label>
+                                <input type="file" class="custom-file-input" id="gambar" name="gambar" onchange="previewImage()">
+                                <label class="custom-file-label" id="file-label" for="gambar">Pilih File</label>
                               </div>
                             </div>
                           </div>
                         </div>
                         <div class="card-footer">
                             <a href="/dashboard/isyarat" class="btn btn-default">Kembali</a>
-                          <button type="submit" class="btn btn-primary">Simpan</button>
+                          <button type="submit" class="btn btn-success">Simpan</button>
                         </div>
                       </form>
                     </div>

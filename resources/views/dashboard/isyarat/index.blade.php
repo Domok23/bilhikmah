@@ -28,25 +28,25 @@
                         @if (session()->has('success'))
                             <div class="alert alert-success alert-dismissible">
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                <h5><i class="icon fas fa-check"></i> Alert!</h5>
+                                <h5><i class="icon fas fa-check"></i> Berhasil!</h5>
                                 {{ session('success') }}
                             </div>
                             @elseif (session()->has('danger'))
                             <div class="alert alert-danger alert-dismissible">
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                <h5><i class="icon fas fa-ban"></i> Alert!</h5>
+                                <h5><i class="icon fas fa-ban"></i> Dihapus!</h5>
                                 {{ session('danger') }}
                             </div>
                             <br>
                         @endif
-                            <a href="/dashboard/isyarat/create" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Tambah</a>
+                            <a href="/dashboard/isyarat/create" class="btn btn-success mb-3"><i class="fas fa-plus"></i> Tambah</a>
                             <table id="dataTable" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         <th class="text-center">No</th>
                                         <th class="text-center">Deskripsi</th>
                                         <th class="text-center">Gambar</th>
-                                        <th class="text-center">Action</th>
+                                        <th class="text-center">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -60,13 +60,13 @@
                                             </div>
                                         </td>
                                         <td class="text-center">
-                                            <a href="/dashboard/isyarat/{{ $item->id }}/edit" class="btn btn-warning">
+                                            <a href="/dashboard/isyarat/{{ $item->id }}/edit" class="btn btn-warning mb-1">
                                                 <i class="fas fa-edit"></i>
                                             </a>
                                             <form action="/dashboard/isyarat/{{ $item->id }}" method="post" class="d-inline">
                                                 @method('delete')
                                                 @csrf
-                                                <button class="btn btn-danger" onclick="return confirm('Apakah yakin mau hapus data?')">
+                                                <button class="btn btn-danger mb-1" onclick="return confirm('Apakah yakin mau hapus data?')">
                                                     <i class="fas fa-times-circle"></i>
                                                 </button>
                                             </form>

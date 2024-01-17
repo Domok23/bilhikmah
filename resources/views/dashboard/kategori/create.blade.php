@@ -20,7 +20,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="card card-primary">
+                    <div class="card card-success">
                       <div class="card-header">
                         <h3 class="card-title">Tambah Data Kategori</h3>
                       </div>
@@ -34,7 +34,7 @@
                         </div>
                         <div class="card-footer">
                             <a href="/dashboard/kategori" class="btn btn-default">Kembali</a>
-                          <button type="submit" class="btn btn-primary">Simpan</button>
+                          <button type="submit" class="btn btn-success">Simpan</button>
                         </div>
                       </form>
                     </div>

@@ -13,10 +13,8 @@
 
     <div class="row g-5">
         <div class="col-md-8">
-            <div class="col-md-6 px-0">
-                <img src="{{ asset('storage/gambar/' . $artikel->gambar) }}" class="bd-placeholder-img card-img"
-                    alt="{{ $artikel->deskripsi }}" style="width: 180%; height: auto;">
-            </div>
+            <img src="{{ asset('storage/gambar/' . $artikel->gambar) }}" class="bd-placeholder-img card-img mb-3"
+                alt="{{ $artikel->deskripsi }}">
             <br>
             <article class="blog-post">
                 <h2 class="blog-post-title">{{ $artikel->judul }}</h2>
@@ -28,9 +26,9 @@
         </div>
 
         <div class="col-md-4">
-            <div class="position-sticky" style="top: 2rem;">
-                @foreach ($getAllArtikel as $item)
-                <div class="col">
+            <div class="album p-3 bg-light">
+                <div class="position-sticky" style="top: 2rem;">
+                    @foreach ($getAllArtikel as $item)
                     <div class="card shadow-sm">
                         <img src="{{ asset('storage/gambar/' . $item->gambar) }}"
                             class="bd-placeholder-img card-img-top" alt="{{ $item->deskripsi }}" width="100px"
@@ -46,14 +44,15 @@
                             </div>
                         </div>
                     </div>
+                    <br>
+                    @endforeach
                 </div>
-                <br>
-                @endforeach
             </div>
         </div>
         <hr class="featurette-divider">
     </div>
 </main>
+
 <script>
     /**
                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.

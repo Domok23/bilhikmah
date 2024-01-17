@@ -11,11 +11,10 @@
       </div>
     </section>
     <div class="container marketing">
-        <div class="album py-5 bg-light">
+        <div class="album py-4 bg-light">
             <div class="container">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     @foreach ($data as $item)
-                    <div class="col">
                         <a href="/alquran/{{ $item['nomor'] }}" style="text-decoration: none;">
                             <div class="card shadow-sm">
                                 <li class="list-group-item d-flex justify-content-between lh-sm">
@@ -30,7 +29,6 @@
                                 </li>
                             </div>
                         </a>
-                    </div>
                     @endforeach
                 </div>
             </div>

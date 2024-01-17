@@ -22,7 +22,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Data user</h3>
+                            <h3 class="card-title">Data Admin</h3>
                         </div>
                         <div class="card-body">
                         @if (session()->has('success'))
@@ -39,7 +39,7 @@
                             </div>
                             <br>
                         @endif
-                            <a href="/dashboard/user/create" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Tambah</a>
+                            <a href="/dashboard/user/create" class="btn btn-success mb-3"><i class="fas fa-plus"></i> Tambah</a>
                             <table id="dataTable" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
@@ -56,13 +56,13 @@
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->email }}</td>
                                         <td class="text-center">
-                                            <a href="/dashboard/user/{{ $item->id }}/edit" class="btn btn-warning">
+                                            <a href="/dashboard/user/{{ $item->id }}/edit" class="btn btn-warning mb-1">
                                                 <i class="fas fa-edit"></i>
                                             </a>
                                             <form action="/dashboard/user/{{ $item->id }}" method="post" class="d-inline">
                                                 @method('delete')
                                                 @csrf
-                                                <button class="btn btn-danger" onclick="return confirm('Apakah yakin mau hapus data?')">
+                                                <button class="btn btn-danger mb-1" onclick="return confirm('Apakah yakin mau hapus data?')">
                                                     <i class="fas fa-times-circle"></i>
                                                 </button>
                                             </form>

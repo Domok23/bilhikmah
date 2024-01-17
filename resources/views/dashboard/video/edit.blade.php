@@ -20,7 +20,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="card card-primary">
+                    <div class="card card-success">
                       <div class="card-header">
                         <h3 class="card-title">Edit Data Video</h3>
                       </div>
@@ -29,7 +29,7 @@
                         @csrf
                         <div class="card-body">
                           <div class="form-group">
-                            <label for="judul">video</label>
+                            <label for="id_kategori">Kategori</label>
                             <select class="form-control" id="id_kategori" name="id_kategori">
                                     <option selected value="{{ $video->id_kategori }}">{{ $video->judul_kat }}</option>
                                     <option disabled><b>Pilih kategori</b></option>
@@ -49,7 +49,7 @@
                         </div>
                         <div class="card-footer">
                             <a href="/dashboard/video" class="btn btn-default">Kembali</a>
-                          <button type="submit" class="btn btn-primary">Simpan</button>
+                          <button type="submit" class="btn btn-success">Simpan</button>
                         </div>
                       </form>
                     </div>

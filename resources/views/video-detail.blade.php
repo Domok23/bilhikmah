@@ -13,10 +13,8 @@
 
     <div class="row g-5">
         <div class="col-md-8">
-            <div class="col-md-6 px-0">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="{{ $video->link }}" allowfullscreen></iframe>
-                </div>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{ $video->link }}" allowfullscreen></iframe>
             </div>
             <br>
             <article class="blog-post">
@@ -25,17 +23,16 @@
                         Admin</a></p>
                 <p>{{ $video->judul }}</p>
             </article>
-
+            <div id="disqus_thread"></div>
         </div>
 
         <div class="col-md-4">
-            <div class="position-sticky" style="top: 2rem;">
-                @foreach ($getAllVideo as $item)
-                <div class="col">
+            <div class="album p-3 bg-light">
+                <div class="position-sticky" style="top: 2rem;">
+                    @foreach ($getAllVideo as $item)
                     <div class="card shadow-sm">
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="{{ $item->link }}"
-                                style="width: 100%; height: 80%;" allowfullscreen></iframe>
+                            <iframe class="embed-responsive-item" src="{{ $item->link }}" allowfullscreen></iframe>
                         </div>
                         <div class="card-body">
                             <p class="card-text">{{ Str::limit($item->judul, 50) }}</p>
@@ -48,14 +45,11 @@
                             </div>
                         </div>
                     </div>
+                    <br>
+                    @endforeach
                 </div>
-                <br>
-                @endforeach
             </div>
-
         </div>
-
-        <div id="disqus_thread"></div>
         <hr class="featurette-divider">
     </div>
 </main>

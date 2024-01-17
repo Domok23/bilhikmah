@@ -39,11 +39,11 @@
 <!-- overlayScrollbars -->
 <script src="/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
-<script src="/dist/js/adminlte.js"></script>
+<script src="/js/adminlte.js"></script>
 <!-- AdminLTE for demo purposes -->
 {{-- <script src="/dist/js/demo.js"></script> --}}
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="/dist/js/pages/dashboard.js"></script>
+<script src="/js/pages/dashboard.js"></script>
 <!-- DataTable -->
 <script src="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.js"></script>
 <script>
@@ -53,6 +53,15 @@
 </script>
 <!-- Script untuk Trix -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.min.js"></script>
+<script>
+    // Fungsi untuk menampilkan nama file pada label
+    function previewImage() {
+        var input = document.getElementById('gambar');
+        var label = document.getElementById('file-label');
+        var fileName = input.files[0].name;
+        label.innerText = fileName;
+    }
+</script>
 </body>
 
 </html>

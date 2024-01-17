@@ -20,29 +20,29 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="card card-primary">
+                    <div class="card card-success">
                       <div class="card-header">
-                        <h3 class="card-title">Tambah Data User</h3>
+                        <h3 class="card-title">Tambah Data Admin</h3>
                       </div>
                       <form method="post" action="/dashboard/user" class="mb-5" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body">
                           <div class="form-group">
                             <label for="name">Nama</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Masukan nama user">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Masukan nama Admin">
                           </div>
                           <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="text" class="form-control" id="email" name="email" placeholder="Masukan email user">
+                            <input type="text" class="form-control" id="email" name="email" placeholder="Masukan email Admin">
                           </div>
                           <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Masukan password user">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Masukan password Admin">
                           </div>
                         </div>
                         <div class="card-footer">
                             <a href="/dashboard/user" class="btn btn-default">Kembali</a>
-                          <button type="submit" class="btn btn-primary">Simpan</button>
+                          <button type="submit" class="btn btn-success">Simpan</button>
                         </div>
                       </form>
                     </div>

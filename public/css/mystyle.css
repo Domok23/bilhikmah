@@ -1,22 +1,35 @@
-/* Stil responsif untuk iframe pada layar berukuran lebih besar */
-@media (min-width: 768px) {
-  .embed-responsive-16by9 iframe {
-    width: 180%;
-    height: 50%;
-  }
+.embed-responsive-16by9 {
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+.embed-responsive-16by9 iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-/* Stil responsif untuk iframe pada layar berukuran lebih kecil */
-@media (max-width: 767px) {
-  .embed-responsive-16by9 iframe {
-    width: 100%;
-    height: 100%;
-    /* Atur tinggi sesuai kebutuhan pada layar berukuran lebih kecil */
-  }
+main {
+  margin-top: 28px;
+}
 
-  .blog-post {
-    display: inline;
-    font-size: 12px;
-    margin-bottom: 20px;
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* CSS untuk mengatur lebar tetap */
+.fixed-width-nav-button {
+  width: 90px;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
   }
 }

@@ -6,7 +6,7 @@
     <section class="py-2 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light"><b>Artikel</b></h1>
+                <h1 class="fw-light"><b>Artikel Islami</b></h1>
             </div>
         </div>
     </section>
@@ -25,12 +25,12 @@
                     </div>
                     <div class="col-md-1">
                         <!-- Adjust the column width as needed -->
-                        <button type="submit" class="btn btn-primary mb-3">Filter</button>
+                        <button type="submit" class="btn btn-success mb-3">Filter</button>
                     </div>
                 </div>
             </form>
         </div>
-        <div class="album py-5 bg-light">
+        <div class="album py-4 bg-light">
             <div class="container">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
                     @foreach ($artikel as $item)
