@@ -56,14 +56,14 @@
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->email }}</td>
                                         <td class="text-center">
-                                            <a href="/dashboard/user/{{ $item->id }}/edit" class="btn btn-warning mb-1">
-                                                <i class="fas fa-edit"></i>
+                                            <a href="/dashboard/user/{{ $item->id }}/edit" class="btn btn-sm btn-warning mb-1">
+                                                <i class="fas fa-edit"></i> Edit
                                             </a>
                                             <form action="/dashboard/user/{{ $item->id }}" method="post" class="d-inline">
                                                 @method('delete')
                                                 @csrf
-                                                <button class="btn btn-danger mb-1" onclick="return confirm('Apakah yakin mau hapus data?')">
-                                                    <i class="fas fa-times-circle"></i>
+                                                <button class="btn btn-sm btn-danger mb-1" onclick="return confirm('Apakah yakin mau hapus data?')">
+                                                    <i class="fas fa-times-circle"></i> Hapus
                                                 </button>
                                             </form>
                                         </td>

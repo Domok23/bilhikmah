@@ -14,7 +14,7 @@
     <div class="row g-5">
         <div class="col-md-8">
             <img src="{{ asset('storage/gambar/' . $artikel->gambar) }}" class="bd-placeholder-img card-img mb-3"
-                alt="{{ $artikel->deskripsi }}">
+                alt="{{ $artikel->judul }}">
             <br>
             <article class="blog-post">
                 <h2 class="blog-post-title">{{ $artikel->judul }}</h2>
@@ -31,7 +31,7 @@
                     @foreach ($getAllArtikel as $item)
                     <div class="card shadow-sm">
                         <img src="{{ asset('storage/gambar/' . $item->gambar) }}"
-                            class="bd-placeholder-img card-img-top" alt="{{ $item->deskripsi }}" width="100px"
+                            class="bd-placeholder-img card-img-top" alt="{{ $item->judul }}" width="100px"
                             height="180px">
                         <div class="card-body">
                             <p class="card-text">{!! Str::limit(strip_tags($item->deskripsi), 50) !!}</p>

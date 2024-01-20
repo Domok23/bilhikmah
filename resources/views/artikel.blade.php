@@ -37,7 +37,7 @@
                     <div class="col">
                         <div class="card shadow-sm">
                             <img src="{{ asset('storage/gambar/' . $item->gambar) }}"
-                                class="bd-placeholder-img card-img-top" alt="{{ $item->deskripsi }}" width="100px"
+                                class="bd-placeholder-img card-img-top" alt="{{ $item->judul }}" width="100px"
                                 height="180px">
                             <div class="card-body">
                                 <p class="card-text">{!! Str::limit(strip_tags($item->deskripsi), 50) !!}</p>

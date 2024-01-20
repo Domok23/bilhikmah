@@ -21,7 +21,7 @@
                 <h2 class="blog-post-title">{{ $video->judul }}</h2>
                 <p class="blog-post-meta">{{ $video->created_at }}<a href="#" class="text-decoration-none text-success">
                         Admin</a></p>
-                <p>{{ $video->judul }}</p>
+                <p>{{$video->judul}}</p>
             </article>
             <div id="disqus_thread"></div>
         </div>
