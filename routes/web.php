@@ -49,3 +49,10 @@ Route::resource('/dashboard/poster', DashboardPosterController::class)->middlewa
 Route::resource('/dashboard/artikel', DashboardArtikelController::class)->middleware('auth');
 Route::resource('/dashboard/video', DashboardVideoController::class)->middleware('auth');
 Route::resource('/dashboard/user', DashboardUserController::class)->middleware('auth');
+
+// symbolic link use /storage-link (hosting)
+Route::get('storage-link', function () {
+    $targetFolder = storage_path('app/public');
+    $linkFolder = $_SERVER['DOCUMENT_ROOT'] . '/storage';
+    symlink($targetFolder, $linkFolder);
+});
