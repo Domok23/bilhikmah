@@ -67,6 +67,13 @@
                     <div class="input-group mb-3">
                         <input type="password" name="password" id="password" class="form-control" placeholder="Password"
                             required>
+                        <div class="input-group-append">
+                            @error('password')
+                            <div class="invalid feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-12">

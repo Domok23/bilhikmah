@@ -30,13 +30,19 @@
                                 <div class="form-group">
                                     <label for="judul">Judul</label>
                                     <input type="text" class="form-control" id="judul" name="judul"
-                                        placeholder="Masukan judul video" required>
+                                        placeholder="Masukan judul video" value="{{ old('judul') }}" required>
+                                        @error('judul')
+                                        <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                 </div>
 
                                 <div class="form-group">
                                     <label for="link">Link Embed Youtube</label>
                                     <input type="text" class="form-control" id="link" name="link"
-                                        placeholder="Masukan link embed dari video Youtube" required>
+                                        placeholder="Masukan link embed dari video Youtube" required value="{{ old('link') }}">
+                                        @error('link')
+                                        <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                 </div>
 
                                 <div class="form-group">

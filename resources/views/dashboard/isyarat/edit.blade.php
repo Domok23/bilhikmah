@@ -53,8 +53,11 @@
                                 <div class="form-group">
                                     <label for="deskripsi">Deskripsi</label>
                                     <input type="text" class="form-control" id="deskripsi" name="deskripsi"
-                                        placeholder="Masukan deskripsi isyarat" value="{{ $isyarat->deskripsi }}"
-                                        required>
+                                        placeholder="Masukan deskripsi bahasa isyarat"
+                                        value="{{ $isyarat->deskripsi }}" required>
+                                    @error('deskripsi')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="card-footer">

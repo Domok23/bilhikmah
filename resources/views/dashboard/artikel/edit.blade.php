@@ -32,16 +32,23 @@
                                 <div class="form-group">
                                     <label for="judul">Judul</label>
                                     <input type="text" class="form-control" id="judul" name="judul"
-                                        placeholder="Masukan judul artikel" value="{{ $artikel->judul }}" required>
+                                        placeholder="Masukan judul artikel" value="{{ $artikel->judul }}"
+                                        required>
+                                    @error('judul')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">
                                     <label for="deskripsi">Deskripsi</label>
                                     <div class="mb-3">
-                                        <input id="x" type="hidden" name="deskripsi" value="{{ $artikel->deskripsi }}"
-                                            required>
+                                        <input id="x" type="hidden" id="deskripsi" name="deskripsi"
+                                            value="{{ $artikel->deskripsi }}" required>
                                         <trix-editor input="x">{{ $artikel->deskripsi }}</trix-editor>
                                     </div>
+                                    @error('deskripsi')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">

@@ -39,6 +39,9 @@
                                     <label for="link">Link</label>
                                     <input type="text" class="form-control" id="link" name="link"
                                         placeholder="Masukan link video" value="{{ $video->link }}" required>
+                                    @error('link')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">

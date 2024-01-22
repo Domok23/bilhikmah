@@ -51,10 +51,10 @@ class DashboardArtikelController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'id_kategori' => 'required',
-            'judul' => 'required',
+            'judul' => 'required|min:3|max:255',
             'deskripsi' => 'required',
-            'gambar' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
+            'id_kategori' => 'required',
+            'gambar' => 'image|mimes:jpeg,png,jpg,gif,webp|max:2048'
         ]);
 
         $gambar = null;
@@ -116,10 +116,10 @@ class DashboardArtikelController extends Controller
     public function update(Request $request, string $id)
     {
         $validatedData = $request->validate([
-            'id_kategori' => 'required',
-            'judul' => 'required',
+            'judul' => 'required|min:3|max:255',
             'deskripsi' => 'required',
-            'gambar' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
+            'id_kategori' => 'required',
+            'gambar' => 'image|mimes:jpeg,png,jpg,gif,webp|file|max:2048'
         ]);
 
         $validatedData['kutipan'] = Str::limit(strip_tags($request->deskripsi), 100);

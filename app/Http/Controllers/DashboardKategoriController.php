@@ -45,7 +45,7 @@ class DashboardKategoriController extends Controller
     public function store(Request $request)
     {
         $validate = $request->validate([
-            'judul' => 'required',
+            'judul' => 'required|min:3|max:255',
         ]);
 
         Kategori::create($validate);
@@ -91,7 +91,7 @@ class DashboardKategoriController extends Controller
     public function update(Request $request, $id)
     {
         $rules = [
-            'judul' => 'required'
+            'judul' => 'required|min:3|max:255'
         ];
 
         $validate = $request->validate($rules);

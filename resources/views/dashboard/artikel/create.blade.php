@@ -30,14 +30,21 @@
                                 <div class="form-group">
                                     <label for="judul">Judul</label>
                                     <input type="text" class="form-control" id="judul" name="judul"
-                                        placeholder="Masukan judul artikel" required>
+                                        placeholder="Masukan judul artikel" required value="{{ old('judul') }}">
+                                    @error('judul')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">
                                     <label for="deskripsi">Deskripsi</label>
                                     <div class="mb-3">
-                                        <input id="x" type="hidden" name="deskripsi" required>
+                                        <input id="x" type="hidden" id="deskripsi" name="deskripsi" required
+                                            value="{{ old('deskripsi') }}">
                                         <trix-editor input="x"></trix-editor>
+                                        @error('deskripsi')
+                                        <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
 

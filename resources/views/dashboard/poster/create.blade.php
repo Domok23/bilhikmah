@@ -32,8 +32,10 @@
                                     <img class="img-preview img-fluid mb-2 col-sm-4">
                                     <div class="input-group">
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input @error('gambar') is-invalid  @enderror" id="gambar"
-                                                name="gambar" accept="gambar/*" onchange="previewImage()" required>
+                                            <input type="file"
+                                                class="custom-file-input @error('gambar') is-invalid  @enderror"
+                                                id="gambar" name="gambar" accept="gambar/*" onchange="previewImage()"
+                                                required>
                                             <label class="custom-file-label col-lg-6" for="gambar">Pilih file</label>
                                         </div>
                                     </div>
@@ -45,13 +47,19 @@
                                 <div class="form-group">
                                     <label for="judul">Judul</label>
                                     <input type="text" class="form-control" id="judul" name="judul"
-                                        placeholder="Masukan judul poster" required>
+                                        placeholder="Masukan judul poster" required value="{{ old('judul') }}">
+                                    @error('judul')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">
                                     <label for="deskripsi">Deskripsi</label>
                                     <input type="text" class="form-control" id="deskripsi" name="deskripsi"
-                                        placeholder="Masukan deskripsi poster" required>
+                                        placeholder="Masukan deskripsi poster" required value="{{ old('deskripsi') }}">
+                                    @error('deskripsi')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">

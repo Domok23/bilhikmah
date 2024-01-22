@@ -47,7 +47,7 @@ class DashboardIsyaratController extends Controller
     {
         $validatedData = $request->validate([
             'deskripsi' => 'required',
-            'gambar' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
+            'gambar' => 'image|mimes:jpeg,png,jpg,gif,webp|max:2048'
         ]);
 
         $gambar = null;
@@ -106,7 +106,7 @@ class DashboardIsyaratController extends Controller
     {
         $validatedData = $request->validate([
             'deskripsi' => 'required',
-            'gambar' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
+            'gambar' => 'image|mimes:jpeg,png,jpg,gif,webp|file|max:2048'
         ]);
 
         $isyarat = Isyarat::find($id);

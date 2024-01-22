@@ -33,14 +33,17 @@
                                 <div class="form-group">
                                     <label for="gambar">Masukkan Poster</label>
                                     @if ($poster->gambar)
-                                    <img src="{{ asset('storage/gambar/' . $poster->gambar) }}" class="img-preview img-fluid mb-2 col-sm-4 d-block">
+                                    <img src="{{ asset('storage/gambar/' . $poster->gambar) }}"
+                                        class="img-preview img-fluid mb-2 col-sm-4 d-block">
                                     @else
                                     <img class="img-preview img-fluid mb-2 col-sm-4">
                                     @endif
                                     <div class="input-group">
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input @error('gambar') is-invalid  @enderror" id="gambar"
-                                                name="gambar" accept="gambar/*" onchange="previewImage()" required>
+                                            <input type="file"
+                                                class="custom-file-input @error('gambar') is-invalid  @enderror"
+                                                id="gambar" name="gambar" accept="gambar/*" onchange="previewImage()"
+                                                required>
                                             <label class="custom-file-label col-lg-6" for="gambar">Pilih file</label>
                                         </div>
                                     </div>
@@ -53,12 +56,19 @@
                                     <label for="judul">Judul</label>
                                     <input type="text" class="form-control" id="judul" name="judul"
                                         placeholder="Masukan judul poster" value="{{ $poster->judul }}" required>
+                                    @error('judul')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">
                                     <label for="deskripsi">Deskripsi</label>
                                     <input type="text" class="form-control" id="deskripsi" name="deskripsi"
-                                        placeholder="Masukan deskripsi poster" value="{{ $poster->deskripsi }}" required>
+                                        placeholder="Masukan deskripsi poster" value="{{ $poster->deskripsi }}"
+                                        required>
+                                    @error('deskripsi')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">
