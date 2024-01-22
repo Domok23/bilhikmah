@@ -12,12 +12,12 @@ class BerandaController extends Controller
     public function index()
     {
         $video = Video::take(3)->get();
-        $artikel = Artikel::take(5)->get();
         $poster = Poster::take(3)->get();
+        $artikel = Artikel::take(5)->get();
 
         return view('beranda',[
             'title' => 'Beranda',
-            'action' => 'beranda',
+            'active' => 'beranda',
             'video' => $video,
             'artikel' => $artikel,
             'poster' => $poster

@@ -14,6 +14,7 @@ class Artikel extends Model
 
     public static function getDataArtikel(Request $request)
     {
+        // Using Query Builder
         $query = DB::table('artikels')
             ->leftJoin('kategoris', 'kategoris.id', '=', 'artikels.id_kategori')
             ->select(

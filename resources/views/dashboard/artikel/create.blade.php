@@ -39,25 +39,29 @@
                                 <div class="form-group">
                                     <label for="judul">Judul</label>
                                     <input type="text" class="form-control" id="judul" name="judul"
-                                        placeholder="Masukan judul artikel">
+                                        placeholder="Masukan judul artikel" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="deskripsi">Deskripsi</label>
                                     <div class="mb-3">
-                                        <input id="x" type="hidden" name="deskripsi">
+                                        <input id="x" type="hidden" name="deskripsi" required>
                                         <trix-editor input="x"></trix-editor>
                                     </div>
                                 </div>
-                                <div class="form-group col-md-3">
+                                <div class="form-group">
                                     <label for="gambar">Gambar</label>
+                                    <img class="img-preview img-fluid mb-2 col-sm-4">
                                     <div class="input-group">
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="gambar" name="gambar"
-                                                onchange="previewImage()">
-                                            <label class="custom-file-label" id="file-label" for="gambar">Pilih
-                                                File</label>
+                                            <input type="file"
+                                                class="custom-file-input @error('gambar') is-invalid  @enderror"
+                                                id="gambar" name="gambar" accept="gambar/*" onchange="previewImage()">
+                                            <label class="custom-file-label col-lg-6" for="gambar">Pilih file</label>
                                         </div>
                                     </div>
+                                    @error('gambar')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="card-footer">
@@ -71,4 +75,6 @@
         </div>
     </section>
 </div>
+
+
 @endsection

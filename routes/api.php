@@ -1,12 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\VideoController;
-use App\Http\Controllers\PosterController;
-use App\Http\Controllers\IsyaratController;
-use App\Http\Controllers\ArtikelController;
-use App\Http\Controllers\kategoriController;
+use App\Http\Controllers\ApiUserController;
+use App\Http\Controllers\ApiVideoController;
+use App\Http\Controllers\ApiPosterController;
+use App\Http\Controllers\ApiIsyaratController;
+use App\Http\Controllers\ApiArtikelController;
+use App\Http\Controllers\ApiKategoriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,19 +20,19 @@ use App\Http\Controllers\kategoriController;
 */
 
 // User
-Route::apiResource('user', UserController::class);
+Route::apiResource('user', ApiUserController::class);
 
 // Kategori
-Route::apiResource('kategori', kategoriController::class);
+Route::apiResource('kategori', ApiKategoriController::class);
 
 // Artikel
-Route::apiResource('artikel', ArtikelController::class);
+Route::apiResource('artikel', ApiArtikelController::class);
 
 // Poster
-Route::apiResource('poster', PosterController::class);
+Route::apiResource('poster', ApiPosterController::class);
 
 // Video
-Route::apiResource('video', VideoController::class);
+Route::apiResource('video', ApiVideoController::class);
 
 // Isyarat
-Route::apiResource('isyarat', IsyaratController::class);
+Route::apiResource('isyarat', ApiIsyaratController::class);

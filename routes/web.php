@@ -40,14 +40,14 @@ Route::resource('/poster', BerandaPosterController::class);
 
 Route::get('/login', [AuthController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [AuthController::class, 'authenticate'])->name('login');
-Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/logout', [AuthController::class, 'logout']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
-Route::resource('/dashboard/isyarat', DashboardIsyaratController::class)->middleware('auth');
-Route::resource('/dashboard/kategori', DashboardKategoriController::class)->middleware('auth');
-Route::resource('/dashboard/poster', DashboardPosterController::class)->middleware('auth');
 Route::resource('/dashboard/artikel', DashboardArtikelController::class)->middleware('auth');
 Route::resource('/dashboard/video', DashboardVideoController::class)->middleware('auth');
+Route::resource('/dashboard/poster', DashboardPosterController::class)->middleware('auth');
+Route::resource('/dashboard/isyarat', DashboardIsyaratController::class)->middleware('auth');
+Route::resource('/dashboard/kategori', DashboardKategoriController::class)->middleware('auth');
 Route::resource('/dashboard/user', DashboardUserController::class)->middleware('auth');
 
 // symbolic link use /storage-link (hosting)

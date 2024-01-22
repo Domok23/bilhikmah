@@ -30,7 +30,7 @@
                         <div class="card-body">
                           <div class="form-group">
                             <label for="judul">Judul Kategori</label>
-                            <input type="text" class="form-control" id="judul" name="judul" placeholder="Masukan judul kategori" value="{{ $kategori->judul }}">
+                            <input type="text" class="form-control" id="judul" name="judul" placeholder="Masukan judul kategori" value="{{ $kategori->judul }}" required>
                           </div>
                         </div>
                         <div class="card-footer">

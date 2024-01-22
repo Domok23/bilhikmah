@@ -13,7 +13,7 @@ class BerandaIsyaratController extends Controller
 
         return view('isyarat',[
             'title' => 'Isyarat',
-            'action' => 'isyarat',
+            'active' => 'isyarat',
             'isyarat' => $isyarat
         ]);
     }

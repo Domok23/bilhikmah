@@ -20,7 +20,7 @@ class BerandaPosterController extends Controller
 
         return view('poster', [
             'title' => 'Poster',
-            'action' => 'poster',
+            'active' => 'poster',
             'poster' => $poster,
             'kategori' => $kategori
         ]);

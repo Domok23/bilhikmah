@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Video;
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 
-class VideoController extends Controller
+class ApiKategoriController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +14,9 @@ class VideoController extends Controller
      */
     public function index()
     {
-        $video = Video::all();
-
+        $kategori = Kategori::all();
         return response()->json([
-            'video' => $video
+            'kategori' => $kategori
         ]);
     }
 
@@ -39,37 +38,35 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
-        $video = Video::create([
-            'id_kategori' => $request->id_kategori,
-            'judul' => $request->judul,
-            'link' => $request->link
+        $kategori = Kategori::create([
+            'judul' => $request->judul
         ]);
 
         return response()->json([
-            'video' => $video
+            'kategori' => $kategori
         ]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Video  $video
+     * @param  \App\Models\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function show(Video $video)
+    public function show(Kategori $kategori)
     {
         return response()->json([
-            'video' => $video
+            'kategori' => $kategori
         ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Video  $video
+     * @param  \App\Models\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function edit(Video $video)
+    public function edit(Kategori $kategori)
     {
         //
     }
@@ -78,33 +75,31 @@ class VideoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Video  $video
+     * @param  \App\Models\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Video $video)
+    public function update(Request $request, Kategori $kategori)
     {
-        $video->id_kategori = $request->id_kategori;
-        $video->judul = $request->judul;
-        $video->link = $request->link;
-        $video->save();
+        $kategori->judul = $request->judul;
+        $kategori->save();
 
         return response()->json([
-            'video' => $video
+            'kategori' => $kategori
         ]);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Video  $video
+     * @param  \App\Models\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Video $video)
+    public function destroy(Kategori $kategori)
     {
-        $video->delete();
+        $kategori->delete();
 
         return response()->json([
-            'message' => 'video deleted'
+            'message' => 'Kategori deleted'
         ], 204);
     }
 }

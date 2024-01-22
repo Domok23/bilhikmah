@@ -20,7 +20,7 @@ class BerandaVideoController extends Controller
 
         return view('video', [
             'title' => 'Video',
-            'action' => 'video',
+            'active' => 'video',
             'video' => $video,
             'kategori' => $kategori
         ]);
@@ -60,7 +60,7 @@ class BerandaVideoController extends Controller
 
         return view('video-detail', [
             'title' => 'Video',
-            'action' => 'video',
+            'active' => 'video',
             'video' => $video,
             'getAllVideo' => $getAllVideo
         ]);

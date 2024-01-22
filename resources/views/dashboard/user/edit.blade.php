@@ -30,15 +30,15 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="name">Nama</label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Masukan nama Admin" value="{{ $user->name }}">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Masukan nama Admin" value="{{ $user->name }}" required>
                             </div>
                             <div class="form-group">
                               <label for="email">Email</label>
-                              <input type="text" class="form-control" id="email" name="email" placeholder="Masukan email Admin" value="{{ $user->email }}">
+                              <input type="text" class="form-control" id="email" name="email" placeholder="Masukan email Admin" value="{{ $user->email }}" required>
                             </div>
                             <div class="form-group">
                               <label for="password">Password</label>
-                              <input type="password" class="form-control" id="password" name="password" placeholder="Masukan password Admin">
+                              <input type="password" class="form-control" id="password" name="password" placeholder="Masukan password Admin" required>
                             </div>
                         </div>
                         <div class="card-footer">

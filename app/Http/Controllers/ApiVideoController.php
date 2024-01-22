@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Artikel;
+use App\Models\Video;
 use Illuminate\Http\Request;
 
-class ArtikelController extends Controller
+class ApiVideoController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request  $request)
+    public function index()
     {
-        $artikel = Artikel::getDataArtikel($request);
+        $video = Video::all();
 
         return response()->json([
-            'artikel' => $artikel
+            'video' => $video
         ]);
     }
 
@@ -39,38 +39,37 @@ class ArtikelController extends Controller
      */
     public function store(Request $request)
     {
-        $artikel = Artikel::create([
+        $video = Video::create([
             'id_kategori' => $request->id_kategori,
             'judul' => $request->judul,
-            'deskripsi' => $request->deskripsi,
-            'gambar' => $request->gambar
+            'link' => $request->link
         ]);
 
         return response()->json([
-            'artikel' => $artikel
+            'video' => $video
         ]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Artikel  $artikel
+     * @param  \App\Models\Video  $video
      * @return \Illuminate\Http\Response
      */
-    public function show(Artikel $artikel)
+    public function show(Video $video)
     {
         return response()->json([
-            'artikel' => $artikel
+            'video' => $video
         ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Artikel  $artikel
+     * @param  \App\Models\Video  $video
      * @return \Illuminate\Http\Response
      */
-    public function edit(Artikel $artikel)
+    public function edit(Video $video)
     {
         //
     }
@@ -79,34 +78,33 @@ class ArtikelController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Artikel  $artikel
+     * @param  \App\Models\Video  $video
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Artikel $artikel)
+    public function update(Request $request, Video $video)
     {
-        $artikel->id_kategori = $request->id_kategori;
-        $artikel->judul = $request->judul;
-        $artikel->deskripsi = $request->deskripsi;
-        $artikel->gambar = $request->gambar;
-        $artikel->save();
+        $video->id_kategori = $request->id_kategori;
+        $video->judul = $request->judul;
+        $video->link = $request->link;
+        $video->save();
 
         return response()->json([
-            'artikel' => $artikel
+            'video' => $video
         ]);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Artikel  $artikel
+     * @param  \App\Models\Video  $video
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Artikel $artikel)
+    public function destroy(Video $video)
     {
-        $artikel->delete();
+        $video->delete();
 
         return response()->json([
-            'message' => 'artikel deleted'
+            'message' => 'video deleted'
         ], 204);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Facade\Ignition\QueryRecorder\Query;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\DB;
@@ -14,6 +15,7 @@ class Video extends Model
 
     public static function getDatavideo(Request $request)
     {
+        // Using Query Builder
         $query = DB::table('videos')
             ->leftJoin('kategoris', 'kategoris.id', '=', 'videos.id_kategori')
             ->select(

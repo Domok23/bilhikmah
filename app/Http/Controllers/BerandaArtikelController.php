@@ -20,7 +20,7 @@ class BerandaArtikelController extends Controller
 
         return view('artikel', [
             'title' => 'Artikel',
-            'action' => 'artikel',
+            'active' => 'artikel',
             'artikel' => $artikel,
             'kategori' => $kategori
         ]);
@@ -60,7 +60,7 @@ class BerandaArtikelController extends Controller
 
         return view('artikel-detail', [
             'title' => 'Artikel',
-            'action' => 'artikel',
+            'active' => 'artikel',
             'artikel' => $artikel,
             'getAllArtikel' => $getAllArtikel
         ]);

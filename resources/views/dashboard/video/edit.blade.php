@@ -40,11 +40,11 @@
                             </div>
                           <div class="form-group">
                             <label for="judul">Judul</label>
-                            <input type="text" class="form-control" id="judul" name="judul" placeholder="Masukan judul video" value="{{ $video->judul }}">
+                            <input type="text" class="form-control" id="judul" name="judul" placeholder="Masukan judul video" value="{{ $video->judul }}" required>
                           </div>
                           <div class="form-group">
                             <label for="link">Link</label>
-                            <input type="text" class="form-control" id="link" name="link" placeholder="Masukan link video" value="{{ $video->link }}">
+                            <input type="text" class="form-control" id="link" name="link" placeholder="Masukan link video" value="{{ $video->link }}" required>
                           </div>
                         </div>
                         <div class="card-footer">

@@ -30,17 +30,26 @@
                         <div class="card-body">
                           <div class="form-group">
                             <label for="deskripsi">Deskripsi</label>
-                            <input type="text" class="form-control" id="deskripsi" name="deskripsi" placeholder="Masukan deskripsi isyarat" value="{{ $isyarat->deskripsi }}">
+                            <input type="text" class="form-control" id="deskripsi" name="deskripsi" placeholder="Masukan deskripsi isyarat" value="{{ $isyarat->deskripsi }}" required>
                           </div>
                           <div class="form-group">
                             <label for="gambar">Gambar</label>
+                            @if ($isyarat->gambar)
+                            <img src="{{ asset('storage/gambar/' . $isyarat->gambar) }}" class="img-preview img-fluid mb-2 col-sm-4 d-block">
+                            @else
+                            <img class="img-preview img-fluid mb-2 col-sm-4">
+                            @endif
                             <div class="input-group">
-                              <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="gambar" name="gambar" onchange="previewImage()">
-                                <label class="custom-file-label" id="file-label" for="gambar">Pilih File</label>
-                              </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input @error('gambar') is-invalid  @enderror" id="gambar"
+                                        name="gambar" accept="gambar/*" onchange="previewImage()">
+                                    <label class="custom-file-label col-lg-6" for="gambar">Pilih file</label>
+                                </div>
                             </div>
-                          </div>
+                            @error('gambar')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
                         </div>
                         <div class="card-footer">
                             <a href="/dashboard/isyarat" class="btn btn-default">Kembali</a>

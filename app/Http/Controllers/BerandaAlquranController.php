@@ -17,7 +17,7 @@ class BerandaAlquranController extends Controller
 
         return view('alquran', [
             'title' => 'Al-quran',
-            'action' => 'alquran',
+            'active' => 'alquran',
             'data' => $data
         ]);
     }
@@ -32,7 +32,7 @@ class BerandaAlquranController extends Controller
 
         return view('alquran-detail', [
             'title' => 'Al-Quran',
-            'action' => 'alquran',
+            'active' => 'alquran',
             'data' => $data
         ]);
     }

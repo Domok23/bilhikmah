@@ -64,7 +64,7 @@
         <div class="row featurette">
             <div class="col-md-7">
                 <h2 class="featurette-heading">{{ $item->judul }}</h2>
-                <p class="lead">{!! $item->deskripsi !!}</p>
+                <p class="lead">{{ $item->kutipan }}</p>
             </div>
             <div class="col-md-5">
                 <img src="{{ asset('storage/gambar/' . $item->gambar) }}" class="bd-placeholder-img card-img-top"
@@ -75,7 +75,7 @@
         <div class="row featurette">
             <div class="col-md-7 order-md-2">
                 <h2 class="featurette-heading">{{ $item->judul }}</h2>
-                <p class="lead">{!! $item->deskripsi !!}</p>
+                <p class="lead">{{  $item->kutipan  }}</p>
             </div>
             <div class="col-md-5">
                 <img src="{{ asset('storage/gambar/' . $item->gambar) }}" class="bd-placeholder-img card-img-top"

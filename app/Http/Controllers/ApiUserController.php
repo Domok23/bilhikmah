@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 
 
-class UserController extends Controller
+class ApiUserController extends Controller
 {
     /**
      * Display a listing of the resource.

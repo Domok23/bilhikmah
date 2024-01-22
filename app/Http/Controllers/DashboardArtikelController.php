@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kategori;
 use App\Models\Artikel;
+use App\Models\Kategori;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -18,7 +19,7 @@ class DashboardArtikelController extends Controller
     {
         $artikel = Artikel::getDataArtikel($request);
 
-        return view('dashboard.artikel.index',[
+        return view('dashboard.artikel.index', [
             'title' => 'Artikel',
             'active' => 'artikel',
             'artikel' => $artikel
@@ -34,7 +35,7 @@ class DashboardArtikelController extends Controller
     {
         $kategori = Kategori::all();
 
-        return view('dashboard.artikel.create',[
+        return view('dashboard.artikel.create', [
             'title' => 'Artikel',
             'active' => 'artikel',
             'kategori' => $kategori
@@ -64,6 +65,8 @@ class DashboardArtikelController extends Controller
 
             $request->file('gambar')->storeAs('public/gambar', $gambar);
         }
+
+        $validatedData['kutipan'] = Str::limit(strip_tags($request->deskripsi), 100);
 
         $data = $validatedData;
         $data['gambar'] = $gambar;
@@ -95,7 +98,7 @@ class DashboardArtikelController extends Controller
         $kategori = Kategori::all();
         $artikel = Artikel::getDataArtikelById($id);
 
-        return view('dashboard.artikel.edit',[
+        return view('dashboard.artikel.edit', [
             'title' => 'Artikel',
             'active' => 'artikel',
             'kategori' => $kategori,
@@ -119,6 +122,8 @@ class DashboardArtikelController extends Controller
             'gambar' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
+        $validatedData['kutipan'] = Str::limit(strip_tags($request->deskripsi), 100);
+
         $artikel = Artikel::find($id);
 
         if (!$artikel) {
@@ -128,6 +133,7 @@ class DashboardArtikelController extends Controller
         $artikel->id_kategori = $validatedData['id_kategori'];
         $artikel->judul = $validatedData['judul'];
         $artikel->deskripsi = $validatedData['deskripsi'];
+        $artikel->kutipan = $validatedData['kutipan'];
 
         if ($request->hasFile('gambar')) {
             $gambarLama = $artikel->gambar;
@@ -159,10 +165,15 @@ class DashboardArtikelController extends Controller
         $artikel = Artikel::find($id);
         $artikel->delete();
 
+        if ($artikel->gambar) {
+            Storage::delete($artikel->gambar);
+        }
+
         return redirect('/dashboard/artikel')->with('danger', 'Data berhasil dihapus');
     }
 
-    function generateRandomString($length = 30) {
+    function generateRandomString($length = 30)
+    {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
         $randomString = '';

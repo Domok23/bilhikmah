@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kategori;
+use App\Models\Artikel;
 use Illuminate\Http\Request;
 
-class KategoriController extends Controller
+class ApiArtikelController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request  $request)
     {
-        $kategori = Kategori::all();
+        $artikel = Artikel::getDataArtikel($request);
+
         return response()->json([
-            'kategori' => $kategori
+            'artikel' => $artikel
         ]);
     }
 
@@ -38,35 +39,38 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
-        $kategori = Kategori::create([
-            'judul' => $request->judul
+        $artikel = Artikel::create([
+            'id_kategori' => $request->id_kategori,
+            'judul' => $request->judul,
+            'deskripsi' => $request->deskripsi,
+            'gambar' => $request->gambar
         ]);
 
         return response()->json([
-            'kategori' => $kategori
+            'artikel' => $artikel
         ]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Kategori  $kategori
+     * @param  \App\Models\Artikel  $artikel
      * @return \Illuminate\Http\Response
      */
-    public function show(Kategori $kategori)
+    public function show(Artikel $artikel)
     {
         return response()->json([
-            'kategori' => $kategori
+            'artikel' => $artikel
         ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Kategori  $kategori
+     * @param  \App\Models\Artikel  $artikel
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kategori $kategori)
+    public function edit(Artikel $artikel)
     {
         //
     }
@@ -75,31 +79,34 @@ class KategoriController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Kategori  $kategori
+     * @param  \App\Models\Artikel  $artikel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kategori $kategori)
+    public function update(Request $request, Artikel $artikel)
     {
-        $kategori->judul = $request->judul;
-        $kategori->save();
+        $artikel->id_kategori = $request->id_kategori;
+        $artikel->judul = $request->judul;
+        $artikel->deskripsi = $request->deskripsi;
+        $artikel->gambar = $request->gambar;
+        $artikel->save();
 
         return response()->json([
-            'kategori' => $kategori
+            'artikel' => $artikel
         ]);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Kategori  $kategori
+     * @param  \App\Models\Artikel  $artikel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kategori $kategori)
+    public function destroy(Artikel $artikel)
     {
-        $kategori->delete();
+        $artikel->delete();
 
         return response()->json([
-            'message' => 'Kategori deleted'
+            'message' => 'artikel deleted'
         ], 204);
     }
 }

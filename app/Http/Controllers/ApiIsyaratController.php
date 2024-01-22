@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
-class IsyaratController extends Controller
+class ApiIsyaratController extends Controller
 {
     /**
      * Display a listing of the resource.

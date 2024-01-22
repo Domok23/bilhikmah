@@ -15,6 +15,7 @@ class Poster extends Model
 
     public static function getDataPoster(Request $request)
     {
+        // Using Query Builder
         $query = DB::table('posters')
             ->leftJoin('kategoris', 'kategoris.id', '=', 'posters.id_kategori')
             ->select(

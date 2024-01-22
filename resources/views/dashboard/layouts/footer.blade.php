@@ -53,14 +53,29 @@
 </script>
 <!-- Script untuk Trix -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.min.js"></script>
+<!-- bs-custom-file-input -->
+<script src="/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<!-- Script untuk preview gambar -->
 <script>
-    // Fungsi untuk menampilkan nama file pada label
     function previewImage() {
-        var input = document.getElementById('gambar');
-        var label = document.getElementById('file-label');
-        var fileName = input.files[0].name;
-        label.innerText = fileName;
-    }
+            const gambar = document.querySelector('#gambar');
+            const imgPreview = document.querySelector('.img-preview');
+
+            imgPreview.style.display = 'block';
+
+            const oFReader = new FileReader();
+            oFReader.readAsDataURL(gambar.files[0]);
+
+            oFReader.onload = function(oFREvent) {
+                imgPreview.src = oFREvent.target.result;
+            };
+        }
+</script>
+<!-- Page specific script -->
+<script>
+    $(function() {
+            bsCustomFileInput.init();
+        });
 </script>
 </body>
 

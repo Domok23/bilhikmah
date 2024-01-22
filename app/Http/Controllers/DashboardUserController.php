@@ -18,7 +18,7 @@ class DashboardUserController extends Controller
     {
         $user = User::all();
 
-        return view('dashboard.user.index',[
+        return view('dashboard.user.index', [
             'title' => 'User',
             'active' => 'user',
             'user' => $user
@@ -32,12 +32,9 @@ class DashboardUserController extends Controller
      */
     public function create()
     {
-        $user = User::all();
-
-        return view('dashboard.user.create',[
+        return view('dashboard.user.create', [
             'title' => 'User',
-            'active' => 'user',
-            'user' => $user
+            'active' => 'user'
         ]);
     }
 
@@ -91,7 +88,7 @@ class DashboardUserController extends Controller
     {
         $user = User::find($id);
 
-        return view('dashboard.user.edit',[
+        return view('dashboard.user.edit', [
             'title' => 'User',
             'active' => 'user',
             'user' => $user
@@ -109,7 +106,7 @@ class DashboardUserController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required|email|unique:users,email,'.$id,
+            'email' => 'required|email|unique:users,email,' . $id,
             'password' => 'nullable|min:6'
         ]);
 
