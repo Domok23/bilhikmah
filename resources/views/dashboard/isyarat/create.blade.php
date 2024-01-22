@@ -22,29 +22,32 @@
                 <div class="col-md-6">
                     <div class="card card-success">
                         <div class="card-header">
-                            <h3 class="card-title">Tambah Data Isyarat</h3>
+                            <h3 class="card-title">Tambah Data Bahasa Isyarat</h3>
                         </div>
                         <form method="post" action="/dashboard/isyarat" class="mb-5" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="deskripsi">Deskripsi</label>
-                                    <input type="text" class="form-control" id="deskripsi" name="deskripsi"
-                                        placeholder="Masukan deskripsi isyarat" required>
-                                </div>
-                                <div class="form-group">
                                     <label for="gambar">Gambar</label>
                                     <img class="img-preview img-fluid mb-2 col-sm-4">
                                     <div class="input-group">
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input @error('gambar') is-invalid  @enderror" id="gambar"
-                                                name="gambar" accept="gambar/*" onchange="previewImage()">
+                                            <input type="file"
+                                                class="custom-file-input @error('gambar') is-invalid  @enderror"
+                                                id="gambar" name="gambar" accept="gambar/*" onchange="previewImage()"
+                                                required>
                                             <label class="custom-file-label col-lg-6" for="gambar">Pilih file</label>
                                         </div>
                                     </div>
                                     @error('gambar')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="deskripsi">Deskripsi</label>
+                                    <input type="text" class="form-control" id="deskripsi" name="deskripsi"
+                                        placeholder="Masukan deskripsi isyarat" required>
                                 </div>
                             </div>
                             <div class="card-footer">

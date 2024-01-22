@@ -28,38 +28,44 @@
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="id_kategori">Kategori</label>
-                                    <select class="form-control" id="id_kategori" name="id_kategori">
-                                        <option selected disabled><b>Pilih kategori</b></option>
-                                        @foreach ($kategori as $item)
-                                        <option value="{{ $item->id }}">{{ $item->judul }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="judul">Judul</label>
-                                    <input type="text" class="form-control" id="judul" name="judul"
-                                        placeholder="Masukan judul poster" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="deskripsi">Deskripsi</label>
-                                    <input type="text" class="form-control" id="deskripsi" name="deskripsi"
-                                        placeholder="Masukan deskripsi poster" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="gambar">Gambar</label>
+                                    <label for="gambar">Masukkan Poster</label>
                                     <img class="img-preview img-fluid mb-2 col-sm-4">
                                     <div class="input-group">
                                         <div class="custom-file">
-                                            <input type="file"
-                                                class="custom-file-input @error('gambar') is-invalid  @enderror"
-                                                id="gambar" name="gambar" accept="gambar/*" onchange="previewImage()">
+                                            <input type="file" class="custom-file-input @error('gambar') is-invalid  @enderror" id="gambar"
+                                                name="gambar" accept="gambar/*" onchange="previewImage()" required>
                                             <label class="custom-file-label col-lg-6" for="gambar">Pilih file</label>
                                         </div>
                                     </div>
                                     @error('gambar')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="judul">Judul</label>
+                                    <input type="text" class="form-control" id="judul" name="judul"
+                                        placeholder="Masukan judul poster" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="deskripsi">Deskripsi</label>
+                                    <input type="text" class="form-control" id="deskripsi" name="deskripsi"
+                                        placeholder="Masukan deskripsi poster" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="id_kategori">Kategori</label>
+                                    <select class="form-control col-lg-6" name="id_kategori">
+                                        @foreach ($kategori as $item)
+                                        @if (old('id_kategori') == $item->id)
+                                        <option value="{{ $item->id }}" selected>{{ $item->judul }}
+                                        </option>
+                                        @else
+                                        <option value="{{ $item->id }}">{{ $item->judul }}</option>
+                                        @endif
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <div class="card-footer">

@@ -29,22 +29,12 @@
                             @method('put')
                             @csrf
                             <div class="card-body">
-                                <div class="form-group col-md-3">
-                                    <label for="id_kategori">Pilih Kategori</label>
-                                    <select class="form-control" id="id_kategori" name="id_kategori">
-                                        <option selected value="{{ $artikel->id_kategori }}">{{ $artikel->judul_kat }}
-                                        </option>
-                                        <option disabled><b>Pilih kategori</b></option>
-                                        @foreach ($kategori as $item)
-                                        <option value="{{ $item->id }}">{{ $item->judul }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
                                 <div class="form-group">
                                     <label for="judul">Judul</label>
                                     <input type="text" class="form-control" id="judul" name="judul"
                                         placeholder="Masukan judul artikel" value="{{ $artikel->judul }}" required>
                                 </div>
+
                                 <div class="form-group">
                                     <label for="deskripsi">Deskripsi</label>
                                     <div class="mb-3">
@@ -53,6 +43,7 @@
                                         <trix-editor input="x">{{ $artikel->deskripsi }}</trix-editor>
                                     </div>
                                 </div>
+
                                 <div class="form-group">
                                     <label for="gambar">Gambar</label>
                                     @if ($artikel->gambar)
@@ -65,7 +56,8 @@
                                         <div class="custom-file">
                                             <input type="file"
                                                 class="custom-file-input @error('gambar') is-invalid  @enderror"
-                                                id="gambar" name="gambar" accept="gambar/*" onchange="previewImage()">
+                                                id="gambar" name="gambar" accept="gambar/*" onchange="previewImage()"
+                                                required>
                                             <label class="custom-file-label col-lg-6" for="gambar">Pilih file</label>
                                         </div>
                                     </div>
@@ -73,6 +65,18 @@
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
+
+                                <div class="form-group">
+                                    <label for="id_kategori">Pilih Kategori</label>
+                                    <select class="form-control col-lg-6" id="id_kategori" name="id_kategori">
+                                        <option selected value="{{ $artikel->id_kategori }}">{{ $artikel->judul_kat }}
+                                        </option>
+                                        @foreach ($kategori as $item)
+                                        <option value="{{ $item->id }}">{{ $item->judul }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
                             </div>
                             <div class="card-footer">
                                 <a href="/dashboard/artikel" class="btn btn-default">Kembali</a>
