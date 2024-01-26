@@ -42,8 +42,7 @@
                                         <div class="custom-file">
                                             <input type="file"
                                                 class="custom-file-input @error('gambar') is-invalid  @enderror"
-                                                id="gambar" name="gambar" accept="gambar/*" onchange="previewImage()"
-                                                required>
+                                                id="gambar" name="gambar" accept="gambar/*" onchange="previewImage()">
                                             <label class="custom-file-label col-lg-6" for="gambar">Pilih file</label>
                                         </div>
                                     </div>

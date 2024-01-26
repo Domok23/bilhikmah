@@ -32,8 +32,7 @@
                                 <div class="form-group">
                                     <label for="judul">Judul</label>
                                     <input type="text" class="form-control" id="judul" name="judul"
-                                        placeholder="Masukan judul artikel" value="{{ $artikel->judul }}"
-                                        required>
+                                        placeholder="Masukan judul artikel" value="{{ $artikel->judul }}" required>
                                     @error('judul')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -63,8 +62,7 @@
                                         <div class="custom-file">
                                             <input type="file"
                                                 class="custom-file-input @error('gambar') is-invalid  @enderror"
-                                                id="gambar" name="gambar" accept="gambar/*" onchange="previewImage()"
-                                                required>
+                                                id="gambar" name="gambar" accept="gambar/*" onchange="previewImage()">
                                             <label class="custom-file-label col-lg-6" for="gambar">Pilih file</label>
                                         </div>
                                     </div>

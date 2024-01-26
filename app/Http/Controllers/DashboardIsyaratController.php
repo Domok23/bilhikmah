@@ -147,6 +147,10 @@ class DashboardIsyaratController extends Controller
         $isyarat = Isyarat::find($id);
         $isyarat->delete();
 
+        if ($isyarat->gambar) {
+            Storage::delete($isyarat->gambar);
+        }
+
         return redirect('/dashboard/isyarat')->with('danger', 'Data berhasil dihapus');
     }
 

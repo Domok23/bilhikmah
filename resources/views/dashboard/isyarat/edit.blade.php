@@ -41,8 +41,7 @@
                                         <div class="custom-file">
                                             <input type="file"
                                                 class="custom-file-input @error('gambar') is-invalid  @enderror"
-                                                id="gambar" name="gambar" accept="gambar/*" onchange="previewImage()"
-                                                required>
+                                                id="gambar" name="gambar" accept="gambar/*" onchange="previewImage()">
                                             <label class="custom-file-label col-lg-6" for="gambar">Pilih file</label>
                                         </div>
                                     </div>
@@ -53,8 +52,8 @@
                                 <div class="form-group">
                                     <label for="deskripsi">Deskripsi</label>
                                     <input type="text" class="form-control" id="deskripsi" name="deskripsi"
-                                        placeholder="Masukan deskripsi bahasa isyarat"
-                                        value="{{ $isyarat->deskripsi }}" required>
+                                        placeholder="Masukan deskripsi bahasa isyarat" value="{{ $isyarat->deskripsi }}"
+                                        required>
                                     @error('deskripsi')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror

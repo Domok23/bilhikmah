@@ -159,6 +159,10 @@ class DashboardPosterController extends Controller
         $poster = Poster::find($id);
         $poster->delete();
 
+        if ($poster->gambar) {
+            Storage::delete($poster->gambar);
+        }
+
         return redirect('/dashboard/poster')->with('danger', 'Data berhasil dihapus');
     }
 
