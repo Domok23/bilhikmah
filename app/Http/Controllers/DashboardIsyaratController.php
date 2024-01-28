@@ -46,7 +46,7 @@ class DashboardIsyaratController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'deskripsi' => 'required',
+            'deskripsi' => 'unique:isyarats|required',
             'gambar' => 'image|mimes:jpeg,png,jpg,gif,webp|max:2048'
         ]);
 

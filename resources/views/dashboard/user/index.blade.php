@@ -25,21 +25,24 @@
                             <h3 class="card-title">Data Admin</h3>
                         </div>
                         <div class="card-body">
-                        @if (session()->has('success'))
+                            @if (session()->has('success'))
                             <div class="alert alert-success alert-dismissible">
-                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                <h5><i class="icon fas fa-check"></i> Alert!</h5>
+                                <button type="button" class="close" data-dismiss="alert"
+                                    aria-hidden="true">&times;</button>
+                                <h5><i class="icon fas fa-check"></i> Berhasil!</h5>
                                 {{ session('success') }}
                             </div>
-                            @elseif (session()->has('danger'))
+                            @elseif (session()->has('error'))
                             <div class="alert alert-danger alert-dismissible">
-                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                <h5><i class="icon fas fa-ban"></i> Alert!</h5>
-                                {{ session('danger') }}
+                                <button type="button" class="close" data-dismiss="alert"
+                                    aria-hidden="true">&times;</button>
+                                <h5><i class="icon fas fa-ban"></i> Gagal!</h5>
+                                {{ session('error') }}
                             </div>
                             <br>
-                        @endif
-                            <a href="/dashboard/user/create" class="btn btn-success mb-3"><i class="fas fa-plus"></i> Tambah</a>
+                            @endif
+                            <a href="/dashboard/user/create" class="btn btn-success mb-3"><i class="fas fa-plus"></i>
+                                Tambah</a>
                             <table id="dataTable" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
@@ -53,16 +56,19 @@
                                     @foreach ($user as $item)
                                     <tr>
                                         <td class="text-center">{{ $loop->iteration }}</td>
-                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->nama }}</td>
                                         <td>{{ $item->email }}</td>
                                         <td class="text-center">
-                                            <a href="/dashboard/user/{{ $item->id }}/edit" class="btn btn-sm btn-warning mb-1">
+                                            <a href="/dashboard/user/{{ $item->id }}/edit"
+                                                class="btn btn-sm btn-warning mb-1">
                                                 <i class="fas fa-edit"></i> Edit
                                             </a>
-                                            <form action="/dashboard/user/{{ $item->id }}" method="post" class="d-inline">
+                                            <form action="/dashboard/user/{{ $item->id }}" method="post"
+                                                class="d-inline">
                                                 @method('delete')
                                                 @csrf
-                                                <button class="btn btn-sm btn-danger mb-1" onclick="return confirm('Apakah yakin mau hapus data?')">
+                                                <button class="btn btn-sm btn-danger mb-1"
+                                                    onclick="return confirm('Apakah yakin mau hapus data?')">
                                                     <i class="fas fa-times-circle"></i> Hapus
                                                 </button>
                                             </form>

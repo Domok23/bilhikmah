@@ -51,7 +51,7 @@ class DashboardArtikelController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'judul' => 'required|min:3|max:255',
+            'judul' => 'unique:artikels|required|min:3|max:255',
             'deskripsi' => 'required',
             'id_kategori' => 'required',
             'gambar' => 'image|mimes:jpeg,png,jpg,gif,webp|max:2048'

@@ -50,7 +50,7 @@ class DashboardPosterController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'judul' => 'required',
+            'judul' => 'unique:posters|required',
             'deskripsi' => 'required',
             'id_kategori' => 'required',
             'gambar' => 'image|mimes:jpeg,png,jpg,gif,webp|max:2048'

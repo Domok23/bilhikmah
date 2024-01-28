@@ -49,9 +49,9 @@ class DashboardVideoController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'judul' => 'required|min:3|max:255',
+            'judul' => 'unique:videos|required|min:3|max:255',
             'id_kategori' => 'required',
-            'link' => 'required|url'
+            'link' => 'unique:videos|required|url'
         ]);
 
         $data = $validatedData;

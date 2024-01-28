@@ -30,10 +30,10 @@
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="name">Nama</label>
-                                    <input type="text" class="form-control" id="name" name="name"
-                                        placeholder="Masukan nama Admin" value="{{ $user->name }}" required>
-                                        @error('name')
+                                    <label for="nama">Nama</label>
+                                    <input type="text" class="form-control" id="nama" name="nama"
+                                        placeholder="Masukan nama Admin" value="{{ $user->nama }}" required>
+                                        @error('nama')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                 </div>

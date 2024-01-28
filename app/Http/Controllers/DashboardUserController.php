@@ -47,7 +47,7 @@ class DashboardUserController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|min:3|max:255',
+            'nama' => 'required|min:3|max:255',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:6'
         ]);
@@ -57,14 +57,14 @@ class DashboardUserController extends Controller
         }
 
         $user = new User([
-            'name' => $request->input('name'),
+            'nama' => $request->input('nama'),
             'email' => $request->input('email'),
             'password' => Hash::make($request->input('password')),
         ]);
 
         $user->save();
 
-        return redirect('/dashboard/user')->with('success', 'Data berhasil ditambah');
+        return redirect('/dashboard/user')->with('success', 'Data user berhasil ditambah');
     }
 
     /**
@@ -105,7 +105,7 @@ class DashboardUserController extends Controller
     public function update(Request $request, string $id)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|min:3|max:255',
+            'nama' => 'required|min:3|max:255',
             'email' => 'required|email|unique:users,email,' . $id,
             'password' => 'nullable|min:6'
         ]);
@@ -120,7 +120,7 @@ class DashboardUserController extends Controller
             return redirect('/dashboard/user')->with('error', 'Data tidak ditemukan');
         }
 
-        $user->name = $request->input('name');
+        $user->nama = $request->input('nama');
         $user->email = $request->input('email');
 
         if ($request->filled('password')) {
