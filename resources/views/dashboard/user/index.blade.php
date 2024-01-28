@@ -22,7 +22,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Data Admin</h3>
+                            <h3 class="card-title">Manajemen Data Admin</h3>
                         </div>
                         <div class="card-body">
                             @if (session()->has('success'))
