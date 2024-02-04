@@ -69,9 +69,9 @@
         @if($key % 2 == 0)
         <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading">{{ $item->judul }}</h2>
+                <h2 class="featurette-heading mt-2">{{ $item->judul }}</h2>
                 <p class="lead">{{ $item->kutipan }}</p>
-                <a class="btn btn-success" href="/artikel/{{ $item->id }}">Lebih lanjut →</a>
+                <a class="btn btn-success mb-4" href="/artikel/{{ $item->id }}">Lebih lanjut →</a>
             </div>
             <div class="col-md-5">
                 <div class="thumbnail">
@@ -86,9 +86,9 @@
         @else
         <div class="row featurette">
             <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">{{ $item->judul }}</h2>
+                <h2 class="featurette-heading mt-2">{{ $item->judul }}</h2>
                 <p class="lead">{{ $item->kutipan }}</p>
-                <a class="btn btn-success" href="/artikel/{{ $item->id }}">Lebih lanjut →</a>
+                <a class="btn btn-success mb-4" href="/artikel/{{ $item->id }}">Lebih lanjut →</a>
             </div>
             <div class="col-md-5">
                 <div class="thumbnail">
