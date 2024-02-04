@@ -16,7 +16,16 @@ class BerandaPosterController extends Controller
     public function index(Request  $request)
     {
         $kategori = Kategori::all();
-        $poster = Poster::getDataPoster($request);
+        // Cek apakah ada nilai di form pencarian
+        if ($request->has('cari')) {
+            $poster = Poster::searchData($request, ['cari' => $request->cari]);
+        } elseif ($request->has('id')) {
+            // Cek apakah ada nilai di form kategori
+            $poster = Poster::getDataPoster($request, ['id' => $request->id]);
+        } else {
+            // Jika tidak ada kedua form diisi, ambil semua data
+            $poster = Poster::getDataPoster($request);
+        }
 
         return view('poster', [
             'title' => 'Poster',

@@ -19,6 +19,7 @@ class CreateArtikelsTable extends Migration
             $table->string('judul');
             $table->string('deskripsi');
             $table->string('gambar');
+            $table->string('kutipan');
             $table->timestamps();
         });
     }

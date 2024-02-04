@@ -50,10 +50,14 @@
         <div class="row">
             @foreach ($poster as $item)
             <div class="col-lg-4">
-                <img src="{{ asset('storage/gambar/' . $item->gambar) }}"
-                    class="bd-placeholder-img card-img-top rounded-circle" alt="{{ $item->judul }}"
-                    style="width: 200px; height: 200px;">
-                <p>{!! Str::limit($item->deskripsi, 50) !!}</p>
+                <div class="thumbnail">
+                    <a href="{{ asset('storage/gambar/' . $item->gambar) }}">
+                        <img src="{{ asset('storage/gambar/' . $item->gambar) }}"
+                            class="bd-placeholder-img card-img-top rounded-circle mb-3" alt="{{ $item->judul }}"
+                            style="width: 200px; height: 200px;">
+                    </a>
+                </div>
+                <p>"{{ $item->judul }}"</p>
             </div>
             @endforeach
         </div>
@@ -75,7 +79,7 @@
         <div class="row featurette">
             <div class="col-md-7 order-md-2">
                 <h2 class="featurette-heading">{{ $item->judul }}</h2>
-                <p class="lead">{{  $item->kutipan  }}</p>
+                <p class="lead">{{ $item->kutipan }}</p>
             </div>
             <div class="col-md-5">
                 <img src="{{ asset('storage/gambar/' . $item->gambar) }}" class="bd-placeholder-img card-img-top"

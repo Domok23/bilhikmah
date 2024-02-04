@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Video;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class DashboardVideoController extends Controller
 {
@@ -50,9 +51,12 @@ class DashboardVideoController extends Controller
     {
         $validatedData = $request->validate([
             'judul' => 'unique:videos|required|min:3|max:255',
+            'deskripsi' => 'required|min:3',
             'id_kategori' => 'required',
             'link' => 'unique:videos|required|url'
         ]);
+
+        $validatedData['kutipan'] = Str::limit(strip_tags($request->deskripsi), 100);
 
         $data = $validatedData;
 
@@ -102,9 +106,12 @@ class DashboardVideoController extends Controller
     {
         $validatedData = $request->validate([
             'judul' => 'required|min:3|max:255',
+            'deskripsi' => 'required',
             'id_kategori' => 'required',
             'link' => 'required|url'
         ]);
+
+        $validatedData['kutipan'] = Str::limit(strip_tags($request->deskripsi), 100);
 
         $video = Video::find($id);
 
@@ -115,6 +122,8 @@ class DashboardVideoController extends Controller
         $video->id_kategori = $validatedData['id_kategori'];
         $video->judul = $validatedData['judul'];
         $video->link = $validatedData['link'];
+        $video->deskripsi = $validatedData['deskripsi'];
+        $video->kutipan = $validatedData['kutipan'];
 
         $video->save();
 

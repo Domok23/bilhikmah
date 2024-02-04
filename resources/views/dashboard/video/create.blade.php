@@ -31,18 +31,31 @@
                                     <label for="judul">Judul</label>
                                     <input type="text" class="form-control" id="judul" name="judul"
                                         placeholder="Masukan judul video" value="{{ old('judul') }}" required>
-                                        @error('judul')
+                                    @error('judul')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="deskripsi">Deskripsi</label>
+                                    <div class="mb-3">
+                                        <input id="x" type="hidden" id="deskripsi" name="deskripsi" required
+                                            value="{{ old('deskripsi') }}">
+                                        <trix-editor input="x"></trix-editor>
+                                        @error('deskripsi')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
+                                    </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="link">Link Embed Youtube</label>
                                     <input type="text" class="form-control" id="link" name="link"
-                                        placeholder="Masukan link embed dari video Youtube" required value="{{ old('link') }}">
-                                        @error('link')
-                                        <div class="text-danger">{{ $message }}</div>
-                                        @enderror
+                                        placeholder="Masukan link embed dari video Youtube" required
+                                        value="{{ old('link') }}">
+                                    @error('link')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">
@@ -50,7 +63,7 @@
                                     <select class="form-control col-lg-6" name="id_kategori">
                                         @foreach ($kategori as $item)
                                         @if (old('id_kategori') == $item->id)
-                                        <option value="{{ $item->id }}" selected>{{ $item->judul }}
+                                        <option value="{{ $item->id }}">{{ $item->judul }}
                                         </option>
                                         @else
                                         <option value="{{ $item->id }}">{{ $item->judul }}</option>

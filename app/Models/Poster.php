@@ -27,7 +27,7 @@ class Poster extends Model
             $query->where('kategoris.id', $request->id);
         }
 
-        return $query->get();
+        return $query->paginate(10);
     }
 
     public static function getDataPosterById($id)
@@ -40,5 +40,22 @@ class Poster extends Model
             )
             ->where('posters.id', $id)
             ->first();
+    }
+
+    public static function searchData(Request $request)
+    {
+        $query = DB::table('posters')
+            ->leftJoin('kategoris', 'kategoris.id', '=', 'posters.id_kategori')
+            ->select(
+                'posters.*',
+                DB::raw('kategoris.judul as judul_kat')
+            );
+
+        if ($request->cari) {
+            $query->where('posters.judul', 'like', '%' . $request->cari . '%')
+                ->orWhere('posters.deskripsi', 'like', '%' . $request->cari . '%');
+        }
+
+        return $query->paginate(10);
     }
 }

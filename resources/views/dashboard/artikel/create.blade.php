@@ -70,7 +70,7 @@
                                     <select class="form-control col-lg-6" name="id_kategori">
                                         @foreach ($kategori as $item)
                                         @if (old('id_kategori') == $item->id)
-                                        <option value="{{ $item->id }}" selected>{{ $item->judul }}
+                                        <option value="{{ $item->id }}">{{ $item->judul }}
                                         </option>
                                         @else
                                         <option value="{{ $item->id }}">{{ $item->judul }}</option>

@@ -4,31 +4,52 @@
 
 <main>
     <section class="py-2 text-center container">
-      <div class="row py-lg-5">
-        <div class="col-lg-6 col-md-8 mx-auto">
-          <h1 class="fw-light"><b>Bahasa Isyarat</b></h1>
+        <div class="row py-lg-4">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light"><b>Bahasa Isyarat</b></h1>
+            </div>
         </div>
-      </div>
     </section>
     <div class="container marketing">
+        <div class="col-12">
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-6">
+                    <form action="/isyarat" method="get">
+                        @csrf
+                        <div class="input-group mb-3">
+                            <input type="search" class="form-control" placeholder="Cari bahasa isyarat" name="cari"
+                                value="{{ request('cari') }}">
+                            <button class="btn btn-success" type="submit">Cari</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
         <div class="album py-4 bg-light">
             <div class="container">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+                @if ($isyarat->count())
+                <div class="row row-cols-3 row-cols-sm-2 row-cols-md-4 g-3">
                     @foreach ($isyarat as $item)
-                    <div class="col">
+                    <div class="col d-grid align-items-stretch">
                         <div class="card shadow-sm">
-                            <img src="{{ asset('storage/gambar/' . $item->gambar) }}" class="bd-placeholder-img card-img-top" alt="{{ $item->deskripsi }}" width="100px" height="180px">
-                            <div class="card-body">
-                                <p class="card-text"><b><h1>{{ $item->deskripsi }}</h1></b></p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                </div>
+                            <div class="thumbnail">
+                                <a href="{{ asset('storage/gambar/' . $item->gambar) }}" data-lightbox="photos">
+                                    <img src="{{ asset('storage/gambar/' . $item->gambar) }}"
+                                        class="bd-placeholder-img card-img-top" alt="{{ $item->deskripsi }}">
+                                </a>
+                            </div>
+                            <div class="card-body d-flex">
+                                <h2 class="card-text fw-bold mt-auto">{{ $item->deskripsi }}</h2>
                             </div>
                         </div>
                     </div>
                     @endforeach
                 </div>
+                @else
+                <p class="text-center fs-4">Data tidak ditemukan</p>
+                @endif
             </div>
         </div>
         <hr class="featurette-divider">
     </div>
-  </main>
+</main>

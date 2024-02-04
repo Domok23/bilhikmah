@@ -16,7 +16,17 @@ class BerandaVideoController extends Controller
     public function index(Request  $request)
     {
         $kategori = Kategori::all();
-        $video = Video::getDatavideo($request);
+
+        // Cek apakah ada nilai di form pencarian
+        if ($request->has('cari')) {
+            $video = Video::searchData($request, ['cari' => $request->cari]);
+        } elseif ($request->has('id')) {
+            // Cek apakah ada nilai di form kategori
+            $video = Video::getDataVideo($request, ['id' => $request->id]);
+        } else {
+            // Jika tidak ada kedua form diisi, ambil semua data
+            $video = Video::getDataVideo($request);
+        }
 
         return view('video', [
             'title' => 'Video',
@@ -56,7 +66,7 @@ class BerandaVideoController extends Controller
     public function show($id)
     {
         $getAllVideo = Video::take(3)->get();
-        $video = Video::getDatavideoById($id);
+        $video = Video::getDataVideoById($id);
 
         return view('video-detail', [
             'title' => 'Video',

@@ -5,7 +5,9 @@
 @include('layouts.navbar')
 
 <!-- main -->
-@yield('container')
+<div class="container mt-2">
+    @yield('container')
+</div>
 
 {{-- footer --}}
 @include('layouts.footer')

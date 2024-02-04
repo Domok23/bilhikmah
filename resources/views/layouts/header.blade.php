@@ -8,14 +8,17 @@
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
-    <!-- Bootstrap core CSS -->
+    <!-- Bootstrap v5.0.2 core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="/css/mystyle.css" >
-    <!-- Custom styles for this template -->
     <link href="/css/carousel.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="/css/mystyle.css" >
+
+    <!-- Lightbox -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
 </head>
 
 <body class="d-flex flex-column min-vh-100">

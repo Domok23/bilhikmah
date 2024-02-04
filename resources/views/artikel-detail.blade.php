@@ -18,23 +18,39 @@
             <br>
             <article class="blog-post">
                 <h2 class="blog-post-title">{{ $artikel->judul }}</h2>
-                <p class="blog-post-meta">{{ $artikel->created_at }}<a href="#"
-                        class="text-decoration-none text-success"> Admin</a></p>
-                <p>{!! $artikel->deskripsi !!}</p>
+                <p class="blog-post-meta">{{ \Carbon\Carbon::parse($artikel->created_at)->diffForHumans() }} - <a
+                        href="#!" class="text-decoration-none text-success"> Admin</a></p>
+                <a class="badge bg-success text-decoration-none link-light" href="#!">{{
+                    $artikel->judul_kat }}</a>
+                <p class="my-4 fs-5">
+                    {!! $artikel->deskripsi !!}
+                </p>
             </article>
-            <div id="disqus_thread"></div>
+            <div class="mt-5" id="disqus_thread"></div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4 d-flex align-items-stretch">
             <div class="album p-3 bg-light">
-                <div class="position-sticky" style="top: 2rem;">
+                <div class="position-sticky">
                     @foreach ($getAllArtikel as $item)
                     <div class="card shadow-sm">
                         <img src="{{ asset('storage/gambar/' . $item->gambar) }}"
-                            class="bd-placeholder-img card-img-top" alt="{{ $item->judul }}" width="100px"
-                            height="180px">
+                            class="bd-placeholder-img card-img-top" alt="{{ $item->judul }}" width="100px">
                         <div class="card-body">
-                            <p class="card-text">{!! Str::limit(strip_tags($item->deskripsi), 50) !!}</p>
+                            <h5 class="card-title"><a href="/artikel/{{ $item->id }}"
+                                    class="text-decoration-none text-dark">{{
+                                    $item->judul }}</a></h5>
+                            <p class="mb-1">
+                                <small>
+                                    oleh <a href="#!" class="text-decoration-none text-success">Admin</a>
+                                    - {{ \Carbon\Carbon::parse($item->created_at)->diffForHumans() }}
+                                </small>
+                            </p>
+                            <small>
+                                <a class="badge bg-success text-decoration-none link-light mb-2" href="#!">{{
+                                    $item->judul_kat }}</a>
+                            </small>
+                            <p class="card-text">{{ $item->kutipan }}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                     <a href="/artikel/{{ $item->id }}" class="btn btn-outline-success">

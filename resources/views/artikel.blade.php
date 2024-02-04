@@ -4,46 +4,72 @@
 
 <main>
     <section class="py-2 text-center container">
-        <div class="row py-lg-5">
+        <div class="row py-lg-4">
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-light"><b>Artikel Islami</b></h1>
             </div>
         </div>
     </section>
     <div class="container marketing">
-        <div class="col-10">
-            <form action="/artikel" method="get">
-                @csrf
-                <div class="row g-3">
-                    <div class="col-md-3">
-                        <select class="form-control" id="id" name="id">
-                            <option value="">--Filter kategori artikel--</option>
-                            @foreach ($kategori as $item)
-                            <option value="{{ $item->id }}">{{ $item->judul }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="col-md-1">
-                        <!-- Adjust the column width as needed -->
-                        <button type="submit" class="btn btn-success mb-3">Filter</button>
-                    </div>
+        <div class="col-12">
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-6">
+                    <form action="/artikel" method="get">
+                        @csrf
+                        <div class="input-group mb-3">
+                            <input type="search" class="form-control" placeholder="Cari artikel" name="cari"
+                                value="{{ request('cari') }}">
+                            <button class="btn btn-success" type="submit">Cari</button>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
-        <div class="album py-4 bg-light">
+        <div class="album py-4 bg-light mb-4">
             <div class="container">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+                <form action="/artikel" method="get">
+                    @csrf
+                    <div class="row g-3 mb-2">
+                        <div class="col-md-3">
+                            <select class="form-control" id="id" name="id">
+                                <option value="">--Filter kategori artikel--</option>
+                                @foreach ($kategori as $item)
+                                <option value="{{ $item->id }}">{{ $item->judul }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-md-1">
+                            <!-- Adjust the column width as needed -->
+                            <button type="submit" class="btn btn-success mb-3">Filter</button>
+                        </div>
+                    </div>
+                </form>
+                @if ($artikel->count())
+                <div class="row g-3">
                     @foreach ($artikel as $item)
-                    <div class="col">
+                    <div class="col-sm-4 d-flex align-items-stretch">
                         <div class="card shadow-sm">
                             <img src="{{ asset('storage/gambar/' . $item->gambar) }}"
-                                class="bd-placeholder-img card-img-top" alt="{{ $item->judul }}" width="100px"
-                                height="180px">
+                                class="bd-placeholder-img card-img-top" alt="{{ $item->judul }}">
                             <div class="card-body">
-                                <p class="card-text">{!! Str::limit(strip_tags($item->deskripsi), 50) !!}</p>
+                                <h5 class="card-title"><a href="/artikel/{{ $item->id }}"
+                                        class="text-decoration-none text-dark">{{
+                                        $item->judul }}</a></h5>
+                                <p class="mb-1">
+                                    <small>
+                                        oleh <a href="#!" class="text-decoration-none text-success"> Admin</a>
+                                        - {{ \Carbon\Carbon::parse($item->created_at)->diffForHumans() }}
+                                    </small>
+                                </p>
+                                <small>
+                                    <a class="badge bg-success text-decoration-none link-light mb-2" href="#!">{{
+                                        $item->judul_kat }}</a>
+                                </small>
+                                <p class="card-text">{{ $item->kutipan }}</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <a href="/artikel/{{ $item->id }}" class="btn btn-outline-success">
+                                        <a href="/artikel/{{ $item->id }}"
+                                            class="btn btn-outline-success mt-auto align-self-start">
                                             Detail
                                         </a>
                                     </div>
@@ -53,8 +79,12 @@
                     </div>
                     @endforeach
                 </div>
+                @else
+                <p class="text-center fs-4">Data tidak ditemukan</p>
+                @endif
             </div>
         </div>
+        {!! $artikel->links('pagination::bootstrap-5') !!}
         <hr class="featurette-divider">
     </div>
 </main>

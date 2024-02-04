@@ -19,30 +19,39 @@
             <br>
             <article class="blog-post">
                 <h2 class="blog-post-title">{{ $video->judul }}</h2>
-                <p class="blog-post-meta">{{ $video->created_at }}<a href="#" class="text-decoration-none text-success">
-                        Admin</a></p>
-                <p>{{$video->judul}}</p>
+                <p class="blog-post-meta">{{
+                    \Carbon\Carbon::parse($video->created_at)->diffForHumans() }} - <a href="#!"
+                        class="text-decoration-none text-success">Admin</a></p>
+                <a class="badge bg-success text-decoration-none link-light" href="#!">{{
+                    $video->judul_kat }}</a>
+                <p class="my-4 fs-5">
+                    {!! $video->deskripsi !!}
+                </p>
             </article>
-            <div id="disqus_thread"></div>
+            <div class="mt-5" id="disqus_thread"></div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4 d-flex align-items-stretch">
             <div class="album p-3 bg-light">
-                <div class="position-sticky" style="top: 2rem;">
+                <div class="position-sticky">
                     @foreach ($getAllVideo as $item)
                     <div class="card shadow-sm">
                         <div class="embed-responsive embed-responsive-16by9">
                             <iframe class="embed-responsive-item" src="{{ $item->link }}" allowfullscreen></iframe>
                         </div>
                         <div class="card-body">
-                            <p class="card-text">{{ Str::limit($item->judul, 50) }}</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="/video/{{ $item->id }}" class="btn btn-outline-success">
-                                        Detail
-                                    </a>
-                                </div>
-                            </div>
+                            <h5 class="card-title"><a href="/video/{{ $item->id }}"
+                                    class="text-decoration-none text-dark">{{
+                                    $item->judul }}</a></h5>
+                            <p class="card-text text-muted mb-1">{{
+                                \Carbon\Carbon::parse($item->created_at)->diffForHumans() }} - <a href="#!"
+                                    class="text-decoration-none text-success"> Admin</a></p>
+                            <small>
+                                <a class="badge bg-success text-decoration-none link-light mb-2" href="#!">{{
+                                    $item->judul_kat }}</a>
+                            </small>
+                            <br>
+                            <a href="/video/{{ $item->id }}" class=" btn btn-outline-success stretched-link">Detail</a>
                         </div>
                     </div>
                     <br>

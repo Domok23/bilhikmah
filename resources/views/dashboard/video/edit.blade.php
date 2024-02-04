@@ -36,6 +36,16 @@
                                         placeholder="Masukan judul video" value="{{ $video->judul }}" required>
                                 </div>
                                 <div class="form-group">
+                                        <label for="deskripsi">Deskripsi</label>
+                                        <div class="mb-3">
+                                            <input id="x" type="hidden" id="deskripsi" name="deskripsi" value="{{ $video->deskripsi }}" required>
+                                            <trix-editor input="x">{{ $video->deskripsi }}</trix-editor>
+                                        </div>
+                                        @error('deskripsi')
+                                        <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                <div class="form-group">
                                     <label for="link">Link</label>
                                     <input type="text" class="form-control" id="link" name="link"
                                         placeholder="Masukan link video" value="{{ $video->link }}" required>

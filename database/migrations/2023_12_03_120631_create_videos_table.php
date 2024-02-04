@@ -18,6 +18,7 @@ class CreateVideosTable extends Migration
             $table->foreignId('id_kategori')->constrained('kategoris');
             $table->string('judul');
             $table->string('deskripsi');
+            $table->string('kutipan');
             $table->string('link');
             $table->timestamps();
         });

@@ -16,7 +16,17 @@ class BerandaArtikelController extends Controller
     public function index(Request $request)
     {
         $kategori = Kategori::all();
-        $artikel = Artikel::getDataArtikel($request);
+
+        // Cek apakah ada nilai di form pencarian
+        if ($request->has('cari')) {
+            $artikel = Artikel::searchData($request, ['cari' => $request->cari]);
+        } elseif ($request->has('id')) {
+            // Cek apakah ada nilai di form kategori
+            $artikel = Artikel::getDataArtikel($request, ['id' => $request->id]);
+        } else {
+            // Jika tidak ada kedua form diisi, ambil semua data
+            $artikel = Artikel::getDataArtikel($request);
+        }
 
         return view('artikel', [
             'title' => 'Artikel',
@@ -57,12 +67,14 @@ class BerandaArtikelController extends Controller
     {
         $getAllArtikel = Artikel::take(3)->get();
         $artikel = Artikel::getDataArtikelById($id);
+        $kategori = Kategori::all();
 
         return view('artikel-detail', [
             'title' => 'Artikel',
             'active' => 'artikel',
             'artikel' => $artikel,
-            'getAllArtikel' => $getAllArtikel
+            'getAllArtikel' => $getAllArtikel,
+            'kategori' => $kategori
         ]);
     }
     /**
