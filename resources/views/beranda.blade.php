@@ -51,7 +51,7 @@
             @foreach ($poster as $item)
             <div class="col-lg-4">
                 <div class="thumbnail">
-                    <a href="{{ asset('storage/gambar/' . $item->gambar) }}">
+                    <a href="{{ asset('storage/gambar/' . $item->gambar) }}" data-lightbox="photos">
                         <img src="{{ asset('storage/gambar/' . $item->gambar) }}"
                             class="bd-placeholder-img card-img-top rounded-circle mb-3" alt="{{ $item->judul }}"
                             style="width: 200px; height: 200px;">
@@ -71,8 +71,13 @@
                 <p class="lead">{{ $item->kutipan }}</p>
             </div>
             <div class="col-md-5">
-                <img src="{{ asset('storage/gambar/' . $item->gambar) }}" class="bd-placeholder-img card-img-top"
-                    alt="{{ $item->judul }}" style="width: 100%; height: auto;">
+                <div class="thumbnail">
+                    <a href="{{ asset('storage/gambar/' . $item->gambar) }}">
+                        <img src="{{ asset('storage/gambar/' . $item->gambar) }}"
+                            class="bd-placeholder-img card-img-top" alt="{{ $item->judul }}"
+                            style="width: 100%; height: auto;">
+                    </a>
+                </div>
             </div>
         </div>
         @else
@@ -82,8 +87,13 @@
                 <p class="lead">{{ $item->kutipan }}</p>
             </div>
             <div class="col-md-5">
-                <img src="{{ asset('storage/gambar/' . $item->gambar) }}" class="bd-placeholder-img card-img-top"
-                    alt="{{ $item->judul }}" style="width: 100%; height: auto;">
+                <div class="thumbnail">
+                    <a href="{{ asset('storage/gambar/' . $item->gambar) }}">
+                        <img src="{{ asset('storage/gambar/' . $item->gambar) }}"
+                            class="bd-placeholder-img card-img-top" alt="{{ $item->judul }}"
+                            style="width: 100%; height: auto;">
+                    </a>
+                </div>
             </div>
         </div>
         @endif

@@ -50,7 +50,7 @@
                     <div class="col-sm-4">
                         <div class="card shadow-sm">
                             <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="{{ $item->link }}"></iframe>
+                                <iframe class="embed-responsive-item rounded" src="{{ $item->link }}"></iframe>
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title"><a href="/video/{{ $item->id }}"

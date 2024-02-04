@@ -13,8 +13,13 @@
 
     <div class="row g-5">
         <div class="col-md-8">
-            <img src="{{ asset('storage/gambar/' . $artikel->gambar) }}" class="bd-placeholder-img card-img mb-3"
-                alt="{{ $artikel->judul }}">
+            <thumnail>
+                <a href="{{ asset('storage/gambar/' . $artikel->gambar) }}">
+                    <img src="{{ asset('storage/gambar/' . $artikel->gambar) }}"
+                        class="bd-placeholder-img card-img mb-3" style="border-radius: 10px;"
+                        alt="{{ $artikel->judul }}">
+                </a>
+            </thumnail>
             <br>
             <article class="blog-post">
                 <h2 class="blog-post-title">{{ $artikel->judul }}</h2>
@@ -34,8 +39,10 @@
                 <div class="position-sticky">
                     @foreach ($getAllArtikel as $item)
                     <div class="card shadow-sm">
-                        <img src="{{ asset('storage/gambar/' . $item->gambar) }}"
-                            class="bd-placeholder-img card-img-top" alt="{{ $item->judul }}" width="100px">
+                        <a href="/artikel/{{ $item->id }}" class="text-decoration-none text-dark">
+                            <img src="{{ asset('storage/gambar/' . $item->gambar) }}"
+                                class="bd-placeholder-img card-img-top" alt="{{ $item->judul }}">
+                        </a>
                         <div class="card-body">
                             <h5 class="card-title"><a href="/artikel/{{ $item->id }}"
                                     class="text-decoration-none text-dark">{{
