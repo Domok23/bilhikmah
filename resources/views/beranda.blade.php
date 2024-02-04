@@ -56,7 +56,7 @@
                     <a href="{{ asset('storage/gambar/' . $item->gambar) }}" data-lightbox="photos">
                         <img src="{{ asset('storage/gambar/' . $item->gambar) }}"
                             class="bd-placeholder-img card-img-top rounded-circle mb-3" alt="{{ $item->judul }}"
-                            style="width: 200px; height: 100%;">
+                            style="width: 200px; height: 200px;">
                     </a>
                 </div>
                 <p>"{{ $item->judul }}"</p>
