@@ -3,7 +3,7 @@
 @section('container')
 
 <main>
-    <div id="myCarousel" class="carousel slide bg-success pt-0" data-bs-ride="carousel">
+    <div id="myCarousel" class="carousel slide bg-success mx-1" style="border-radius: 30px" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <?php $active = 'active'; ?>
             @foreach($video as $item)
@@ -17,13 +17,15 @@
             @foreach($video as $item)
             <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
                 <div class="d-flex justify-content-center">
-                    <iframe width="1080px" height="512px" src="{{ $item->link }}" frameborder="0"
-                        allowfullscreen></iframe>
+                    <a href="/video/{{ $item->id }}" class="stretched-link">
+                        <iframe style="border-radius: 15px; filter: grayscale(100%);" width="1080px" height="512px"
+                            src="{{ $item->link }}" frameborder="0" allowfullscreen></iframe>
+                    </a>
                 </div>
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h2 class="fw-normal" style="color: white;">{!! $item->judul !!}</h2>
-                    </div>
+                <div class="carousel-caption d-none d-sm-block p-0">
+                    <a href="/video/{{ $item->id }}"
+                        class="shadow-lg badge bg-success text-decoration-none link-light fw-normal fs-5 stretched-link">{!!
+                        $item->judul !!}</a>
                 </div>
             </div>
             @endforeach
@@ -54,7 +56,7 @@
                     <a href="{{ asset('storage/gambar/' . $item->gambar) }}" data-lightbox="photos">
                         <img src="{{ asset('storage/gambar/' . $item->gambar) }}"
                             class="bd-placeholder-img card-img-top rounded-circle mb-3" alt="{{ $item->judul }}"
-                            style="width: 200px; height: 200px;">
+                            style="width: 200px; height: 100%;">
                     </a>
                 </div>
                 <p>"{{ $item->judul }}"</p>
