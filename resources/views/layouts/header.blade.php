@@ -18,7 +18,8 @@
     <link rel="stylesheet" href="/css/mystyle.css" >
 
     <!-- Lightbox -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css"> --}}
+    <link rel="stylesheet" href="/css/lightbox.css">
 </head>
 
 <body class="d-flex flex-column min-vh-100">

@@ -34,45 +34,32 @@ main {
   }
 }
 
-.photo-gallery {
-  color:#313437;
-  background-color:#fff;
+.image-container {
+  position: relative;
+  overflow: hidden;
 }
 
-.photo-gallery p {
-  color:#7d8285;
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.photo-gallery h2 {
-  font-weight:bold;
-  margin-bottom:40px;
-  padding-top:40px;
-  color:inherit;
+.overlay:hover {
+  opacity: 1;
 }
 
-@media (max-width:767px) {
-  .photo-gallery h2 {
-    margin-bottom:25px;
-    padding-top:25px;
-    font-size:24px;
-  }
+.text {
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  margin: 0 10px;
 }
-
-.photo-gallery .intro {
-  font-size:16px;
-  max-width:500px;
-  margin:0 auto 40px;
-}
-
-.photo-gallery .intro p {
-  margin-bottom:0;
-}
-
-.photo-gallery .photos {
-  padding-bottom:20px;
-}
-
-.photo-gallery .item {
-  padding-bottom:30px;
-}
-

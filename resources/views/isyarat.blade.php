@@ -33,7 +33,8 @@
                     <div class="col d-grid align-items-stretch">
                         <div class="card shadow-sm">
                             <div class="thumbnail">
-                                <a href="{{ asset('storage/gambar/' . $item->gambar) }}" data-lightbox="photos">
+                                <a href="{{ asset('storage/gambar/' . $item->gambar) }}" data-lightbox="roadtrip"
+                                data-title="{{ $item->deskripsi }}">
                                     <img src="{{ asset('storage/gambar/' . $item->gambar) }}"
                                         class="bd-placeholder-img card-img-top" alt="{{ $item->deskripsi }}">
                                 </a>

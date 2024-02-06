@@ -12,7 +12,7 @@
     </section>
     <div class="container marketing">
         <div class="col-12">
-            <div class="row justify-content-center mb-4">
+            <div class="row justify-content-center">
                 <div class="col-md-6">
                     <form action="/poster" method="get">
                         @csrf
@@ -31,16 +31,15 @@
                     @csrf
                     <div class="row g-3 mb-2">
                         <div class="col-md-3">
-                            <select class="form-control" id="id" name="id">
-                                <option value="">--Filter kategori poster--</option>
+                            <select class="form-select" id="id" name="id">
+                                <option selected disabled value="">Pilih Kategori</option>
+                                <option value="" @if (request('id')===null) selected @endif>Semua Kategori</option>
                                 @foreach ($kategori as $item)
-                                <option value="{{ $item->id }}">{{ $item->judul }}</option>
+                                <option value="{{ $item->id }}" @if (request('id')==$item->id) selected @endif>{{
+                                    $item->judul }}
+                                </option>
                                 @endforeach
                             </select>
-                        </div>
-                        <div class="col-md-1">
-                            <!-- Adjust the column width as needed -->
-                            <button type="submit" class="btn btn-success mb-3">Filter</button>
                         </div>
                     </div>
                 </form>
@@ -50,12 +49,15 @@
                     <div class="col">
                         <div class="card shadow-sm">
                             <div class="thumbnail">
-                                <a href="{{ asset('storage/gambar/' . $item->gambar) }}" data-lightbox="photos">
-                                    <img src="{{ asset('storage/gambar/' . $item->gambar) }}"
-                                        class="bd-placeholder-img img-fluid card-img-top" alt="{{ $item->judul }}">
-                                    {{-- <div class="caption">
-                                        <p>{{ $item->judul }}</p>
-                                    </div> --}}
+                                <a href="{{ asset('storage/gambar/' . $item->gambar) }}" data-lightbox="roadtrip"
+                                    data-title="{{ $item->judul }}">
+                                    <div class="image-container">
+                                        <img src="{{ asset('storage/gambar/' . $item->gambar) }}"
+                                            class="img-fluid rounded-3" alt="{{ $item->judul }}">
+                                        <div class="overlay rounded-3">
+                                            <p class="text">{{ $item->judul }}</p>
+                                        </div>
+                                    </div>
                                 </a>
                             </div>
                         </div>
@@ -71,3 +73,8 @@
         <hr class="featurette-divider">
     </div>
 </main>
+<script>
+    document.getElementById('id').addEventListener('change', function() {
+        this.form.submit();
+    });
+</script>

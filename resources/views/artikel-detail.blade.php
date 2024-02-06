@@ -10,9 +10,24 @@
             </div>
         </div>
     </section>
-
+    <div class="col-12">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-12 mb-md-4">
+                <!-- Penyesuaian -->
+                <form class="mb-0" action="/artikel" method="get">
+                    @csrf
+                    <div class="input-group mb-3">
+                        <input type="search" class="form-control" placeholder="Cari artikel" name="cari"
+                            value="{{ request('cari') }}">
+                        <button class="btn btn-success" type="submit">Cari</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <div class="row g-5">
-        <div class="col-md-8">
+        <div class="col-md-8 col-12">
+            <!-- Penyesuaian -->
             <thumnail>
                 <a href="{{ asset('storage/gambar/' . $artikel->gambar) }}">
                     <img src="{{ asset('storage/gambar/' . $artikel->gambar) }}"
@@ -34,7 +49,8 @@
             <div class="mt-5" id="disqus_thread"></div>
         </div>
 
-        <div class="col-md-4 d-flex align-items-stretch">
+        <div class="col-md-4 col-12">
+            <!-- Penyesuaian -->
             <div class="album p-3 bg-light">
                 <div class="position-sticky">
                     @foreach ($getAllArtikel as $item)

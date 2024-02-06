@@ -4,15 +4,25 @@
 
 <main class="container">
     <section class="py-2 text-center container">
-        <div class="row py-lg-5">
-            <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light"><b>Video Islami</b></h1>
+    </section>
+    <div class="col-12">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-12 my-md-4">
+                <!-- Penyesuaian -->
+                <form action="/video" method="get">
+                    @csrf
+                    <div class="input-group mb-3">
+                        <input type="search" class="form-control" placeholder="Cari video" name="cari"
+                            value="{{ request('cari') }}">
+                        <button class="btn btn-success" type="submit">Cari</button>
+                    </div>
+                </form>
             </div>
         </div>
-    </section>
-
+    </div>
     <div class="row g-5">
-        <div class="col-md-8">
+        <div class="col-md-8 col-12">
+            <!-- Penyesuaian -->
             <div class="embed-responsive embed-responsive-16by9 shadow-lg">
                 <iframe class="embed-responsive-item" style="border-radius: 10px;" src="{{ $video->link }}"
                     allowfullscreen></iframe>
@@ -32,7 +42,8 @@
             <div class="mt-5" id="disqus_thread"></div>
         </div>
 
-        <div class="col-md-4 d-flex align-items-stretch">
+        <div class="col-md-4 col-12">
+            <!-- Penyesuaian -->
             <div class="album p-3 bg-light">
                 <div class="position-sticky">
                     @foreach ($getAllVideo as $item)
