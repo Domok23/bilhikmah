@@ -38,7 +38,8 @@
                                 <div class="form-group">
                                     <label for="email">Email</label>
                                     <input type="text" class="form-control" id="email" name="email"
-                                        placeholder="Masukan email Admin" required value="{{ old('email') }}">
+                                        placeholder="Masukan email Admin" required value="{{ old('email') }}"
+                                        autocomplete="off">
                                     @error('email')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -46,7 +47,7 @@
                                 <div class="form-group">
                                     <label for="password">Password</label>
                                     <input type="password" class="form-control" id="password" name="password"
-                                        placeholder="Masukan password Admin" required>
+                                        placeholder="Masukan password Admin" required autocomplete="off">
                                     @error('password')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
