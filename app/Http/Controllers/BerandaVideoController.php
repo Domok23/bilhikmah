@@ -65,7 +65,7 @@ class BerandaVideoController extends Controller
      */
     public function show($id)
     {
-        $getAllVideo = Video::take(3)->get();
+        $getAllVideo = Video::take(4)->get();
         $video = Video::getDataVideoById($id);
 
         return view('video-detail', [

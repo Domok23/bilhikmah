@@ -8,7 +8,6 @@
     <div class="col-12">
         <div class="row justify-content-center">
             <div class="col-md-6 col-12 my-md-4">
-                <!-- Penyesuaian -->
                 <form action="/video" method="get">
                     @csrf
                     <div class="input-group mb-3">
@@ -22,20 +21,20 @@
     </div>
     <div class="row g-5">
         <div class="col-md-8 col-12">
-            <!-- Penyesuaian -->
             <div class="embed-responsive embed-responsive-16by9 shadow-lg">
                 <iframe class="embed-responsive-item" style="border-radius: 10px;" src="{{ $video->link }}"
                     allowfullscreen></iframe>
             </div>
             <br>
             <article class="blog-post">
-                <h2 class="blog-post-title">{{ $video->judul }}</h2>
-                <p class="blog-post-meta">{{
-                    \Carbon\Carbon::parse($video->created_at)->diffForHumans() }} - <a href="#!"
-                        class="text-decoration-none text-success">Admin</a></p>
-                <a class="badge bg-success text-decoration-none link-light" href="#!">{{
-                    $video->judul_kat }}</a>
-                <p class="my-4 fs-5">
+                <h2 class="blog-post-title fw-bold">{{ $video->judul }}</h2>
+                <h5 class="blog-post-meta fw-bold"><a href="#!" class="text-decoration-none text-success">Admin</a></h5>
+                <p class="blog-post-meta fw-bold">{{
+                    \Carbon\Carbon::parse($video->created_at)->diffForHumans() }} <a
+                        class="text-decoration-none link-success" href="#!"> #{{
+                        $video->judul_kat }}</a></p>
+
+                <p class="fs-5">
                     {!! $video->deskripsi !!}
                 </p>
             </article>
@@ -43,11 +42,11 @@
         </div>
 
         <div class="col-md-4 col-12">
-            <!-- Penyesuaian -->
             <div class="album p-3 bg-light">
                 <div class="position-sticky">
                     @foreach ($getAllVideo as $item)
-                    <div class="card shadow-sm">
+                    @if ($item->id !== $video->id)
+                    <div class="card shadow-sm mb-3">
                         <div class="embed-responsive embed-responsive-16by9">
                             <iframe class="embed-responsive-item rounded" src="{{ $item->link }}"
                                 allowfullscreen></iframe>
@@ -56,18 +55,14 @@
                             <h5 class="card-title"><a href="/video/{{ $item->id }}"
                                     class="text-decoration-none text-dark">{{
                                     $item->judul }}</a></h5>
-                            <p class="card-text text-muted mb-1">{{
+                            <p class="card-text text-muted mb-0">{{
                                 \Carbon\Carbon::parse($item->created_at)->diffForHumans() }} - <a href="#!"
                                     class="text-decoration-none text-success"> Admin</a></p>
-                            <small>
-                                <a class="badge bg-success text-decoration-none link-light mb-2" href="#!">{{
-                                    $item->judul_kat }}</a>
-                            </small>
                             <br>
                             <a href="/video/{{ $item->id }}" class=" btn btn-outline-success stretched-link">Detail</a>
                         </div>
                     </div>
-                    <br>
+                    @endif
                     @endforeach
                 </div>
             </div>

@@ -16,6 +16,36 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Cara Embed Video YouTube</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <p>1. Buka video yang ingin di embed di YouTube</p>
+                            <p>2. Klik tombol "Bagikan" di bawah video</p>
+                            <img class="img-responsive mb-4" style="margin:0 auto; max-width: 100%;" src="/img/bagikan.png"
+                                alt="klik tombol bagikan">
+                            <p>3. Klik tombol "Embed"</p>
+                            <img class="img-responsive mb-4" style="margin:0 auto; max-width: 100%;" src="/img/sematkan.png"
+                                alt="klik tombol sematkan">
+                            <p>4. Salin link yang ada di dalam kotak</p>
+                            <img class="img-responsive" style="margin:0 auto; max-width: 100%;" src="/img/copy_link.png"
+                                alt="klik tombol sematkan">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-dismiss="modal">Mengerti</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     <section class="content">
         <div class="container-fluid">
             <div class="row">
@@ -46,7 +76,12 @@
                                         @enderror
                                     </div>
                                 <div class="form-group">
-                                    <label for="link">Link</label>
+                                    <label class="mb-0" for="link">Link Embed Youtube</label>
+                                    <br>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn badge bg-success mb-2" data-toggle="modal" data-target="#staticBackdrop">
+                                        Lihat cara embed
+                                    </button>
                                     <input type="text" class="form-control" id="link" name="link"
                                         placeholder="Masukan link video" value="{{ $video->link }}" required>
                                     @error('link')

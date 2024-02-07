@@ -43,50 +43,53 @@
                             @endif
                             <a href="/dashboard/video/create" class="btn btn-success mb-3"><i class="fas fa-plus"></i>
                                 Tambah</a>
-                            <table id="dataTable" class="table table-bordered table-striped">
-                                <thead>
-                                    <tr>
-                                        <th class="text-center">No</th>
-                                        <th class="text-center">Judul</th>
-                                        <th class="text-center">Kategori Video</th>
-                                        <th class="text-center">Video</th>
-                                        <th class="text-center">Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($video as $item)
-                                    <tr>
-                                        <td class="text-center">{{ $loop->iteration }}</td>
-                                        <td>{{ $item->judul }}</td>
-                                        <td>{{ $item->judul_kat }}</td>
-                                        <td class="text-center">
-                                            <div>
-                                                <iframe width="200px" height="100px" class="embed-responsive-item"
-                                                    src="{{ $item->link }}" allowfullscreen></iframe>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <a href="/video/{{ $item->id }}" class="btn btn-sm btn-primary mb-1" target="_blank">
-                                                <i class="fas fa-eye"></i> Lihat
-                                            </a>
-                                            <a href="/dashboard/video/{{ $item->id }}/edit"
-                                                class="btn btn-sm btn-warning mb-1">
-                                                <i class="fas fa-edit"></i> Edit
-                                            </a>
-                                            <form action="/dashboard/video/{{ $item->id }}" method="post"
-                                                class="d-inline">
-                                                @method('delete')
-                                                @csrf
-                                                <button class="btn btn-sm btn-danger mb-1"
-                                                    onclick="return confirm('Apakah yakin mau hapus data?')">
-                                                    <i class="fas fa-times-circle"></i> Hapus
-                                                </button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                            <div class="table-responsive">
+                                <table id="dataTable" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">No</th>
+                                            <th class="text-center">Judul</th>
+                                            <th class="text-center">Kategori Video</th>
+                                            <th class="text-center">Video</th>
+                                            <th class="text-center">Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($video as $item)
+                                        <tr>
+                                            <td class="text-center">{{ $loop->iteration }}</td>
+                                            <td>{{ $item->judul }}</td>
+                                            <td>{{ $item->judul_kat }}</td>
+                                            <td class="text-center">
+                                                <div>
+                                                    <iframe width="200px" height="100px" class="embed-responsive-item"
+                                                        src="{{ $item->link }}" allowfullscreen></iframe>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="/video/{{ $item->id }}" class="btn btn-sm btn-primary mb-1"
+                                                    target="_blank">
+                                                    <i class="fas fa-eye"></i> Lihat
+                                                </a>
+                                                <a href="/dashboard/video/{{ $item->id }}/edit"
+                                                    class="btn btn-sm btn-warning mb-1">
+                                                    <i class="fas fa-edit"></i> Edit
+                                                </a>
+                                                <form action="/dashboard/video/{{ $item->id }}" method="post"
+                                                    class="d-inline">
+                                                    @method('delete')
+                                                    @csrf
+                                                    <button class="btn btn-sm btn-danger mb-1"
+                                                        onclick="return confirm('Apakah yakin mau hapus data?')">
+                                                        <i class="fas fa-times-circle"></i> Hapus
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

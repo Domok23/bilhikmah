@@ -65,7 +65,7 @@ class BerandaArtikelController extends Controller
      */
     public function show($id)
     {
-        $getAllArtikel = Artikel::take(3)->get();
+        $getAllArtikel = Artikel::take(4)->get();
         $artikel = Artikel::getDataArtikelById($id);
         $kategori = Kategori::all();
 

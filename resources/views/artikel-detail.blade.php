@@ -54,7 +54,8 @@
             <div class="album p-3 bg-light">
                 <div class="position-sticky">
                     @foreach ($getAllArtikel as $item)
-                    <div class="card shadow-sm">
+                    @if ($item->id !== $artikel->id)
+                    <div class="card shadow-sm mb-3">
                         <a href="/artikel/{{ $item->id }}" class="text-decoration-none text-dark">
                             <img src="{{ asset('storage/gambar/' . $item->gambar) }}"
                                 class="bd-placeholder-img card-img-top" alt="{{ $item->judul }}">
@@ -83,7 +84,7 @@
                             </div>
                         </div>
                     </div>
-                    <br>
+                    @endif
                     @endforeach
                 </div>
             </div>

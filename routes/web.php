@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BerandaVideoController;
+use App\Http\Controllers\DashboardApiController;
 use App\Http\Controllers\BerandaPosterController;
 use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\BerandaAlquranController;
@@ -43,6 +44,7 @@ Route::post('/login', [AuthController::class, 'authenticate'])->name('login');
 Route::get('/logout', [AuthController::class, 'logout']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/api-docs', [DashboardApiController::class, 'index'])->middleware('auth');
 Route::resource('/dashboard/artikel', DashboardArtikelController::class)->middleware('auth');
 Route::resource('/dashboard/video', DashboardVideoController::class)->middleware('auth');
 Route::resource('/dashboard/poster', DashboardPosterController::class)->middleware('auth');

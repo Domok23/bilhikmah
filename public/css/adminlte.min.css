@@ -2973,6 +2973,19 @@ fieldset:disabled a.btn {
 .btn-link:focus {
   text-decoration: none;
 }
+.btn-link-success {
+  font-weight: 400;
+  color: #0AAE7C;
+  text-decoration: none;
+}
+.btn-link-success:hover {
+  color: #0aae7dc2 ;
+  text-decoration: none;
+}
+.btn-link-success.focus,
+.btn-link-success:focus {
+  text-decoration: none;
+}
 .btn-link.disabled,
 .btn-link:disabled {
   color: #6c757d;

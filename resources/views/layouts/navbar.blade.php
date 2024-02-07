@@ -11,36 +11,31 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 {{-- <ul class="navbar-nav me-auto mb-2 mb-md-0"> --}}
                     <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav pt-2 py-md-0">
-                    <li class="nav-item m-1">
-                        <a class="nav-link btn btn-outline-success fixed-width-nav-button {{ Request::is('/') || Request::is('beranda') ? 'active' : '' }}"
-                            aria-current="page" href="/">Beranda</a>
-                    </li>
-                    <li class="nav-item m-1">
-                        <a class="nav-link btn btn-outline-success fixed-width-nav-button {{ Request::is('alquran*') ? 'active' : '' }}"
-                            aria-current="page" href="/alquran">Al-Qur'an</a>
-                    </li>
-                    <li class="nav-item m-1">
-                        <a class="nav-link btn btn-outline-success fixed-width-nav-button {{ Request::is('isyarat*') ? 'active' : '' }}"
-                            aria-current="page" href="/isyarat">Isyarat</a>
-                    </li>
-                    <li class="nav-item m-1">
-                        <a class="nav-link btn btn-outline-success fixed-width-nav-button {{ Request::is('artikel*') ? 'active' : '' }}"
-                            aria-current="page" href="/artikel">Artikel</a>
-                    </li>
-                    <li class="nav-item m-1">
-                        <a class="nav-link btn btn-outline-success fixed-width-nav-button {{ Request::is('video*') ? 'active' : '' }}"
-                            aria-current="page" href="/video">Video</a>
-                    </li>
-                    <li class="nav-item m-1">
-                        <a class="nav-link btn btn-outline-success fixed-width-nav-button {{ Request::is('poster*') ? 'active' : '' }}"
-                            aria-current="page" href="/poster">Poster</a>
-                    </li>
-                </ul>
-                {{-- <form class="d-flex" style="margin-top: 10px;">
-                    <input class="form-control" type="search" placeholder="Pencarian" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit"><i
-                            class="nav-icon fas fa-search"></i></button>
-                </form> --}}
+                        <li class="nav-item m-1">
+                            <a class="nav-link btn btn-outline-success fixed-width-nav-button {{ Request::is('/') || Request::is('beranda') ? 'active' : '' }}"
+                                aria-current="page" href="/">Beranda</a>
+                        </li>
+                        <li class="nav-item m-1">
+                            <a class="nav-link btn btn-outline-success fixed-width-nav-button {{ Request::is('alquran*') ? 'active' : '' }}"
+                                aria-current="page" href="/alquran">Al-Qur'an</a>
+                        </li>
+                        <li class="nav-item m-1">
+                            <a class="nav-link btn btn-outline-success fixed-width-nav-button {{ Request::is('isyarat*') ? 'active' : '' }}"
+                                aria-current="page" href="/isyarat">Isyarat</a>
+                        </li>
+                        <li class="nav-item m-1">
+                            <a class="nav-link btn btn-outline-success fixed-width-nav-button {{ Request::is('artikel*') ? 'active' : '' }}"
+                                aria-current="page" href="/artikel">Artikel</a>
+                        </li>
+                        <li class="nav-item m-1">
+                            <a class="nav-link btn btn-outline-success fixed-width-nav-button {{ Request::is('video*') ? 'active' : '' }}"
+                                aria-current="page" href="/video">Video</a>
+                        </li>
+                        <li class="nav-item m-1">
+                            <a class="nav-link btn btn-outline-success fixed-width-nav-button {{ Request::is('poster*') ? 'active' : '' }}"
+                                aria-current="page" href="/poster">Poster</a>
+                        </li>
+                    </ul>
             </div>
         </div>
     </nav>

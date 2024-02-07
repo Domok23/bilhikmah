@@ -1,4 +1,4 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar main-sidebar-custom sidebar-dark-primary elevation-4">
     <a href="/dashboard" class="brand-link">
         <img src="/img/logo.png" alt="logo-sidebar" class="brand-image">
         <span class="brand-text font-weight-light">Bilhikmah</span>
@@ -54,7 +54,19 @@
                         <p>Data Admin</p>
                     </a>
                 </li>
+                {{-- <li class="nav-item">
+                    <a class="nav-link {{ Request::is('dashboard/api-docs*') ? 'active bg-success' : '' }}"
+                        href="/dashboard/api-docs">
+                        <i class="nav-icon fas fa-fire"></i>
+                        <p>Dokumentasi API</p>
+                    </a>
+                </li> --}}
             </ul>
         </nav>
+    </div>
+    <div class="sidebar-custom">
+        <a href="/dashboard/api-docs"
+            class="btn btn-link-success"><i
+                class="fas fa-fire"></i> Dokumentasi API</a>
     </div>
 </aside>
