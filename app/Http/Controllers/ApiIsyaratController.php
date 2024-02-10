@@ -20,8 +20,6 @@ class ApiIsyaratController extends Controller
         $isyarat = Isyarat::all();
 
         return response()->json([
-            'status' => true,
-            'message' => 'Data ditemukan',
             'isyarat' => $isyarat
         ], 200);
     }

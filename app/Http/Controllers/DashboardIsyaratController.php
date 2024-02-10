@@ -68,17 +68,6 @@ class DashboardIsyaratController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Isyarat  $isyarat
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Isyarat $isyarat)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Isyarat  $isyarat

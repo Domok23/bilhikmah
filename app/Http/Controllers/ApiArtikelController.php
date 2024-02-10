@@ -12,12 +12,14 @@ class ApiArtikelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request  $request)
+    public function index(Request $request)
     {
-        $artikel = Artikel::getDataArtikel($request);
+        // Mendapatkan data artikel tanpa pagination
+        $artikelData = Artikel::getAllDataArtikel($request)->toArray();
 
+        // Membuat respons JSON tanpa data pagination
         return response()->json([
-            'artikel' => $artikel
+            'artikel' => $artikelData
         ]);
     }
 

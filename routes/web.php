@@ -28,7 +28,7 @@ use App\Http\Controllers\DashboardKategoriController;
 |
 */
 
-Route::get('/', [BerandaController::class, 'index']);
+Route::get('/', [BerandaController::class, 'index'])->name('beranda');
 Route::get('/beranda', [BerandaController::class, 'index']);
 Route::get('/alquran', [BerandaAlquranController::class, 'index']);
 Route::get('/alquran/{nomor}', [BerandaAlquranController::class, 'show']);

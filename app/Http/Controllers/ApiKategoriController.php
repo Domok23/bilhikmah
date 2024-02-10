@@ -15,9 +15,10 @@ class ApiKategoriController extends Controller
     public function index()
     {
         $kategori = Kategori::all();
+        
         return response()->json([
             'kategori' => $kategori
-        ]);
+        ], 200);
     }
 
     /**

@@ -16,7 +16,7 @@ class DashboardVideoController extends Controller
      */
     public function index(Request $request)
     {
-        $video = Video::getDataVideo($request);
+        $video = Video::getAllDataVideo($request);
 
         return view('dashboard.video.index',[
             'title' => 'Video',
@@ -56,6 +56,9 @@ class DashboardVideoController extends Controller
             'link' => 'unique:videos|required|url'
         ]);
 
+        // Membersihkan deskripsi dari tag HTML
+        // $validatedData['deskripsi'] = strip_tags($validatedData['deskripsi']);
+
         $validatedData['kutipan'] = Str::limit(strip_tags($request->deskripsi), 100);
 
         $data = $validatedData;
@@ -63,17 +66,6 @@ class DashboardVideoController extends Controller
         Video::create($data);
 
         return redirect('/dashboard/video')->with('success', 'Data berhasil ditambah');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Video  $video
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Video $video)
-    {
-        //
     }
 
     /**
@@ -110,6 +102,9 @@ class DashboardVideoController extends Controller
             'id_kategori' => 'required',
             'link' => 'required|url'
         ]);
+
+        // Membersihkan deskripsi dari tag HTML
+        // $validatedData['deskripsi'] = strip_tags($validatedData['deskripsi']);
 
         $validatedData['kutipan'] = Str::limit(strip_tags($request->deskripsi), 100);
 

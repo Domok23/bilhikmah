@@ -43,7 +43,8 @@
                                     <div class="mb-3">
                                         <input id="x" type="hidden" id="deskripsi" name="deskripsi"
                                             value="{{ $artikel->deskripsi }}" required>
-                                        <trix-editor input="x">{{ $artikel->deskripsi }}</trix-editor>
+                                        <trix-editor input="x" data-trix-accept-content="text/html">{{
+                                            $artikel->deskripsi }}</trix-editor>
                                     </div>
                                     @error('deskripsi')
                                     <div class="text-danger">{{ $message }}</div>

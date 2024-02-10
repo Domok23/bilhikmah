@@ -46,36 +46,30 @@ class DashboardUserController extends Controller
      */
     public function store(Request $request)
     {
+        // Validasi data masukan
         $validator = Validator::make($request->all(), [
             'nama' => 'required|min:3|max:255',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:6'
         ]);
 
+        // Jika validasi gagal, kembalikan respons dengan pesan error
         if ($validator->fails()) {
-            return redirect('/dashboard/user')->with('error', $validator->errors()->first());
+            return redirect('/dashboard/user/create')->withErrors($validator)->withInput();
         }
 
+        // Buat entitas user baru
         $user = new User([
             'nama' => $request->input('nama'),
             'email' => $request->input('email'),
             'password' => Hash::make($request->input('password')),
         ]);
 
+        // Simpan data user baru
         $user->save();
 
+        // Redirect kembali dengan pesan sukses
         return redirect('/dashboard/user')->with('success', 'Data user berhasil ditambah');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function show(User $user)
-    {
-        //
     }
 
     /**
@@ -104,31 +98,39 @@ class DashboardUserController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        // Validasi data masukan
         $validator = Validator::make($request->all(), [
             'nama' => 'required|min:3|max:255',
             'email' => 'required|email|unique:users,email,' . $id,
             'password' => 'nullable|min:6'
         ]);
 
+        // Jika validasi gagal, kembalikan respons dengan pesan error
         if ($validator->fails()) {
-            return redirect('/dashboard/user')->with('error', $validator->errors()->first());
+            return redirect('/dashboard/user/' . $id . '/edit')->withErrors($validator)->withInput();
         }
 
+        // Temukan user berdasarkan ID
         $user = User::find($id);
 
+        // Jika user tidak ditemukan, kembalikan respons dengan pesan error
         if (!$user) {
             return redirect('/dashboard/user')->with('error', 'Data tidak ditemukan');
         }
 
+        // Update data user
         $user->nama = $request->input('nama');
         $user->email = $request->input('email');
 
+        // Jika password diisi, update password
         if ($request->filled('password')) {
             $user->password = Hash::make($request->input('password'));
         }
 
+        // Simpan perubahan
         $user->save();
 
+        // Redirect kembali dengan pesan sukses
         return redirect('/dashboard/user')->with('success', 'Data user berhasil diedit');
     }
 

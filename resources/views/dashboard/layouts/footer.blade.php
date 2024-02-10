@@ -11,39 +11,35 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="/plugins/jquery/jquery.min.js"></script>
+<script src="/lte/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="/lte/plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
     $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
-<script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/lte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- ChartJS -->
-<script src="/plugins/chart.js/Chart.min.js"></script>
+<script src="/lte/plugins/chart.js/Chart.min.js"></script>
 <!-- Sparkline -->
-<script src="/plugins/sparklines/sparkline.js"></script>
+<script src="/lte/plugins/sparklines/sparkline.js"></script>
 <!-- JQVMap -->
-<script src="/plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<script src="/lte/plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="/lte/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
 <!-- jQuery Knob Chart -->
-<script src="/plugins/jquery-knob/jquery.knob.min.js"></script>
+<script src="/lte/plugins/jquery-knob/jquery.knob.min.js"></script>
 <!-- daterangepicker -->
-<script src="/plugins/moment/moment.min.js"></script>
-<script src="/plugins/daterangepicker/daterangepicker.js"></script>
+<script src="/lte/plugins/moment/moment.min.js"></script>
+<script src="/lte/plugins/daterangepicker/daterangepicker.js"></script>
 <!-- Tempusdominus Bootstrap 4 -->
-<script src="/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- Summernote -->
-<script src="/plugins/summernote/summernote-bs4.min.js"></script>
+<script src="/lte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 <!-- overlayScrollbars -->
-<script src="/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<script src="/lte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
-<script src="/js/adminlte.js"></script>
-<!-- AdminLTE for demo purposes -->
-{{-- <script src="/dist/js/demo.js"></script> --}}
+<script src="/lte/js/adminlte.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="/js/pages/dashboard.js"></script>
+<script src="/lte/js/pages/dashboard.js"></script>
 <!-- DataTable -->
 <script src="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.js"></script>
 <script>
@@ -53,8 +49,17 @@
 </script>
 <!-- Script untuk Trix -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.min.js"></script>
+<!-- Script untuk CKEditor -->
+<script src="https://cdn.ckeditor.com/ckeditor5/41.1.0/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 <!-- bs-custom-file-input -->
-<script src="/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<script src="/lte/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <!-- Script untuk preview gambar -->
 <script>
     function previewImage() {

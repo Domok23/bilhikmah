@@ -68,8 +68,8 @@
                                 <div class="form-group">
                                         <label for="deskripsi">Deskripsi</label>
                                         <div class="mb-3">
-                                            <input id="x" type="hidden" id="deskripsi" name="deskripsi" value="{{ $video->deskripsi }}" required>
-                                            <trix-editor input="x">{{ $video->deskripsi }}</trix-editor>
+                                            <input id="x" type="hidden" id="deskripsi" name="deskripsi" value="{{ $video->deskripsi }}">
+                                            <trix-editor input="x" data-trix-accept-content="text/html">{{ $video->deskripsi }}</trix-editor>
                                         </div>
                                         @error('deskripsi')
                                         <div class="text-danger">{{ $message }}</div>

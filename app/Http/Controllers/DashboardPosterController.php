@@ -16,7 +16,7 @@ class DashboardPosterController extends Controller
      */
     public function index(Request $request)
     {
-        $poster = Poster::getDataPoster($request);
+        $poster = Poster::getAllDataPoster($request);
 
         return view('dashboard.poster.index',[
             'title' => 'Poster',
@@ -71,17 +71,6 @@ class DashboardPosterController extends Controller
         Poster::create($data);
 
         return redirect('/dashboard/poster')->with('success', 'Data berhasil ditambah');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Poster  $poster
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Poster $poster)
-    {
-        //
     }
 
     /**

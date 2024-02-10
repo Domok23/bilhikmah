@@ -9,17 +9,17 @@
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
     <!-- Bootstrap v5.0.2 core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/home/css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="/home/plugins/fontawesome-free/css/all.min.css">
     <!-- Custom styles for this template -->
-    <link href="/css/carousel.css" rel="stylesheet">
+    <link href="/home/css/carousel.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="/css/mystyle.css" >
+    <link rel="stylesheet" href="/home/css/mystyle.css" >
 
     <!-- Lightbox -->
     {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css"> --}}
-    <link rel="stylesheet" href="/css/lightbox.css">
+    <link rel="stylesheet" href="/home/css/lightbox.css">
 </head>
 
 <body class="d-flex flex-column min-vh-100">

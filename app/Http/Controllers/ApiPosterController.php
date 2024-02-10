@@ -17,12 +17,12 @@ class ApiPosterController extends Controller
      */
     public function index()
     {
-        $poster = Poster::all();
+        // Mengambil data poster tanpa data pagination
+        $posterData = Poster::all()->toArray();
 
+        // Mengembalikan respons JSON tanpa data pagination
         return response()->json([
-            'status' => true,
-            'message' => 'Data ditemukan',
-            'poster' => $poster
+            'poster' => $posterData
         ], 200);
     }
 

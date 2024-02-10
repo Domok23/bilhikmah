@@ -12,13 +12,14 @@ class ApiVideoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $video = Video::all();
+        // Mendapatkan data artikel tanpa pagination
+        $videoData = Video::getAllDataVideo($request)->toArray();
 
         return response()->json([
-            'video' => $video
-        ]);
+            'video' => $videoData
+        ], 200);
     }
 
     /**

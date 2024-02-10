@@ -30,6 +30,23 @@ class Video extends Model
         return $query->paginate(6);
     }
 
+    public static function getAllDataVideo(Request $request)
+    {
+        // Using Query Builder
+        $query = DB::table('videos')
+        ->leftJoin('kategoris', 'kategoris.id', '=', 'videos.id_kategori')
+        ->select(
+            'videos.*',
+            DB::raw('kategoris.judul as judul_kat')
+        );
+
+        if ($request->id) {
+            $query->where('kategoris.id', $request->id);
+        }
+
+        return $query->get();
+    }
+
     public static function getDataVideoById($id)
     {
         return DB::table('videos')

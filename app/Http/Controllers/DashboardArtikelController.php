@@ -17,7 +17,7 @@ class DashboardArtikelController extends Controller
      */
     public function index(Request $request)
     {
-        $artikel = Artikel::getDataArtikel($request);
+        $artikel = Artikel::getAllDataArtikel($request);
 
         return view('dashboard.artikel.index', [
             'title' => 'Artikel',
@@ -56,6 +56,9 @@ class DashboardArtikelController extends Controller
             'id_kategori' => 'required',
             'gambar' => 'image|mimes:jpeg,png,jpg,gif,webp|max:2048'
         ]);
+
+        // Membersihkan deskripsi dari tag HTML
+        // $validatedData['deskripsi'] = strip_tags($validatedData['deskripsi']);
 
         $gambar = null;
         if ($request->hasFile('gambar')) {
@@ -121,6 +124,9 @@ class DashboardArtikelController extends Controller
             'id_kategori' => 'required',
             'gambar' => 'image|mimes:jpeg,png,jpg,gif,webp|file|max:2048'
         ]);
+
+        // Membersihkan deskripsi dari tag HTML
+        // $validatedData['deskripsi'] = strip_tags($validatedData['deskripsi']);
 
         $validatedData['kutipan'] = Str::limit(strip_tags($request->deskripsi), 100);
 

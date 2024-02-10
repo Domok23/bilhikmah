@@ -30,6 +30,23 @@ class Poster extends Model
         return $query->paginate(10);
     }
 
+    public static function getAllDataPoster(Request $request)
+    {
+        // Using Query Builder
+        $query = DB::table('posters')
+        ->leftJoin('kategoris', 'kategoris.id', '=', 'posters.id_kategori')
+        ->select(
+            'posters.*',
+            DB::raw('kategoris.judul as judul_kat')
+        );
+
+        if ($request->id) {
+            $query->where('kategoris.id', $request->id);
+        }
+
+        return $query->get();
+    }
+
     public static function getDataPosterById($id)
     {
         return DB::table('posters')

@@ -69,9 +69,9 @@
                                 <div class="form-group">
                                     <label for="deskripsi">Deskripsi</label>
                                     <div class="mb-3">
-                                        <input id="x" type="hidden" id="deskripsi" name="deskripsi" required
+                                        <input id="x" type="hidden" id="deskripsi" name="deskripsi"
                                             value="{{ old('deskripsi') }}">
-                                        <trix-editor input="x"></trix-editor>
+                                        <trix-editor input="x" data-trix-accept-content="text/html"></trix-editor>
                                         @error('deskripsi')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror

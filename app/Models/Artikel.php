@@ -29,6 +29,23 @@ class Artikel extends Model
         return $query->paginate(6);
     }
 
+    public static function getAllDataArtikel(Request $request)
+    {
+        // Using Query Builder
+        $query = DB::table('artikels')
+        ->leftJoin('kategoris', 'kategoris.id', '=', 'artikels.id_kategori')
+        ->select(
+            'artikels.*',
+            DB::raw('kategoris.judul as judul_kat')
+        );
+
+        if ($request->id) {
+            $query->where('kategoris.id', $request->id);
+        }
+
+        return $query->get();
+    }
+
     public static function getDataArtikelById($id)
     {
         return DB::table('artikels')

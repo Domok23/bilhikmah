@@ -10,11 +10,11 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Theme style AdminLTE -->
-    <link rel="stylesheet" href="/css/adminlte.min.css">
+    <link rel="stylesheet" href="/lte/css/adminlte.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="/lte/plugins/fontawesome-free/css/all.min.css">
     <!-- iCheck -->
-    <link rel="stylesheet" href="/css/icheck-bootstrap.min.css">
+    {{-- <link rel="stylesheet" href="/css/icheck-bootstrap.min.css"> --}}
 </head>
 </head>
 
@@ -85,11 +85,11 @@
         </div>
     </div>
     <!-- AdminLTE App -->
-    <script src="/js/adminlte.js"></script>
+    <script src="/lte/js/adminlte.js"></script>
     <!-- JQuery -->
-    <script src="/js/jquery.min.js"></script>
+    <script src="/lte/js/jquery.min.js"></script>
     <!-- bootstrap -->
-    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/lte/js/bootstrap.bundle.min.js"></script>
     <script>
         document.getElementById('togglePasswordContainer').addEventListener('click', function () {
         var passwordInput = document.getElementById('password');

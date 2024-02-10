@@ -20,7 +20,7 @@ use App\Http\Controllers\ApiKategoriController;
 */
 
 // User
-Route::apiResource('user', ApiUserController::class);
+// Route::apiResource('user', ApiUserController::class);
 
 // Kategori
 Route::apiResource('kategori', ApiKategoriController::class);
