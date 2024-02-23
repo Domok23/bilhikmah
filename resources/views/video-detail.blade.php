@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-    <div class="row g-5">
+    <div class="row gy-5">
         <div class="col-md-8 col-12">
             <div class="embed-responsive embed-responsive-16by9 shadow-lg">
                 <iframe class="embed-responsive-item" style="border-radius: 10px;" src="{{ $video->link }}"

@@ -25,7 +25,7 @@
             </div>
         </div>
     </div>
-    <div class="row g-5">
+    <div class="row gy-5">
         <div class="col-md-8 col-12">
             <!-- Penyesuaian -->
             <thumnail>
