@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Isyarat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class DashboardIsyaratController extends Controller
 {
@@ -17,7 +18,7 @@ class DashboardIsyaratController extends Controller
     {
         $isyarat = Isyarat::all();
 
-        return view('dashboard.isyarat.index',[
+        return view('dashboard.isyarat.index', [
             'title' => 'Isyarat',
             'active' => 'isyarat',
             'isyarat' => $isyarat
@@ -31,7 +32,7 @@ class DashboardIsyaratController extends Controller
      */
     public function create()
     {
-        return view('dashboard.isyarat.create',[
+        return view('dashboard.isyarat.create', [
             'title' => 'Isyarat',
             'active' => 'isyarat'
         ]);
@@ -50,17 +51,20 @@ class DashboardIsyaratController extends Controller
             'gambar' => 'image|mimes:jpeg,png,jpg,gif,webp|max:2048'
         ]);
 
-        $gambar = null;
         if ($request->hasFile('gambar')) {
+            $image = $request->file('gambar');
             $fileName = $this->generateRandomString();
-            $extention = $request->file('gambar')->extension();
-            $gambar = $fileName . '.' . $extention;
 
-            $request->file('gambar')->storeAs('public/gambar', $gambar);
+            // Proses kompresi gambar dengan kualitas 80%
+            $compressedImage = Image::make($image)->encode('jpg', 80);
+
+            // Simpan gambar yang sudah dikompres
+            $gambar = $fileName . '.jpg';
+            Storage::put('public/gambar/' . $gambar, $compressedImage->stream());
         }
 
         $data = $validatedData;
-        $data['gambar'] = $gambar;
+        $data['gambar'] = $gambar ?? null;
 
         Isyarat::create($data);
 
@@ -77,7 +81,7 @@ class DashboardIsyaratController extends Controller
     {
         $isyarat = Isyarat::find($id);
 
-        return view('dashboard.isyarat.edit',[
+        return view('dashboard.isyarat.edit', [
             'title' => 'Isyarat',
             'active' => 'isyarat',
             'isyarat' => $isyarat
@@ -112,11 +116,16 @@ class DashboardIsyaratController extends Controller
                 Storage::delete('public/gambar/' . $gambarLama);
             }
 
+            $image = $request->file('gambar');
             $fileName = $this->generateRandomString();
-            $extension = $request->file('gambar')->extension();
-            $gambarBaru = $fileName . '.' . $extension;
 
-            $request->file('gambar')->storeAs('public/gambar', $gambarBaru);
+            // Proses kompresi gambar dengan kualitas 80%
+            $compressedImage = Image::make($image)->encode('jpg', 80);
+
+            // Simpan gambar yang sudah dikompres
+            $gambarBaru = $fileName . '.jpg';
+            Storage::put('public/gambar/' . $gambarBaru, $compressedImage->stream());
+
             $isyarat->gambar = $gambarBaru;
         }
 
@@ -143,7 +152,8 @@ class DashboardIsyaratController extends Controller
         return redirect('/dashboard/isyarat')->with('danger', 'Data berhasil dihapus');
     }
 
-    function generateRandomString($length = 30) {
+    function generateRandomString($length = 30)
+    {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
         $randomString = '';
