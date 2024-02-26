@@ -48,8 +48,14 @@
                     @foreach ($video as $item)
                     <div class="col-sm-4">
                         <div class="card shadow-sm">
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item rounded" src="{{ $item->link }}"></iframe>
+                            <div class="position-relative">
+                                <a href="/video/{{ $item->id }}" class="stretched-link">
+                                    <img src="https://img.youtube.com/vi/{{ $item->link }}/maxresdefault.jpg"
+                                        class="card-img-top rounded" alt="{{ $item->judul }}">
+                                    <div class="play-icon" style="font-size: 3em;">
+                                        <i class="fa-duotone fa-circle-play"></i>
+                                    </div>
+                                </a>
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title"><a href="/video/{{ $item->id }}"

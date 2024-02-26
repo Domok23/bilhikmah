@@ -21,23 +21,37 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Cara Embed Video YouTube</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Cara Ambil Kode Dari Video YouTube</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div class="container">
-                        <p>1. Buka video yang ingin di embed di YouTube</p>
-                        <p>2. Klik tombol "Bagikan" di bawah video</p>
-                        <img class="img-responsive mb-4" style="margin:0 auto; max-width: 100%;" src="/img/bagikan.png"
-                            alt="klik tombol bagikan">
-                        <p>3. Klik tombol "Embed"</p>
-                        <img class="img-responsive mb-4" style="margin:0 auto; max-width: 100%;" src="/img/sematkan.png"
-                            alt="klik tombol sematkan">
-                        <p>4. Salin link yang ada di dalam kotak</p>
-                        <img class="img-responsive" style="margin:0 auto; max-width: 100%;" src="/img/copy_link.png"
-                            alt="klik tombol sematkan">
+                        <p>1. Buka video yang ingin diambil kodenya di YouTube.</p>
+                        <p style="margin-bottom: 0;">2. Salin kode video tersebut.
+                            <br>
+                            <span style="margin-left: 20px;">Nb:</span>
+                        <ul style="list-style-type: none; padding-left: 0;">
+                            <li style="margin-left: 20px;">- Kode ini biasanya terletak setelah "watch?v=".</li>
+                            <li style="margin-left: 20px;">- Kode ini biasanya terdiri dari 11 karakter alfanumerik.
+                            </li>
+                        </ul>
+                        </p>
+                        <div class="thumbnail">
+                            <a href="/img/kode_yt.png" data-lightbox="roadtrip">
+                                <img class="img-responsive mb-4" style="margin: 0 auto; max-width: 100%;"
+                                    src="/img/kode_yt.png" alt="Salin kode video">
+                            </a>
+                        </div>
+                        <p>Nb: Jika kode terlihat panjang, salin hanya kode yang terletak setelah "watch?v=" dan sebelum
+                            "&".</p>
+                        <div class="thumbnail">
+                            <a href="/img/kode_yt_n.png" data-lightbox="roadtrip">
+                                <img class="img-responsive mb-4" style="margin: 0 auto; max-width: 100%;"
+                                    src="/img/kode_yt_n.png" alt="Salin kode video antara watch?v= dan &">
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -79,15 +93,14 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="mb-0" for="link">Link Embed Youtube</label>
+                                    <label class="mb-0" for="link">Kode Video Youtube</label>
                                     <br>
-                                    <!-- Button trigger modal -->
                                     <button type="button" class="btn badge bg-success mb-2" data-toggle="modal"
                                         data-target="#staticBackdrop">
-                                        Lihat cara embed
+                                        Lihat cara mendapatkan kode video
                                     </button>
                                     <input type="text" class="form-control" id="link" name="link"
-                                        placeholder="Masukan link embed dari video Youtube" required
+                                        placeholder="Masukan kode dari video Youtube" required
                                         value="{{ old('link') }}">
                                     @error('link')
                                     <div class="text-danger">{{ $message }}</div>

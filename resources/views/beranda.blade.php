@@ -18,8 +18,11 @@
             <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
                 <div class="d-flex justify-content-center">
                     <a href="/video/{{ $item->id }}" class="stretched-link">
-                        <iframe style="border-radius: 15px; filter: grayscale(100%);" width="1080px" height="512px"
-                            src="{{ $item->link }}" frameborder="0" allowfullscreen></iframe>
+                        <img style="border-radius: 15px; filter: grayscale(100%);" width="1080px" height="512px"
+                            src="https://img.youtube.com/vi/{{ $item->link }}/maxresdefault.jpg"></img>
+                        <div class="play-icon">
+                            <i class="fa-duotone fa-circle-play"></i>
+                        </div>
                     </a>
                 </div>
                 <div class="carousel-caption d-none d-sm-block p-0">

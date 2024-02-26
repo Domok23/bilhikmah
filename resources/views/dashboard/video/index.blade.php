@@ -63,7 +63,7 @@
                                             <td class="text-center">
                                                 <div>
                                                     <iframe width="200px" height="100px" class="embed-responsive-item"
-                                                        src="{{ $item->link }}" allowfullscreen></iframe>
+                                                        src="https://www.youtube.com/embed/{{ $item->link }}" allowfullscreen></iframe>
                                                 </div>
                                             </td>
                                             <td class="text-center">

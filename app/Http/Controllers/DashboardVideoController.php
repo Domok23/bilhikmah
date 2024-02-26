@@ -53,7 +53,7 @@ class DashboardVideoController extends Controller
             'judul' => 'unique:videos|required|min:3|max:255',
             'deskripsi' => 'required|min:3',
             'id_kategori' => 'required',
-            'link' => 'unique:videos|required|url'
+            'link' => 'unique:videos|required'
         ]);
 
         // Membersihkan deskripsi dari tag HTML
@@ -100,7 +100,7 @@ class DashboardVideoController extends Controller
             'judul' => 'required|min:3|max:255',
             'deskripsi' => 'required',
             'id_kategori' => 'required',
-            'link' => 'required|url'
+            'link' => 'required'
         ]);
 
         // Membersihkan deskripsi dari tag HTML

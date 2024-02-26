@@ -15,10 +15,13 @@
     <!-- Custom styles for this template -->
     <link href="/home/css/carousel.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="/home/css/mystyle.css" >
+    <link rel="stylesheet" href="/home/css/mystyle.css">
+    <!-- Font Awesome -->
+    <link
+        href="https://cdn.jsdelivr.net/gh/eliyantosarage/font-awesome-pro@main/fontawesome-pro-6.5.1-web/css/all.min.css"
+        rel="stylesheet">
 
     <!-- Lightbox -->
-    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css"> --}}
     <link rel="stylesheet" href="/home/css/lightbox.css">
 </head>
 

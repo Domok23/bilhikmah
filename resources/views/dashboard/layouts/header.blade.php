@@ -25,9 +25,10 @@
     <link rel="stylesheet" href="/lte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Daterange picker -->
     <link rel="stylesheet" href="/lte/plugins/daterangepicker/daterangepicker.css">
-
     <!-- trix editor -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.min.css">
+    <!-- Lightbox -->
+    <link rel="stylesheet" href="/home/css/lightbox.css">
 
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed">
     <div class="wrapper">

@@ -38,8 +38,10 @@
 <script src="/lte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
 <script src="/lte/js/adminlte.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<!-- AdminLTE dashboard -->
 <script src="/lte/js/pages/dashboard.js"></script>
+<!-- Lightbox -->
+<script src="/home/js/lightbox.js"></script>
 <!-- DataTable -->
 <script src="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.js"></script>
 <script>
