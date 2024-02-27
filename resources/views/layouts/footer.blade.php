@@ -8,7 +8,7 @@
 </footer>
 <script src="/home/js/bootstrap.bundle.min.js"></script>
 <script src="/home/js/jquery.min.js"></script>
-<script src="/home/js/myscrpit.js"></script>
+<script src="/home/js/myscript.js"></script>
 <script src="/home/js/lightbox.js"></script>
 <script src="https://cdn.userway.org/widget.js" data-account="T0y450VW3Y"></script>
 

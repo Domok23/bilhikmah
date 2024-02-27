@@ -38,8 +38,10 @@
             <br>
             <article class="blog-post">
                 <h2 class="blog-post-title">{{ $artikel->judul }}</h2>
-                <p class="blog-post-meta">{{ \Carbon\Carbon::parse($artikel->created_at)->diffForHumans() }} - <a
-                        href="#!" class="text-decoration-none text-success"> Admin</a></p>
+                <p class="blog-post-meta">{{ \Carbon\Carbon::parse($artikel->created_at)->diffForHumans() }} &bull;
+                    <a href="#!" class="text-decoration-none text-success"> Admin</a> &bull;
+                    <a class="text-decoration-none link-warning" href="{{ Request::url() }}#disqus_thread"></a>
+                </p>
                 <a class="badge bg-success text-decoration-none link-light" href="#!">{{
                     $artikel->judul_kat }}</a>
                 <p class="my-4 fs-5">
@@ -67,7 +69,7 @@
                             <p class="mb-1">
                                 <small>
                                     oleh <a href="#!" class="text-decoration-none text-success">Admin</a>
-                                    - {{ \Carbon\Carbon::parse($item->created_at)->diffForHumans() }}
+                                    &bull; {{ \Carbon\Carbon::parse($item->created_at)->diffForHumans() }}
                                 </small>
                             </p>
                             <small>
@@ -110,6 +112,7 @@
                 (d.head || d.body).appendChild(s);
                 })();
 </script>
+<script id="dsq-count-scr" src="//bil-hikmah.disqus.com/count.js" async></script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
         by
         Disqus.</a></noscript>

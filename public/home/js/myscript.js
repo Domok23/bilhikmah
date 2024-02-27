@@ -1,12 +1,12 @@
 const html = document.querySelector('html');
 html.setAttribute('data-bs-theme', 'dark');
 
-const galleryGrid = document.querySelector('.gallery-grid');
-const links = galleryGrid.querySelectorAll('a');
-const imgs = galleryGrid.querySelectorAll('img');
-const lightboxModal = document.getElementById('lightbox-modal');
-const bsModal = new bootstrap.Modal(lightboxModal);
-const modalBody = lightboxModal.querySelector('.lightbox-content');
+// const galleryGrid = document.querySelector('.gallery-grid');
+// const links = galleryGrid.querySelectorAll('a');
+// const imgs = galleryGrid.querySelectorAll('img');
+// const lightboxModal = document.getElementById('lightbox-modal');
+// const bsModal = new bootstrap.Modal(lightboxModal);
+// const modalBody = lightboxModal.querySelector('.lightbox-content');
 
 function createCaption(caption) {
   return `<div class="carousel-caption d-none d-md-block">
@@ -80,22 +80,22 @@ function createCarousel(img) {
   modalBody.innerHTML = markup;
 }
 
-for (const link of links) {
-  link.addEventListener('click', function (e) {
-    e.preventDefault();
-    const currentImg = link.querySelector('img');
-    const lightboxCarousel = document.getElementById('lightboxCarousel');
+// for (const link of link) {
+//   link.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     const currentImg = link.querySelector('img');
+//     const lightboxCarousel = document.getElementById('lightboxCarousel');
 
-    if (lightboxCarousel) {
-      const parentCol = link.closest('.col');
-      const index = [...parentCol.parentElement.children].indexOf(parentCol);
+//     if (lightboxCarousel) {
+//       const parentCol = link.closest('.col');
+//       const index = [...parentCol.parentElement.children].indexOf(parentCol);
 
-      const bsCarousel = new bootstrap.Carousel(lightboxCarousel);
-      bsCarousel.to(index);
-    } else {
-      createCarousel(currentImg);
-    }
+//       const bsCarousel = new bootstrap.Carousel(lightboxCarousel);
+//       bsCarousel.to(index);
+//     } else {
+//       createCarousel(currentImg);
+//     }
 
-    bsModal.show();
-  });
-}
+//     bsModal.show();
+//   });
+// }

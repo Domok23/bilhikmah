@@ -29,10 +29,12 @@
             <article class="blog-post">
                 <h2 class="blog-post-title fw-bold">{{ $video->judul }}</h2>
                 <h5 class="blog-post-meta fw-bold"><a href="#!" class="text-decoration-none text-success">Admin</a></h5>
-                <p class="blog-post-meta fw-bold">{{
-                    \Carbon\Carbon::parse($video->created_at)->diffForHumans() }} <a
-                        class="text-decoration-none link-success" href="#!"> #{{
-                        $video->judul_kat }}</a></p>
+                <p class="blog-post-meta">{{
+                    \Carbon\Carbon::parse($video->created_at)->diffForHumans() }}
+                    <a class="text-decoration-none link-success" href="#!"> #{{$video->judul_kat }}</a> &bull;
+                    <a class="text-decoration-none link-warning" href="{{ Request::url() }}#disqus_thread"></a>
+                </p>
+
 
                 <p class="fs-5">
                     {!! $video->deskripsi !!}
@@ -61,7 +63,7 @@
                                     class="text-decoration-none text-dark">{{
                                     $item->judul }}</a></h5>
                             <p class="card-text text-muted mb-0">{{
-                                \Carbon\Carbon::parse($item->created_at)->diffForHumans() }} - <a href="#!"
+                                \Carbon\Carbon::parse($item->created_at)->diffForHumans() }} &bull; <a href="#!"
                                     class="text-decoration-none text-success"> Admin</a></p>
                             <br>
                             <a href="/video/{{ $item->id }}" class=" btn btn-outline-success stretched-link">Detail</a>
@@ -93,6 +95,7 @@
     (d.head || d.body).appendChild(s);
     })();
 </script>
+<script id="dsq-count-scr" src="//bil-hikmah-video.disqus.com/count.js" async></script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
         by
         Disqus.</a></noscript>
