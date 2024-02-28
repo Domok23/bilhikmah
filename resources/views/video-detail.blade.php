@@ -27,8 +27,8 @@
             </div>
             <br>
             <article class="blog-post">
-                <h2 class="blog-post-title fw-bold">{{ $video->judul }}</h2>
-                <h5 class="blog-post-meta fw-bold"><a href="#!" class="text-decoration-none text-success">Admin</a></h5>
+                <h2 class="blog-post-title">{{ $video->judul }}</h2>
+                <p class="blog-post-meta"><a href="#!" class="text-decoration-none text-success">Admin</a></p>
                 <p class="blog-post-meta">{{
                     \Carbon\Carbon::parse($video->created_at)->diffForHumans() }}
                     <a class="text-decoration-none link-success" href="#!"> #{{$video->judul_kat }}</a> &bull;

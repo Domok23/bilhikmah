@@ -47,7 +47,6 @@
                                 <table id="dataTable" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th class="text-center">No</th>
                                             <th class="text-center">Nama</th>
                                             <th class="text-center">Email</th>
                                             <th class="text-center">Action</th>
@@ -55,10 +54,11 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($user as $item)
+                                        @if ($item->id !== auth()->user()->id) {{-- Memeriksa apakah pengguna saat ini
+                                        adalah pengguna yang sedang dilihat --}}
                                         <tr>
-                                            <td class="text-center">{{ $loop->iteration }}</td>
-                                            <td>{{ $item->nama }}</td>
-                                            <td>{{ $item->email }}</td>
+                                            <td class="text-center">{{ $item->nama }}</td>
+                                            <td class="text-center">{{ $item->email }}</td>
                                             <td class="text-center">
                                                 <a href="/dashboard/user/{{ $item->id }}/edit"
                                                     class="btn btn-sm btn-warning mb-1">
@@ -75,6 +75,7 @@
                                                 </form>
                                             </td>
                                         </tr>
+                                        @endif
                                         @endforeach
                                     </tbody>
                                 </table>

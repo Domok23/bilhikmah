@@ -25,10 +25,12 @@
                         </div>
                     </a>
                 </div>
-                <div class="carousel-caption d-none d-sm-block p-0">
+                <div class="carousel-caption d-sm-block p-0">
                     <a href="/video/{{ $item->id }}"
-                        class="shadow-lg badge bg-success text-decoration-none link-light fw-normal fs-5 stretched-link">{!!
-                        $item->judul !!}</a>
+                        class="shadow-lg badge bg-success text-decoration-none link-light fw-normal fs-5 stretched-link"
+                        style="text-align: center; white-space: normal;">
+                        {!! $item->judul !!}
+                    </a>
                 </div>
             </div>
             @endforeach
