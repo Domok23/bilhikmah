@@ -49,8 +49,8 @@
                     <div class="col-sm-4 d-flex align-items-stretch">
                         <div class="card shadow-sm">
                             <a href="/artikel/{{ $item->id }}" class="text-decoration-none text-dark">
-                                <img src="{{ asset('storage/gambar/' . $item->gambar) }}"
-                                    class="bd-placeholder-img card-img-top" alt="{{ $item->judul }}">
+                                <img data-src="{{ asset('storage/gambar/' . $item->gambar) }}"
+                                    class="bd-placeholder-img card-img-top lazyload" alt="{{ $item->judul }}">
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title"><a href="/artikel/{{ $item->id }}"

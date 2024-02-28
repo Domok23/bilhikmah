@@ -51,8 +51,8 @@
                     <div class="card shadow-sm mb-3">
                         <div class="position-relative">
                             <a href="/video/{{ $item->id }}" class="stretched-link">
-                                <img src="https://img.youtube.com/vi/{{ $item->link }}/maxresdefault.jpg"
-                                    class="card-img-top rounded" alt="{{ $item->judul }}">
+                                <img data-src="https://img.youtube.com/vi/{{ $item->link }}/maxresdefault.jpg"
+                                    class="card-img-top rounded lazyload" alt="{{ $item->judul }}">
                                 <div class="play-icon" style="font-size: 3em;">
                                     <i class="fa-duotone fa-circle-play"></i>
                                 </div>

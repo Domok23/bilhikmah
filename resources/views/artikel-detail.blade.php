@@ -30,8 +30,8 @@
             <!-- Penyesuaian -->
             <thumnail>
                 <a href="{{ asset('storage/gambar/' . $artikel->gambar) }}">
-                    <img src="{{ asset('storage/gambar/' . $artikel->gambar) }}"
-                        class="bd-placeholder-img card-img mb-3" style="border-radius: 10px;"
+                    <img data-src="{{ asset('storage/gambar/' . $artikel->gambar) }}"
+                        class="bd-placeholder-img card-img mb-3 lazyload" style="border-radius: 10px;"
                         alt="{{ $artikel->judul }}">
                 </a>
             </thumnail>
@@ -59,8 +59,8 @@
                     @if ($item->id !== $artikel->id)
                     <div class="card shadow-sm mb-3">
                         <a href="/artikel/{{ $item->id }}" class="text-decoration-none text-dark">
-                            <img src="{{ asset('storage/gambar/' . $item->gambar) }}"
-                                class="bd-placeholder-img card-img-top" alt="{{ $item->judul }}">
+                            <img data-src="{{ asset('storage/gambar/' . $item->gambar) }}"
+                                class="bd-placeholder-img card-img-top lazyload" alt="{{ $item->judul }}">
                         </a>
                         <div class="card-body">
                             <h5 class="card-title"><a href="/artikel/{{ $item->id }}"

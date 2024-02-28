@@ -60,8 +60,8 @@
                                             <td>{{ $item->deskripsi }}</td>
                                             <td>
                                                 <div style="max-height: 150px; max-width:150px; overflow: hidden;">
-                                                    <img src="{{ asset('storage/gambar/' . $item->gambar) }}"
-                                                        alt="{{ $item->deskripsi }}" class="img-fluid">
+                                                    <img data-src="{{ asset('storage/gambar/' . $item->gambar) }}"
+                                                        alt="{{ $item->deskripsi }}" class="img-fluid lazyload">
                                                 </div>
                                             </td>
                                             <td class="text-center">

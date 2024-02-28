@@ -52,8 +52,8 @@
                                 <a href="{{ asset('storage/gambar/' . $item->gambar) }}" data-lightbox="roadtrip"
                                     data-title="{{ $item->judul }}">
                                     <div class="image-container">
-                                        <img src="{{ asset('storage/gambar/' . $item->gambar) }}"
-                                            class="img-fluid rounded-3" alt="{{ $item->judul }}">
+                                        <img data-src="{{ asset('storage/gambar/' . $item->gambar) }}"
+                                            class="img-fluid rounded-3 lazyload" alt="{{ $item->judul }}">
                                         <div class="overlay rounded-3">
                                             <p class="text">{{ $item->judul }}</p>
                                         </div>

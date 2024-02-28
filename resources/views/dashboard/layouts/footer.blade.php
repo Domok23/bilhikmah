@@ -1,5 +1,7 @@
 <footer class="main-footer">
-    <strong>Copyright &copy; <?php echo date("Y"); ?> <a href="/dashboard" class="text-success">Bilhikmah. All rights reserved.</a></strong>
+    <strong>Copyright &copy;
+        <?php echo date("Y"); ?> <a href="/dashboard" class="text-success">Bilhikmah. All rights reserved.</a>
+    </strong>
 </footer>
 
 <!-- Control Sidebar -->
@@ -42,6 +44,8 @@
 <script src="/lte/js/pages/dashboard.js"></script>
 <!-- Lightbox -->
 <script src="/home/js/lightbox.js"></script>
+<!-- LazySizes -->
+<script src="/plugins/lazysizes/lazysizes.min.js"></script>
 <!-- DataTable -->
 <script src="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.js"></script>
 <script>

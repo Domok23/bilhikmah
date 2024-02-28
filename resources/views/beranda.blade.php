@@ -59,9 +59,9 @@
             <div class="col-lg-4">
                 <div class="thumbnail">
                     <a href="{{ asset('storage/gambar/' . $item->gambar) }}" data-lightbox="photos">
-                        <img src="{{ asset('storage/gambar/' . $item->gambar) }}"
-                            class="bd-placeholder-img card-img-top rounded-circle mb-3" alt="{{ $item->judul }}"
-                            style="width: 200px; height: 200px;">
+                        <img data-src="{{ asset('storage/gambar/' . $item->gambar) }}"
+                            class="bd-placeholder-img card-img-top rounded-circle mb-3 lazyload"
+                            alt="{{ $item->judul }}" style="width: 200px; height: 200px;">
                     </a>
                 </div>
                 <p>"{{ $item->judul }}"</p>
@@ -81,8 +81,8 @@
             <div class="col-md-5">
                 <div class="thumbnail">
                     <a href="{{ asset('storage/gambar/' . $item->gambar) }}">
-                        <img src="{{ asset('storage/gambar/' . $item->gambar) }}"
-                            class="bd-placeholder-img card-img-top" alt="{{ $item->judul }}"
+                        <img data-src="{{ asset('storage/gambar/' . $item->gambar) }}"
+                            class="bd-placeholder-img card-img-top lazyload" alt="{{ $item->judul }}"
                             style="width: 100%; height: auto;">
                     </a>
                 </div>
@@ -98,8 +98,8 @@
             <div class="col-md-5">
                 <div class="thumbnail">
                     <a href="{{ asset('storage/gambar/' . $item->gambar) }}">
-                        <img src="{{ asset('storage/gambar/' . $item->gambar) }}"
-                            class="bd-placeholder-img card-img-top" alt="{{ $item->judul }}"
+                        <img data-src="{{ asset('storage/gambar/' . $item->gambar) }}"
+                            class="bd-placeholder-img card-img-top lazyload" alt="{{ $item->judul }}"
                             style="width: 100%; height: auto;">
                     </a>
                 </div>

@@ -62,8 +62,10 @@
                                             <td>{{ $item->judul_kat }}</td>
                                             <td class="text-center">
                                                 <div>
-                                                    <iframe width="200px" height="100px" class="embed-responsive-item"
-                                                        src="https://www.youtube.com/embed/{{ $item->link }}" allowfullscreen></iframe>
+                                                    <iframe width="200px" height="100px"
+                                                        src="https://www.youtube.com/embed/{{ $item->link }}"
+                                                        class="embed-responsive-item lazyload" frameborder="0"
+                                                        allowfullscreen></iframe>
                                                 </div>
                                             </td>
                                             <td class="text-center">

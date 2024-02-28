@@ -34,9 +34,9 @@
                         <div class="card shadow-sm">
                             <div class="thumbnail">
                                 <a href="{{ asset('storage/gambar/' . $item->gambar) }}" data-lightbox="roadtrip"
-                                data-title="{{ $item->deskripsi }}">
-                                    <img src="{{ asset('storage/gambar/' . $item->gambar) }}"
-                                        class="bd-placeholder-img card-img-top" alt="{{ $item->deskripsi }}">
+                                    data-title="{{ $item->deskripsi }}">
+                                    <img data-src="{{ asset('storage/gambar/' . $item->gambar) }}"
+                                        class="bd-placeholder-img card-img-top lazyload" alt="{{ $item->deskripsi }}">
                                 </a>
                             </div>
                             <div class="card-body d-flex">
