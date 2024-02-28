@@ -15,6 +15,7 @@ use App\Http\Controllers\DashboardVideoController;
 use App\Http\Controllers\DashboardPosterController;
 use App\Http\Controllers\DashboardArtikelController;
 use App\Http\Controllers\DashboardIsyaratController;
+use App\Http\Controllers\DashboardProfileController;
 use App\Http\Controllers\DashboardKategoriController;
 
 /*
@@ -96,6 +97,9 @@ Route::middleware('auth')->group(function () {
         'update' => 'dashboard.user.update',
         'destroy' => 'dashboard.user.destroy',
     ]);
+
+    Route::get('/dashboard/profile/edit', [DashboardProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('/dashboard/profile/update', [DashboardProfileController::class, 'update'])->name('profile.update');
 });
 
 // Beranda

@@ -58,9 +58,7 @@
                             <div class="code-wrapper">
                                 <code><span class="nt">
 {
-    "artikel": {
-        "current_page": 1,
-        "data": [
+    "artikel": [
             {
                 "id": "bigint(20)",
                 "id_kategori": "bigint(20)",
@@ -94,35 +92,7 @@
                 "updated_at": "timestamp",
                 "judul_kat": "varchar(255)"
             }
-        ],
-        "first_page_url": "https://bilhikmah.biz.id/api/artikel?page=1",
-        "from": 1,
-        "last_page": 1,
-        "last_page_url": "https://bilhikmah.biz.id/api/artikel?page=1",
-        "links": [
-            {
-                "url": null,
-                "label": "&laquo; Sebelumnya",
-                "active": false
-            },
-            {
-                "url": "https://bilhikmah.biz.id/api/artikel?page=1",
-                "label": "1",
-                "active": true
-            },
-            {
-                "url": null,
-                "label": "Berikutnya &raquo;",
-                "active": false
-            }
-        ],
-        "next_page_url": null,
-        "path": "https://bilhikmah.biz.id/api/artikel",
-        "per_page": 6,
-        "prev_page_url": null,
-        "to": 3,
-        "total": 3
-    }
+    ]
 }
                                 </span></code>
                             </div>
@@ -216,9 +186,7 @@
                             <div class="code-wrapper">
                                 <code><span class="nt">
 {
-    "video": {
-        "current_page": 1,
-        "data": [
+    "video": [
             {
                 "id": "bigint(20)",
                 "id_kategori": "bigint(20)",
@@ -249,35 +217,7 @@
                 "updated_at": "timestamp",
                 "judul_kat": "varchar(255)"
             }
-        ],
-        "first_page_url": "https://bilhikmah.biz.id/api/video?page=1",
-        "from": 1,
-        "last_page": 1,
-        "last_page_url": "https://bilhikmah.biz.id/api/video?page=1",
-        "links": [
-            {
-                "url": null,
-                "label": "&laquo; Sebelumnya",
-                "active": false
-            },
-            {
-                "url": "https://bilhikmah.biz.id/api/video?page=1",
-                "label": "1",
-                "active": true
-            },
-            {
-                "url": null,
-                "label": "Berikutnya &raquo;",
-                "active": false
-            }
-        ],
-        "next_page_url": null,
-        "path": "https://bilhikmah.biz.id/api/video",
-        "per_page": 6,
-        "prev_page_url": null,
-        "to": 3,
-        "total": 3
-    }
+    ]
 }
                                 </span></code>
                             </div>
@@ -370,9 +310,7 @@
                             <div class="code-wrapper">
                                 <code><span class="nt">
 {
-    "poster": {
-        "current_page": 1,
-        "data": [
+    "poster": [
             {
                 "id": "bigint(20)",
                 "judul": "varchar(255)",
@@ -394,35 +332,7 @@
                 "created_at": "timestamp",
                 "updated_at": "timestamp"
             }
-        ],
-        "first_page_url": "https://bilhikmah.biz.id/api/poster?page=1",
-        "from": 1,
-        "last_page": 1,
-        "last_page_url": "https://bilhikmah.biz.id/api/poster?page=1",
-        "links": [
-            {
-                "url": null,
-                "label": "&laquo; Sebelumnya",
-                "active": false
-            },
-            {
-                "url": "https://bilhikmah.biz.id/api/poster?page=1",
-                "label": "1",
-                "active": true
-            },
-            {
-                "url": null,
-                "label": "Berikutnya &raquo;",
-                "active": false
-            }
-        ],
-        "next_page_url": null,
-        "path": "https://bilhikmah.biz.id/api/poster",
-        "per_page": 6,
-        "prev_page_url": null,
-        "to": 3,
-        "total": 3
-    }
+    ]
 }
                                     </span></code>
                             </div>
@@ -512,8 +422,7 @@
                             <div class="code-wrapper">
                                 <code><span class="nt">
 {
-    "isyarat": {
-        "data": [
+    "isyarat": [
             {
                 "id": "bigint(20)",
                 "judul": "varchar(255)",
@@ -538,8 +447,7 @@
                 "created_at": "timestamp",
                 "updated_at": "timestamp"
             }
-        ]
-    }
+    ]
 }
                             </span></code>
                             </div>

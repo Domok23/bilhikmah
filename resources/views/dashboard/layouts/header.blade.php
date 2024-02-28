@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/lte/css/adminlte.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="/lte/plugins/fontawesome-free/css/all.min.css">
+    <!-- Font Awesome Pro -->
+    <link rel="stylesheet" href="/plugins/fontawesome-pro/css/all.min.css">
     <!-- Tempusdominus Bootstrap 4 -->
     <link rel="stylesheet" href="/lte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
     <!-- JQVMap -->
@@ -40,23 +40,24 @@
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
+                            class="fa-solid fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="/" class="nav-link text-success fw-bold" target="_blank">
-                        <i class="fas fa-globe"></i> Lihat Web
+                        <i class="fa-solid fa-globe-pointer"></i> Lihat Web
                     </a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-                        <i class="fas fa-expand-arrows-alt"></i>
+                        <i class="fa-solid fa-expand-wide"></i>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/logout" class="nav-link">
-                        <i class="nav-icon fas fa-power-off"></i>
+                    <a href="/logout" class="nav-link logout">
+                        <i class="fa-duotone fa-power-off"></i> Logout
                     </a>
                 </li>
             </ul>

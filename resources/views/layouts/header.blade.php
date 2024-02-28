@@ -11,7 +11,7 @@
     <!-- Bootstrap v5.0.2 core CSS -->
     <link rel="stylesheet" href="/home/css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="/home/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="/plugins/fontawesome-pro/css/all.min.css">
     <!-- Custom styles for this template -->
     <link href="/home/css/carousel.css" rel="stylesheet">
     <!-- Custom styles for this template -->

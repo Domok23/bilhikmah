@@ -47,8 +47,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Password</label>
-                                    <input type="password" class="form-control" id="password" name="password"
-                                        placeholder="Masukan password Admin">
+                                    <input type="password" class="form-control" id="password" name="password">
                                         @error('password')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
