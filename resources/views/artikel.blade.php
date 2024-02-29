@@ -58,7 +58,7 @@
                                         $item->judul }}</a></h5>
                                 <p class="mb-1">
                                     <small>
-                                        oleh <a href="#!" class="text-decoration-none text-success"> Admin</a>
+                                        Oleh <a href="#!" class="text-decoration-none text-success"> Admin</a>
                                         &bull; {{ \Carbon\Carbon::parse($item->created_at)->diffForHumans() }}
                                     </small>
                                 </p>

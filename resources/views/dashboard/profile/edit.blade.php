@@ -34,12 +34,17 @@
                     <div class="card card-success card-outline">
                         <div class="card-body box-profile">
                             <div class="text-center">
-                                <img class="profile-user-img img-fluid img-circle mt-4"
-                                    src="{{ asset('img') }}/user.png" alt="User profile picture">
+                                @if(auth()->user()->role === 'superadmin')
+                                <img class="profile-user-img img-fluid img-circle mt-3" src="{{ asset('img/superadmin.png') }}" alt="User profile picture">
+                                @elseif(auth()->user()->role === 'admin')
+                                <img class="profile-user-img img-fluid img-circle mt-3" src="{{ asset('img/admin.png') }}" alt="User profile picture">
+                                @else
+                                <img class="profile-user-img img-fluid img-circle mt-3" src="{{ asset('img/user.png') }}" alt="User profile picture">
+                                @endif
                             </div>
-                            <h3 class="profile-username text-center">{{ $user->nama }}</h3>
-                            <p class="text-muted text-center">{{ $user->role }}</p>
-                            <form method="post" action="{{ route('profile.update') }}" class="mb-5"
+                            <h3 class="profile-username text-center font-weight-bolder mt-2 mb-0">{{ $user->nama }}</h3>
+                            <p class="text-muted text-center font-weight-light">{{ $user->role }}</p>
+                            <form method="post" action="{{ route('profile.update') }}" class="mb-3"
                                 enctype="multipart/form-data">
                                 @method('put')
                                 @csrf
@@ -63,10 +68,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card shadow-none">
+                                <div class="card shadow-none mb-3">
                                     <div class="card-body border">
                                         <p class="text-muted">
-                                            Abaikan jika tidak ingin mengganti password! (biarkan kosong)
+                                            Abaikan jika tidak ingin mengganti password (biarkan kosong)
                                         </p>
                                         {{-- <div class="form-group">
                                             <label for="password_lama">Password Lama</label>

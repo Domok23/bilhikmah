@@ -61,14 +61,13 @@
                                 <h5 class="card-title"><a href="/video/{{ $item->id }}"
                                         class="text-decoration-none text-dark">{{
                                         $item->judul }}</a></h5>
-                                <p class="card-text text-muted mb-1">{{
-                                    \Carbon\Carbon::parse($item->created_at)->diffForHumans() }} &bull; <a href="#!"
-                                        class="text-decoration-none text-success"> Admin</a></p>
                                 <small>
-                                    <a class="badge bg-success text-decoration-none link-light mb-2" href="#!">{{
+                                    <a class="badge bg-success text-decoration-none link-light mb-1" href="#!">{{
                                         $item->judul_kat }}</a>
                                 </small>
-                                <br>
+                                <p class="card-text text-muted mb-4">{{
+                                    \Carbon\Carbon::parse($item->created_at)->diffForHumans() }} &bull; <a href="#!"
+                                        class="text-decoration-none text-success"> Admin</a></p>
                                 <a href="/video/{{ $item->id }}"
                                     class=" btn btn-outline-success stretched-link">Detail</a>
                             </div>

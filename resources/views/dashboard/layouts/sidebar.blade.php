@@ -1,13 +1,18 @@
 <aside class="main-sidebar main-sidebar-custom sidebar-dark-primary elevation-4">
     <a href="/dashboard" class="brand-link">
         <img src="/img/logo.png" alt="logo-sidebar" class="brand-image">
-        <span class="brand-text font-weight-light">Bilhikmah</span>
+        <span class="brand-text font-weight-bolder">{{ env('APP_NAME') }}</span>
     </a>
     <div class="sidebar">
-        <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="{{ asset('img') }}/user.png" class="img-circle elevation-2" alt="User Image">
+                @if(auth()->user()->role === 'superadmin')
+                <img src="{{ asset('img/superadmin.png') }}" class="img-circle elevation-2" alt="Super Admin Image">
+                @elseif(auth()->user()->role === 'admin')
+                <img src="{{ asset('img/admin.png') }}" class="img-circle elevation-2" alt="Admin Image">
+                @else
+                <img src="{{ asset('img/user.png') }}" class="img-circle elevation-2" alt="User Image">
+                @endif
             </div>
             <div class="info">
                 <a href="{{ route('profile.edit', ['id' => auth()->user()->id]) }}" class="d-block">{{

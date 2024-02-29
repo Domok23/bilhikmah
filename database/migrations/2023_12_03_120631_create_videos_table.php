@@ -20,6 +20,7 @@ class CreateVideosTable extends Migration
             $table->string('deskripsi');
             $table->string('kutipan');
             $table->string('link');
+            $table->integer('view_count')->default(0);
             $table->timestamps();
         });
     }

@@ -48,7 +48,7 @@
     <section class=" text-center container">
         <div class="row mb-5">
             <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light"><b>Selamat Datang di Bilhikmah</b></h1>
+                <h1 class="fw-light"><b>Selamat Datang di Bil Hikmah</b></h1>
             </div>
         </div>
     </section>

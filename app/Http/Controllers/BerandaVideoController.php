@@ -47,6 +47,10 @@ class BerandaVideoController extends Controller
         $getAllVideo = Video::take(4)->get();
         $video = Video::getDataVideoById($id);
 
+        // Tambahkan logika untuk meningkatkan jumlah tayangan
+        $video->view_count++; // Menambahkan satu ke jumlah tayangan
+        $video->save(); // Simpan perubahan
+
         return view('video-detail', [
             'title' => 'Video',
             'active' => 'video',

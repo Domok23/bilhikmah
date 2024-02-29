@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ $title }} | Bilhikmah</title>
+    <title>{{ $title }} | Bil Hikmah</title>
     <link rel="icon" href="/img/logo.png">
 
     <link href="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.css" rel="stylesheet">
@@ -33,7 +33,7 @@
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed">
     <div class="wrapper">
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="/img/logo.png" alt="bilhikmah" height="60" width="60">
+            <img class="animation__shake" src="/img/logo.png" alt="{{ env('APP_NAME') }}" height="60" width="60">
         </div>
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">

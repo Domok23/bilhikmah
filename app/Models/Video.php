@@ -34,11 +34,11 @@ class Video extends Model
     {
         // Using Query Builder
         $query = DB::table('videos')
-        ->leftJoin('kategoris', 'kategoris.id', '=', 'videos.id_kategori')
-        ->select(
-            'videos.*',
-            DB::raw('kategoris.judul as judul_kat')
-        );
+            ->leftJoin('kategoris', 'kategoris.id', '=', 'videos.id_kategori')
+            ->select(
+                'videos.*',
+                DB::raw('kategoris.judul as judul_kat')
+            );
 
         if ($request->id) {
             $query->where('kategoris.id', $request->id);
@@ -47,16 +47,26 @@ class Video extends Model
         return $query->get();
     }
 
+    // public static function getDataVideoById($id)
+    // {
+    //     return DB::table('videos')
+    //         ->leftjoin('kategoris', 'kategoris.id', '=', 'videos.id_kategori')
+    //         ->select(
+    //             'videos.*',
+    //             'kategoris.judul as judul_kat',
+    //         )
+    //         ->where('videos.id', $id)
+    //         ->first();
+    // }
+
     public static function getDataVideoById($id)
     {
-        return DB::table('videos')
-            ->leftjoin('kategoris', 'kategoris.id', '=', 'videos.id_kategori')
-            ->select(
-                'videos.*',
-                'kategoris.judul as judul_kat',
-            )
-            ->where('videos.id', $id)
-            ->first();
+        return Video::with('kategori')->findOrFail($id);
+    }
+
+    public function kategori()
+    {
+        return $this->belongsTo(Kategori::class, 'id_kategori');
     }
 
     public static function searchData(Request $request)

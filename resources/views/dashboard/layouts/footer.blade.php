@@ -1,6 +1,6 @@
 <footer class="main-footer">
     <strong>Copyright &copy;
-        <?php echo date("Y"); ?> <a href="/dashboard" class="text-success">Bilhikmah. All rights reserved.</a>
+        <?php echo date("Y"); ?> <a href="/dashboard" class="text-success"> {{ env('APP_NAME') }}. All rights reserved.</a>
     </strong>
 </footer>
 

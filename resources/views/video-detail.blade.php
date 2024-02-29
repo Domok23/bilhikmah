@@ -28,14 +28,17 @@
             <br>
             <article class="blog-post">
                 <h2 class="blog-post-title">{{ $video->judul }}</h2>
-                <p class="blog-post-meta"><a href="#!" class="text-decoration-none text-success">Admin</a></p>
-                <p class="blog-post-meta">{{
-                    \Carbon\Carbon::parse($video->created_at)->diffForHumans() }}
-                    <a class="text-decoration-none link-success" href="#!"> #{{$video->judul_kat }}</a> &bull;
-                    <a class="text-decoration-none link-warning" href="{{ Request::url() }}#disqus_thread"></a>
+                <p class="blog-post-meta fw-bold">
+                    <span class="fw-normal">Oleh</span> <a href="#!" class="text-decoration-none text-success">Admin</a>
+                    &bull;
+                    <span class="fw-normal">{{ \Carbon\Carbon::parse($video->created_at)->isoFormat('dddd, Do MMM YYYY')
+                        }}</span> &bull;
+                    <span class="fw-normal">Ditonton {{ $video->view_count }} kali</span>
+                    <a class="text-decoration-none link-success" href="#!"> #{{ $video->kategori->judul }}</a>
+                    <br>
+                    <a class="text-decoration-none link-success fw-normal"
+                        href="{{ Request::url() }}#disqus_thread"></a>
                 </p>
-
-
                 <p class="fs-5">
                     {!! $video->deskripsi !!}
                 </p>
@@ -62,10 +65,13 @@
                             <h5 class="card-title"><a href="/video/{{ $item->id }}"
                                     class="text-decoration-none text-dark">{{
                                     $item->judul }}</a></h5>
-                            <p class="card-text text-muted mb-0">{{
+                            <small>
+                                <a class="badge bg-success text-decoration-none link-light mb-1" href="#!">{{
+                                    $item->kategori->judul }}</a>
+                            </small>
+                            <p class="card-text text-muted mb-4">{{
                                 \Carbon\Carbon::parse($item->created_at)->diffForHumans() }} &bull; <a href="#!"
-                                    class="text-decoration-none text-success"> Admin</a></p>
-                            <br>
+                                    class="text-decoration-none text-success"> Admin</a> </p>
                             <a href="/video/{{ $item->id }}" class=" btn btn-outline-success stretched-link">Detail</a>
                         </div>
                     </div>

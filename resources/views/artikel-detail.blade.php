@@ -38,9 +38,15 @@
             <br>
             <article class="blog-post">
                 <h2 class="blog-post-title">{{ $artikel->judul }}</h2>
-                <p class="blog-post-meta">{{ \Carbon\Carbon::parse($artikel->created_at)->diffForHumans() }} &bull;
-                    <a href="#!" class="text-decoration-none text-success"> Admin</a> &bull;
-                    <a class="text-decoration-none link-warning" href="{{ Request::url() }}#disqus_thread"></a>
+                <p class="blog-post-meta fw-bold">
+                    <span class="fw-normal">Oleh</span> <a href="#!" class="text-decoration-none text-success">Admin</a>
+                    &bull;
+                    <span class="fw-normal">{{ \Carbon\Carbon::parse($artikel->created_at)->isoFormat('dddd, Do MMM
+                        YYYY')
+                        }}</span>
+                    <br>
+                    <a class="text-decoration-none link-success fw-normal"
+                        href="{{ Request::url() }}#disqus_thread"></a>
                 </p>
                 <a class="badge bg-success text-decoration-none link-light" href="#!">{{
                     $artikel->judul_kat }}</a>
