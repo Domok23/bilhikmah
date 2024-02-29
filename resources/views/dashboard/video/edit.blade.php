@@ -34,7 +34,8 @@
                             <span style="margin-left: 20px;">Nb:</span>
                         <ul style="list-style-type: none; padding-left: 0;">
                             <li style="margin-left: 20px;">- Kode ini biasanya terletak setelah "watch?v="</li>
-                            <li style="margin-left: 20px;">- Kode ini biasanya terdiri dari 11 karakter alfanumerik.</li>
+                            <li style="margin-left: 20px;">- Kode ini biasanya terdiri dari 11 karakter alfanumerik.
+                            </li>
                         </ul>
                         </p>
                         <div class="thumbnail">
@@ -98,7 +99,8 @@
                                         Lihat cara mendapatkan kode video
                                     </button>
                                     <input type="text" class="form-control" id="link" name="link"
-                                        placeholder="Masukan kode dari video Youtube" value="{{ $video->link }}" required>
+                                        placeholder="Masukan kode dari video Youtube" value="{{ $video->link }}"
+                                        required>
                                     @error('link')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -107,11 +109,12 @@
                                 <div class="form-group">
                                     <label for="id_kategori">Pilih Kategori</label>
                                     <br>
-                                    <select class="form-control custom-select col-lg-6" id="id_kategori" name="id_kategori">
-                                        <option selected value="{{ $video->id_kategori }}">{{ $video->judul_kat }}
-                                        </option>
+                                    <select class="form-control custom-select col-lg-6" id="id_kategori"
+                                        name="id_kategori">
                                         @foreach ($kategori as $item)
-                                        <option value="{{ $item->id }}">{{ $item->judul }}</option>
+                                        <option value="{{ $item->id }}" {{ $item->id == $video->id_kategori ? 'selected'
+                                            : '' }}> {{ $item->judul }}
+                                        </option>
                                         @endforeach
                                     </select>
                                 </div>
