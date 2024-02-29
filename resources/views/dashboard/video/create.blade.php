@@ -109,7 +109,8 @@
 
                                 <div class="form-group">
                                     <label for="id_kategori">Kategori</label>
-                                    <select class="form-control col-lg-6" name="id_kategori">
+                                    <br>
+                                    <select class="form-control custom-select col-lg-6" name="id_kategori">
                                         @foreach ($kategori as $item)
                                         @if (old('id_kategori') == $item->id)
                                         <option value="{{ $item->id }}">{{ $item->judul }}

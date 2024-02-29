@@ -13,7 +13,7 @@ class DashboardProfileController extends Controller
     public function edit()
     {
         $user = Auth::user();
-        $title = 'Edit Profile';
+        $title = 'Profil';
         return view('dashboard.profile.edit', compact('user', 'title'));
     }
 
@@ -33,6 +33,19 @@ class DashboardProfileController extends Controller
                 ->withInput();
         }
 
+        // Verifikasi Password Lama
+        // if (!Hash::check($request->password_lama, $user->password)) {
+        //     return redirect()->route('profile.edit')
+        //     ->with('error', 'Password lama tidak cocok!')
+        //     ->withInput();
+        // }
+
+        if ($request->password !== $request->password_confirmation) {
+            return redirect()->route('profile.edit')
+                ->with('error', 'Konfirmasi password tidak cocok!')
+                ->withInput();
+        }
+
         $user = User::find($user->id);
         if (!$user) {
             return redirect()->route('profile.edit')->with('error', 'Data tidak ditemukan!');
@@ -46,6 +59,6 @@ class DashboardProfileController extends Controller
 
         $user->save();
 
-        return redirect()->route('profile.edit')->with('success', 'Profile berhasil diupdate!');
+        return redirect()->route('profile.edit')->with('success', 'Profil berhasil diupdate!');
     }
 }

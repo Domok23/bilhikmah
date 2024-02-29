@@ -50,7 +50,8 @@ class DashboardUserController extends Controller
         $validator = Validator::make($request->all(), [
             'nama' => 'required|min:3|max:255',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:6'
+            'password' => 'required|min:6',
+            'role' => 'required|in:superadmin,admin',
         ]);
 
         // Jika validasi gagal, kembalikan respons dengan pesan error
@@ -63,6 +64,7 @@ class DashboardUserController extends Controller
             'nama' => $request->input('nama'),
             'email' => $request->input('email'),
             'password' => Hash::make($request->input('password')),
+            'role' => $request->input('role'),
         ]);
 
         // Simpan data user baru
@@ -102,7 +104,8 @@ class DashboardUserController extends Controller
         $validator = Validator::make($request->all(), [
             'nama' => 'required|min:3|max:255',
             'email' => 'required|email|unique:users,email,' . $id,
-            'password' => 'nullable|min:6'
+            'password' => 'nullable|min:6',
+            'role' => 'required|in:superadmin,admin',
         ]);
 
         // Jika validasi gagal, kembalikan respons dengan pesan error
@@ -121,6 +124,7 @@ class DashboardUserController extends Controller
         // Update data user
         $user->nama = $request->input('nama');
         $user->email = $request->input('email');
+        $user->role = $request->input('role');
 
         // Jika password diisi, update password
         if ($request->filled('password')) {

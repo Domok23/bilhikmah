@@ -46,6 +46,17 @@
                                         @enderror
                                 </div>
                                 <div class="form-group">
+                                    <label for="role">Role</label>
+                                    <br>
+                                    <select class="form-control col-lg-6 custom-select" id="role" name="role" required>
+                                        <option value="superadmin" {{ $user->role == 'superadmin' ? 'selected' : '' }}>Superadmin</option>
+                                        <option value="admin" {{ $user->role == 'admin' ? 'selected' : '' }}>Admin</option>
+                                    </select>
+                                    @error('role')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
                                     <label for="password">Password</label>
                                     <input type="password" class="form-control" id="password" name="password">
                                         @error('password')

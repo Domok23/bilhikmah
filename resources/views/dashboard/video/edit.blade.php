@@ -106,7 +106,8 @@
 
                                 <div class="form-group">
                                     <label for="id_kategori">Pilih Kategori</label>
-                                    <select class="form-control col-lg-6" id="id_kategori" name="id_kategori">
+                                    <br>
+                                    <select class="form-control custom-select col-lg-6" id="id_kategori" name="id_kategori">
                                         <option selected value="{{ $video->id_kategori }}">{{ $video->judul_kat }}
                                         </option>
                                         @foreach ($kategori as $item)

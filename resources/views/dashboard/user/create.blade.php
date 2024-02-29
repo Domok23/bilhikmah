@@ -45,10 +45,21 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
+                                    <label for="role">Role</label>
+                                    <br>
+                                    <select class="form-control custom-select col-lg-6" id="role" name="role" required>
+                                        <option value="superadmin">Superadmin</option>
+                                        <option value="admin">Admin</option>
+                                    </select>
+                                    @error('role')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
                                     <label for="password">Password</label>
                                     <div class="input-group">
-                                        <input type="password" class="form-control" id="password" name="password" placeholder="Masukan password Admin"
-                                            required autocomplete="off">
+                                        <input type="password" class="form-control" id="password" name="password"
+                                            placeholder="Masukan password Admin" required autocomplete="off">
                                         <div class="input-group-append">
                                             <span class="input-group-text" id="togglePasswordContainer">
                                                 <i class="fas fa-eye" id="togglePassword"></i>

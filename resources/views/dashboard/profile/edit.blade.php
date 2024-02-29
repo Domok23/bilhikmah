@@ -18,7 +18,7 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 mx-auto">
                     @if (session()->has('success'))
                     <div class="alert alert-success alert-dismissible">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -31,49 +31,70 @@
                     </div>
                     <br>
                     @endif
-                    <div class="card card-success">
-                        <div class="card-header">
-                            <h3 class="card-title">Profil: {{ $user->nama }}</h3>
-                        </div>
-                        <form method="post" action="{{ route('profile.update') }}" class="mb-5"
-                            enctype="multipart/form-data">
-                            @method('put')
-                            @csrf
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label for="name">Nama</label>
-                                    <input type="text" class="form-control" id="nama" name="nama"
-                                        value="{{ $user->nama }}" required>
-                                    @error('nama')
-                                    <div class="text-danger">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="email" class="form-control" id="email" name="email"
-                                        value="{{ $user->email }}" required>
-                                    @error('email')
-                                    <div class="text-danger">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input type="password" class="form-control" id="password" name="password">
-                                    @error('password')
-                                    <div class="text-danger">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="password_confirmation">Konfirmasi Password</label>
-                                    <input type="password" class="form-control" id="password_confirmation"
-                                        name="password_confirmation">
-                                </div>
+                    <div class="card card-success card-outline">
+                        <div class="card-body box-profile">
+                            <div class="text-center">
+                                <img class="profile-user-img img-fluid img-circle mt-4"
+                                    src="{{ asset('img') }}/user.png" alt="User profile picture">
                             </div>
-                            <div class="card-footer">
+                            <h3 class="profile-username text-center">{{ $user->nama }}</h3>
+                            <p class="text-muted text-center">{{ $user->role }}</p>
+                            <form method="post" action="{{ route('profile.update') }}" class="mb-5"
+                                enctype="multipart/form-data">
+                                @method('put')
+                                @csrf
+                                <div class="card shadow-none">
+                                    <div class="card-body border">
+                                        <div class="form-group">
+                                            <label for="name">Nama</label>
+                                            <input type="text" class="form-control" id="nama" name="nama"
+                                                value="{{ $user->nama }}" required>
+                                            @error('nama')
+                                            <div class="text-danger">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input type="email" class="form-control" id="email" name="email"
+                                                value="{{ $user->email }}" required>
+                                            @error('email')
+                                            <div class="text-danger">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card shadow-none">
+                                    <div class="card-body border">
+                                        <p class="text-muted">
+                                            Abaikan jika tidak ingin mengganti password! (biarkan kosong)
+                                        </p>
+                                        {{-- <div class="form-group">
+                                            <label for="password_lama">Password Lama</label>
+                                            <input type="password" class="form-control" id="password_lama"
+                                                name="password_lama">
+                                            @error('password_lama')
+                                            <div class="text-danger">{{ $message }}</div>
+                                            @enderror
+                                        </div> --}}
+                                        <div class="form-group">
+                                            <label for="password">Password Baru</label>
+                                            <input type="password" class="form-control" id="password" name="password">
+                                            @error('password')
+                                            <div class="text-danger">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password_confirmation">Konfirmasi Password</label>
+                                            <input type="password" class="form-control" id="password_confirmation"
+                                                name="password_confirmation">
+                                        </div>
+                                    </div>
+                                </div>
                                 <a href="/dashboard" class="btn btn-default">Kembali</a>
                                 <button type="submit" class="btn btn-success">Simpan</button>
-                            </div>
-                        </form>
+
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
