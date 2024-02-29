@@ -88,6 +88,12 @@ Route::middleware('auth')->group(function () {
         'destroy' => 'dashboard.kategori.destroy',
     ]);
 
+    Route::get('/dashboard/profile/edit', [DashboardProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('/dashboard/profile/update', [DashboardProfileController::class, 'update'])->name('profile.update');
+});
+
+Route::middleware(['auth', 'role:superadmin'])->group(function () {
+    // Rute-rute yang bisa diakses oleh superadmin
     Route::resource('/dashboard/user', DashboardUserController::class)->names([
         'index' => 'dashboard.user.index',
         'create' => 'dashboard.user.create',
@@ -97,9 +103,6 @@ Route::middleware('auth')->group(function () {
         'update' => 'dashboard.user.update',
         'destroy' => 'dashboard.user.destroy',
     ]);
-
-    Route::get('/dashboard/profile/edit', [DashboardProfileController::class, 'edit'])->name('profile.edit');
-    Route::put('/dashboard/profile/update', [DashboardProfileController::class, 'update'])->name('profile.update');
 });
 
 // Beranda

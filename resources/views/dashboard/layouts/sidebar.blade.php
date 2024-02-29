@@ -69,6 +69,7 @@
                         <p>Kategori</p>
                     </a>
                 </li>
+                @if(auth()->user()->role === 'superadmin')
                 <li class="nav-header">Administrator</li>
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('dashboard/user*') ? 'active bg-success' : '' }}"
@@ -77,6 +78,7 @@
                         <p>Data Admin</p>
                     </a>
                 </li>
+                @endif
                 {{-- <li class="nav-item">
                     <a class="nav-link {{ Request::is('dashboard/api-docs*') ? 'active bg-success' : '' }}"
                         href="/dashboard/api-docs">

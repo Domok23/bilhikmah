@@ -12,7 +12,7 @@
     <!-- Theme style AdminLTE -->
     <link rel="stylesheet" href="/lte/css/adminlte.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="/lte/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="/plugins/fontawesome-pro/css/all.min.css">
     <!-- iCheck -->
     {{-- <link rel="stylesheet" href="/css/icheck-bootstrap.min.css"> --}}
 </head>
@@ -27,7 +27,6 @@
                 <span aria-hidden="true">&times;</span>
         </div>
         @endif
-
         @if (session()->has('loginError'))
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
             {{ session()->get('loginError') }}
@@ -66,7 +65,7 @@
                             required>
                         <div class="input-group-append">
                             <span class="input-group-text" id="togglePasswordContainer">
-                                <i class="fas fa-eye" id="togglePassword"></i>
+                                <i class="fa-solid fa-eye" id="togglePassword"></i>
                             </span>
                         </div>
                         @error('password')
@@ -94,7 +93,6 @@
         document.getElementById('togglePasswordContainer').addEventListener('click', function () {
         var passwordInput = document.getElementById('password');
         var icon = document.getElementById('togglePassword');
-
         if (passwordInput.type === "password") {
         passwordInput.type = "text";
         icon.classList.remove('fa-eye');
