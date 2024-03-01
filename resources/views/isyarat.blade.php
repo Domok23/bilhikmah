@@ -3,16 +3,16 @@
 @section('container')
 
 <main>
-    <section class="py-2 text-center container">
-        <div class="row py-lg-4">
+    <section class="pt-4 text-center container">
+        <div class="row py-4">
             <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light"><b>Bahasa Isyarat</b></h1>
+                <h1 class="fw-light"><b>Belajar Bahasa Isyarat</b></h1>
             </div>
         </div>
     </section>
     <div class="container marketing">
         <div class="col-12">
-            <div class="row justify-content-center mb-4">
+            <div class="row justify-content-center mb-lg-2">
                 <div class="col-md-6">
                     <form action="/isyarat" method="get">
                         @csrf
@@ -25,7 +25,7 @@
                 </div>
             </div>
         </div>
-        <div class="album py-4 bg-light">
+        <div class="album py-4 bg-light" style="border-radius: 10px;">
             <div class="container">
                 @if ($isyarat->count())
                 <div class="row row-cols-3 row-cols-sm-2 row-cols-md-4 g-3">

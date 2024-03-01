@@ -19,7 +19,7 @@ class DashboardUserController extends Controller
         $user = User::all();
 
         return view('dashboard.user.index', [
-            'title' => 'User',
+            'title' => 'Dashboard User',
             'active' => 'user',
             'user' => $user
         ]);
@@ -33,7 +33,7 @@ class DashboardUserController extends Controller
     public function create()
     {
         return view('dashboard.user.create', [
-            'title' => 'User',
+            'title' => 'Tambah User',
             'active' => 'user'
         ]);
     }
@@ -85,7 +85,7 @@ class DashboardUserController extends Controller
         $user = User::find($id);
 
         return view('dashboard.user.edit', [
-            'title' => 'User',
+            'title' => 'Edit User',
             'active' => 'user',
             'user' => $user
         ]);

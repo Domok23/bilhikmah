@@ -12,7 +12,7 @@
 }
 
 main {
-  margin-top: 28px;
+  margin-top: 42px;
 }
 
 .bd-placeholder-img {
@@ -28,9 +28,20 @@ main {
   width: 90px;
 }
 
+.carousel-item img {
+  object-fit: cover;
+  height: 100%; /* Pastikan gambar mengisi tinggi carousel */
+}
+
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {
     font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  #myCarousel {
+    height: 75vh; /* Tinggi 70% dari tinggi viewport */
   }
 }
 

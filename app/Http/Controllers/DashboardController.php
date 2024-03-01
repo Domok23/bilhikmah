@@ -18,7 +18,7 @@ class DashboardController extends Controller
         $video = Video::all();
 
         return view('dashboard.index',[
-            'title' => 'Dashboard',
+            'title' => 'Dashboard Admin',
             'active' => 'dashboard',
             'isyarat' => $isyarat,
             'artikel' => $artikel,

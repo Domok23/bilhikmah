@@ -1,5 +1,6 @@
 <header>
-    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-green-light shadow mx-lg-4 mt-lg-3 mx-2 mt-2"
+        style="border-radius: 20px;">
         <div class="container-fluid align-items-center">
             <a href="/" class="brand-link navbar-brand">
                 <img src="/img/logo-sidebar.png" alt="logo-sidebar" width="170px" height="50px">

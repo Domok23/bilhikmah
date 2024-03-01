@@ -19,7 +19,7 @@ class DashboardVideoController extends Controller
         $video = Video::getAllDataVideo($request);
 
         return view('dashboard.video.index',[
-            'title' => 'Video',
+            'title' => 'Dashboard Video',
             'active' => 'video',
             'video' => $video
         ]);
@@ -35,7 +35,7 @@ class DashboardVideoController extends Controller
         $kategori = Kategori::all();
 
         return view('dashboard.video.create',[
-            'title' => 'Video',
+            'title' => 'Tambah Video',
             'active' => 'video',
             'kategori' => $kategori
         ]);
@@ -80,7 +80,7 @@ class DashboardVideoController extends Controller
         $video = Video::getDataVideoById($id);
 
         return view('dashboard.video.edit',[
-            'title' => 'video',
+            'title' => 'Edit Video',
             'active' => 'video',
             'kategori' => $kategori,
             'video' => $video

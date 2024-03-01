@@ -1,11 +1,11 @@
 <!-- header -->
 @include('layouts.header')
 
-<!-- sidebar -->
+<!-- navbar -->
 @include('layouts.navbar')
 
 <!-- main -->
-<div class="container mt-2">
+<div class="container">
     @yield('container')
 </div>
 

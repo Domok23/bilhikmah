@@ -1,7 +1,7 @@
 {{-- Konten Utama --}}
 </main>
 <!-- FOOTER -->
-<footer class="bg-light text-center py-3">
+<footer class="bg-green-light text-center py-3">
     <p class="mb-0">&copy;
         <?php echo date("Y"); ?> {{ env('APP_NAME') }}. All rights reserved.
     </p>

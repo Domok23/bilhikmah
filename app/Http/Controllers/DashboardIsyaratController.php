@@ -19,7 +19,7 @@ class DashboardIsyaratController extends Controller
         $isyarat = Isyarat::all();
 
         return view('dashboard.isyarat.index', [
-            'title' => 'Isyarat',
+            'title' => 'Dashboard Bahasa Isyarat',
             'active' => 'isyarat',
             'isyarat' => $isyarat
         ]);
@@ -33,7 +33,7 @@ class DashboardIsyaratController extends Controller
     public function create()
     {
         return view('dashboard.isyarat.create', [
-            'title' => 'Isyarat',
+            'title' => 'Tambah Bahasa Isyarat',
             'active' => 'isyarat'
         ]);
     }
@@ -82,7 +82,7 @@ class DashboardIsyaratController extends Controller
         $isyarat = Isyarat::find($id);
 
         return view('dashboard.isyarat.edit', [
-            'title' => 'Isyarat',
+            'title' => 'Edit Bahasa Isyarat',
             'active' => 'isyarat',
             'isyarat' => $isyarat
         ]);

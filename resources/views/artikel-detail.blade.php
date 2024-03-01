@@ -3,7 +3,7 @@
 @section('container')
 
 <main class="container">
-    <section class="py-2 text-center container">
+    <section class="pt-4 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-light"><b>Artikel Islami</b></h1>
@@ -59,7 +59,7 @@
 
         <div class="col-md-4 col-12">
             <!-- Penyesuaian -->
-            <div class="album p-3 bg-light">
+            <div class="album p-3 bg-light" style="border-radius: 10px;">
                 <div class="position-sticky">
                     @foreach ($getAllArtikel as $item)
                     @if ($item->id !== $artikel->id)

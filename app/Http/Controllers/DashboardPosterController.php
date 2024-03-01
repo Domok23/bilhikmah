@@ -19,7 +19,7 @@ class DashboardPosterController extends Controller
         $poster = Poster::getAllDataPoster($request);
 
         return view('dashboard.poster.index',[
-            'title' => 'Poster',
+            'title' => 'Dashboard Poster',
             'active' => 'poster',
             'poster' => $poster
         ]);
@@ -35,7 +35,7 @@ class DashboardPosterController extends Controller
         $kategori = Kategori::all();
 
         return view('dashboard.poster.create',[
-            'title' => 'Poster',
+            'title' => 'Tambah Poster',
             'active' => 'poster',
             'kategori' => $kategori
         ]);
@@ -85,7 +85,7 @@ class DashboardPosterController extends Controller
         $poster = Poster::getDataPosterById($id);
 
         return view('dashboard.poster.edit',[
-            'title' => 'Poster',
+            'title' => 'Edit Poster',
             'active' => 'poster',
             'kategori' => $kategori,
             'poster' => $poster

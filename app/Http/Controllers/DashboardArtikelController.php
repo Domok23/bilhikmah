@@ -20,7 +20,7 @@ class DashboardArtikelController extends Controller
         $artikel = Artikel::getAllDataArtikel($request);
 
         return view('dashboard.artikel.index', [
-            'title' => 'Artikel',
+            'title' => 'Dashboard Artikel',
             'active' => 'artikel',
             'artikel' => $artikel
         ]);
@@ -36,7 +36,7 @@ class DashboardArtikelController extends Controller
         $kategori = Kategori::all();
 
         return view('dashboard.artikel.create', [
-            'title' => 'Artikel',
+            'title' => 'Tambah Artikel',
             'active' => 'artikel',
             'kategori' => $kategori
         ]);
@@ -102,7 +102,7 @@ class DashboardArtikelController extends Controller
         $artikel = Artikel::getDataArtikelById($id);
 
         return view('dashboard.artikel.edit', [
-            'title' => 'Artikel',
+            'title' => 'Edit Artikel',
             'active' => 'artikel',
             'kategori' => $kategori,
             'artikel' => $artikel

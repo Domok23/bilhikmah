@@ -3,10 +3,10 @@
 @section('container')
 
 <main>
-    <section class="py-2 text-center container">
-        <div class="row py-lg-4">
+    <section class="pt-4 text-center container">
+        <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light"><b>Video Islami</b></h1>
+                <h1 class="fw-light"><b>Artikel Islami</b></h1>
             </div>
         </div>
     </section>
@@ -25,7 +25,7 @@
                 </div>
             </div>
         </div>
-        <div class="album py-4 bg-light mb-4">
+        <div class="album py-4 bg-light mb-4" style="border-radius: 10px;">
             <div class="container">
                 <form action="/video" method="get">
                     @csrf
