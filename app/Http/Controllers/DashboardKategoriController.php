@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kategori;
+use App\Models\Artikel;
+use App\Models\Poster;
+use App\Models\Video;
 use Illuminate\Http\Request;
 
 class DashboardKategoriController extends Controller
@@ -16,7 +19,7 @@ class DashboardKategoriController extends Controller
     {
         $kategori = Kategori::all();
 
-        return view('dashboard.kategori.index',[
+        return view('dashboard.kategori.index', [
             'title' => 'Dashboard Kategori',
             'active' => 'kategori',
             'kategori' => $kategori
@@ -30,7 +33,7 @@ class DashboardKategoriController extends Controller
      */
     public function create()
     {
-        return view('dashboard.kategori.create',[
+        return view('dashboard.kategori.create', [
             'title' => 'Tambah Kategori',
             'active' => 'kategori'
         ]);
@@ -48,9 +51,9 @@ class DashboardKategoriController extends Controller
             'judul' => 'unique:kategoris|required|min:3|max:255',
         ]);
 
-        Kategori::create($validate);
+        $kategori = Kategori::create($validate);
 
-        return redirect('/dashboard/kategori')->with('success', 'Data berhasil ditambah');
+        return redirect('/dashboard/kategori')->with('success', 'Kategori "' . $kategori->judul . '" berhasil ditambah');
     }
 
     /**
@@ -63,7 +66,7 @@ class DashboardKategoriController extends Controller
     {
         $kategori = Kategori::find($id);
 
-        return view('dashboard.kategori.edit',[
+        return view('dashboard.kategori.edit', [
             'title' => 'Edit Kategori',
             'active' => 'kategori',
             'kategori' => $kategori
@@ -83,12 +86,12 @@ class DashboardKategoriController extends Controller
             'judul' => 'unique:kategoris|required|min:3|max:255'
         ];
 
-        $validate = $request->validate($rules);
+        $validatedData = $request->validate($rules);
 
         $kategori = Kategori::find($id);
-        Kategori::where('id', $kategori->id)->update($validate);
+        Kategori::where('id', $kategori->id)->update($validatedData);
 
-        return redirect('/dashboard/kategori')->with('success', 'Data berhasil diedit');
+        return redirect('/dashboard/kategori')->with('success', 'Kategori "' . $kategori->judul . '" berhasil diedit');
     }
 
     /**
@@ -99,9 +102,25 @@ class DashboardKategoriController extends Controller
      */
     public function destroy($id)
     {
+        // Cek apakah kategori digunakan di tabel Artikel
+        $artikelCount = Artikel::where('id_kategori', $id)->count();
+
+        // Cek apakah kategori digunakan di tabel Poster
+        $posterCount = Poster::where('id_kategori', $id)->count();
+
+        // Cek apakah kategori digunakan di tabel Video
+        $videoCount = Video::where('id_kategori', $id)->count();
+
+        // Jika kategori digunakan di salah satu tabel, tampilkan pesan alert
+        if ($artikelCount > 0 || $posterCount > 0 || $videoCount > 0) {
+            return redirect('/dashboard/kategori')->with('failed', 'Kategori tidak bisa dihapus karena sedang digunakan di Artikel, Poster, ataupun Video.');
+        }
+
+        // Jika tidak digunakan, lanjutkan proses penghapusan
         $kategori = Kategori::find($id);
+        $judulKategori = $kategori->judul;
         $kategori->delete();
 
-        return redirect('/dashboard/kategori')->with('danger', 'Data berhasil dihapus');
+        return redirect('/dashboard/kategori')->with('danger', 'Ketegori "' . $judulKategori . '" berhasil dihapus');
     }
 }

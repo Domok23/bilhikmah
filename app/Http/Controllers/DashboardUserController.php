@@ -71,7 +71,7 @@ class DashboardUserController extends Controller
         $user->save();
 
         // Redirect kembali dengan pesan sukses
-        return redirect('/dashboard/user')->with('success', 'Data user berhasil ditambah');
+        return redirect('/dashboard/user')->with('success', 'Admin "' . $request->input('nama') . '" berhasil ditambah');
     }
 
     /**
@@ -134,8 +134,7 @@ class DashboardUserController extends Controller
         // Simpan perubahan
         $user->save();
 
-        // Redirect kembali dengan pesan sukses
-        return redirect('/dashboard/user')->with('success', 'Data user berhasil diedit');
+        return redirect('/dashboard/user')->with('success', 'Admin "' . $request->input('nama') . '" berhasil diedit');
     }
 
     /**
@@ -147,8 +146,9 @@ class DashboardUserController extends Controller
     public function destroy($id)
     {
         $user = User::find($id);
+        $namaAdmin = $user->nama;
         $user->delete();
 
-        return redirect('/dashboard/user')->with('danger', 'Data berhasil dihapus');
+        return redirect('/dashboard/user')->with('danger', 'Admin "' . $namaAdmin . '" berhasil dihapus');
     }
 }

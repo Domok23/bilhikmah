@@ -6,13 +6,14 @@
     <section class="pt-4 text-center container">
         <div class="col-12">
             <div class="row justify-content-center">
-                <div class="col-md-6 col-12 my-md-4">
+                <div class="col-md-6">
                     <form action="/video" method="get">
                         @csrf
                         <div class="input-group mb-3">
-                            <input type="search" class="form-control" placeholder="Cari video" name="cari"
-                                value="{{ request('cari') }}">
-                            <button class="btn btn-success" type="submit">Cari</button>
+                            <input type="search" class="form-control me-2 rounded" placeholder="Cari video..."
+                                name="cari" value="{{ request('cari') }}">
+                            <button class="btn btn-success rounded" type="submit">Cari <i
+                                    class="fa-duotone fa-magnifying-glass"></i></button>
                         </div>
                     </form>
                 </div>

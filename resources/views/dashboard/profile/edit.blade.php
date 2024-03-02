@@ -9,7 +9,8 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">{{ $title }}</a></li>
+                        <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+                        <li class="breadcrumb-item active">{{ $title }}</li>
                     </ol>
                 </div>
             </div>
@@ -96,7 +97,7 @@
                                     </div>
                                 </div>
                                 <a href="/dashboard" class="btn btn-default">Kembali</a>
-                                <button type="submit" class="btn btn-success">Simpan</button>
+                                <button type="submit" class="btn btn-success">Update</button>
 
                             </form>
                         </div>

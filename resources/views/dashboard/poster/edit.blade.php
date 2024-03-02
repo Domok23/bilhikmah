@@ -9,8 +9,8 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="/dashboard/poster">{{ $title }}</a></li>
-                        <li class="breadcrumb-item active">Edit</li>
+                        <li class="breadcrumb-item"><a href="/dashboard/poster">Dashboard Poster</a></li>
+                        <li class="breadcrumb-item active">{{ $title }}</li>
                     </ol>
                 </div>
             </div>

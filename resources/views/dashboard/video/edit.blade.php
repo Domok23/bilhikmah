@@ -9,8 +9,8 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="/dashboard/video">{{ $title }}</a></li>
-                        <li class="breadcrumb-item active">Edit</li>
+                        <li class="breadcrumb-item"><a href="/dashboard/video">Dashboard Video</a></li>
+                        <li class="breadcrumb-item active">{{ $title }}</li>
                     </ol>
                 </div>
             </div>
@@ -63,7 +63,7 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="card card-success">
                         <div class="card-header">
                             <h3 class="card-title">Edit Data Video</h3>
@@ -91,7 +91,7 @@
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group col-lg-6">
                                     <label class="mb-0" for="link">Kode Video Youtube</label>
                                     <br>
                                     <button type="button" class="btn badge bg-success mb-2" data-toggle="modal"
@@ -106,10 +106,10 @@
                                     @enderror
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-group col-lg-6">
                                     <label for="id_kategori">Pilih Kategori</label>
                                     <br>
-                                    <select class="form-control custom-select col-lg-6" id="id_kategori"
+                                    <select class="form-control custom-select" id="id_kategori"
                                         name="id_kategori">
                                         @foreach ($kategori as $item)
                                         <option value="{{ $item->id }}" {{ $item->id == $video->id_kategori ? 'selected'

@@ -74,9 +74,9 @@ class DashboardArtikelController extends Controller
         $data = $validatedData;
         $data['gambar'] = $gambar;
 
-        Artikel::create($data);
+        $artikel = Artikel::create($data);
 
-        return redirect('/dashboard/artikel')->with('success', 'Data berhasil ditambah');
+        return redirect('/dashboard/artikel')->with('success', 'Artikel dengan judul "' . $artikel->judul . '" berhasil ditambah');
     }
 
     /**
@@ -157,7 +157,7 @@ class DashboardArtikelController extends Controller
 
         $artikel->save();
 
-        return redirect('/dashboard/artikel')->with('success', 'Data berhasil diedit');
+        return redirect('/dashboard/artikel')->with('success', 'Artikel dengan judul "' . $validatedData['judul'] . '" berhasil diperbarui');
     }
 
     /**
@@ -169,13 +169,14 @@ class DashboardArtikelController extends Controller
     public function destroy($id)
     {
         $artikel = Artikel::find($id);
+        $judulArtikel = $artikel->judul; // Mengambil judul artikel sebelum dihapus
         $artikel->delete();
 
         if ($artikel->gambar) {
             Storage::delete($artikel->gambar);
         }
 
-        return redirect('/dashboard/artikel')->with('danger', 'Data berhasil dihapus');
+        return redirect('/dashboard/artikel')->with('danger', 'Artikel dengan judul "' . $judulArtikel . '" berhasil dihapus');
     }
 
     function generateRandomString($length = 30)

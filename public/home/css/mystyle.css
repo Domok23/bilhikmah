@@ -84,3 +84,8 @@ main {
   color: #0aae7c;
   font-size: 4em;
 }
+
+.navbar-nav .nav-link {
+  white-space: nowrap;
+  /* Mencegah teks untuk melipat ke baris baru */
+}

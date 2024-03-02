@@ -3,10 +3,10 @@
 @section('container')
 
 <main>
-    <section class="pt-4 text-center container">
-        <div class="row py-lg-5">
+    <section class="pt-5 text-center container">
+        <div class="row py-lg-4 mb-3">
             <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light"><b>Poster Islami</b></h1>
+                <h2 class="fw-normal text-success"><i class="fa-duotone fa-images"></i><b> Poster Islami</b></h2>
             </div>
         </div>
     </section>
@@ -17,9 +17,10 @@
                     <form action="/poster" method="get">
                         @csrf
                         <div class="input-group mb-3">
-                            <input type="search" class="form-control" placeholder="Cari poster" name="cari"
-                                value="{{ request('cari') }}">
-                            <button class="btn btn-success" type="submit">Cari</button>
+                            <input type="search" class="form-control me-2 rounded" placeholder="Cari poster..."
+                                name="cari" value="{{ request('cari') }}">
+                            <button class="btn btn-success rounded" type="submit">Cari <i
+                                    class="fa-duotone fa-magnifying-glass"></i></button>
                         </div>
                     </form>
                 </div>

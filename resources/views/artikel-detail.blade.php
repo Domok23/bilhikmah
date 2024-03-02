@@ -3,23 +3,24 @@
 @section('container')
 
 <main class="container">
-    <section class="pt-4 text-center container">
-        <div class="row py-lg-5">
+    <section class="pt-5 text-center container">
+        <div class="row py-lg-4 mb-3">
             <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light"><b>Artikel Islami</b></h1>
+                <h3 class="fw-normal text-success"><i class="fa-duotone fa-newspaper me-1"></i><b> Artikel Islami</b>
+                </h3>
             </div>
         </div>
     </section>
     <div class="col-12">
         <div class="row justify-content-center">
-            <div class="col-md-6 col-12 mb-md-4">
+            <div class="col-md-6 col-12 mb-md-3">
                 <!-- Penyesuaian -->
                 <form class="mb-0" action="/artikel" method="get">
                     @csrf
-                    <div class="input-group mb-3">
-                        <input type="search" class="form-control" placeholder="Cari artikel" name="cari"
+                    <div class="input-group mb-2">
+                        <input type="search" class="form-control me-2 rounded" placeholder="Cari artikel..." name="cari"
                             value="{{ request('cari') }}">
-                        <button class="btn btn-success" type="submit">Cari</button>
+                        <button class="btn btn-success rounded" type="submit">Cari <i class="fa-duotone fa-magnifying-glass"></i></button>
                     </div>
                 </form>
             </div>

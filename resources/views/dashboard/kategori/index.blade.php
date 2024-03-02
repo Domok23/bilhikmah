@@ -9,7 +9,8 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">{{ $title }}</a></li>
+                        <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+                        <li class="breadcrumb-item active">{{ $title }}</li>
                     </ol>
                 </div>
             </div>
@@ -28,15 +29,22 @@
                             <div class="alert alert-success alert-dismissible">
                                 <button type="button" class="close" data-dismiss="alert"
                                     aria-hidden="true">&times;</button>
-                                <h5><i class="icon fas fa-check"></i> Berhasil!</h5>
+                                <h5><i class="icon fa-solid fa-check"></i> Berhasil!</h5>
                                 {{ session('success') }}
                             </div>
                             @elseif (session()->has('danger'))
                             <div class="alert alert-danger alert-dismissible">
                                 <button type="button" class="close" data-dismiss="alert"
                                     aria-hidden="true">&times;</button>
-                                <h5><i class="icon fas fa-ban"></i> Dihapus!</h5>
+                                <h5><i class="icon fa-solid fa-trash-xmark"></i> Dihapus!</h5>
                                 {{ session('danger') }}
+                            </div>
+                            @elseif (session()->has('failed'))
+                            <div class="alert alert-warning alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert"
+                                    aria-hidden="true">&times;</button>
+                                <h5><i class="icon fa-solid fa-triangle-exclamation"></i> Gagal!</h5>
+                                {{ session('failed') }}
                             </div>
                             <br>
                             @endif

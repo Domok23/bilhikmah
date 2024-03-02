@@ -9,7 +9,8 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">{{ $title }}</a></li>
+                        <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+                        <li class="breadcrumb-item active">{{ $title }}</li>
                     </ol>
                 </div>
             </div>
@@ -29,19 +30,19 @@
                             <div class="alert alert-success alert-dismissible">
                                 <button type="button" class="close" data-dismiss="alert"
                                     aria-hidden="true">&times;</button>
-                                <h5><i class="icon fas fa-check"></i> Berhasil!</h5>
+                                <h5><i class="icon fa-solid fa-check"></i> Berhasil!</h5>
                                 {{ session('success') }}
                             </div>
-                            @elseif (session()->has('error'))
+                            @elseif (session()->has('danger'))
                             <div class="alert alert-danger alert-dismissible">
                                 <button type="button" class="close" data-dismiss="alert"
                                     aria-hidden="true">&times;</button>
-                                <h5><i class="icon fas fa-ban"></i> Gagal!</h5>
-                                {{ session('error') }}
+                                <h5><i class="icon fa-solid fa-trash-xmark"></i> Dihapus!</h5>
+                                {{ session('danger') }}
                             </div>
                             <br>
                             @endif
-                            <a href="/dashboard/user/create" class="btn btn-success mb-3"><i class="fas fa-plus"></i>
+                            <a href="/dashboard/user/create" class="btn btn-success mb-3"> <i class="fa-solid fa-user-plus"></i>
                                 Tambah</a>
                             <div class="table-responsive">
                                 <table id="dataTable" class="table table-bordered table-striped">
@@ -62,7 +63,7 @@
                                             <td class="text-center">
                                                 <a href="/dashboard/user/{{ $item->id }}/edit"
                                                     class="btn btn-sm btn-warning mb-1">
-                                                    <i class="fas fa-edit"></i> Edit
+                                                    <i class="fa-solid fa-user-pen"></i> Edit
                                                 </a>
                                                 <form action="/dashboard/user/{{ $item->id }}" method="post"
                                                     class="d-inline">

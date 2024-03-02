@@ -65,7 +65,7 @@ class DashboardVideoController extends Controller
 
         Video::create($data);
 
-        return redirect('/dashboard/video')->with('success', 'Data berhasil ditambah');
+        return redirect('/dashboard/video')->with('success', 'Data "' . $validatedData['judul'] . '" berhasil ditambah');
     }
 
     /**
@@ -122,7 +122,8 @@ class DashboardVideoController extends Controller
 
         $video->save();
 
-        return redirect('/dashboard/video')->with('success', 'Data berhasil diedit');
+        // Mengembalikan pengguna ke halaman index dengan pesan sukses yang mencantumkan ID data yang berhasil diubah
+        return redirect('/dashboard/video')->with('success', 'Data "' . $video->judul . '" berhasil diedit');
     }
 
     /**
@@ -134,8 +135,9 @@ class DashboardVideoController extends Controller
     public function destroy($id)
     {
         $video = Video::find($id);
+        $judulVideo = $video->judul;
         $video->delete();
 
-        return redirect('/dashboard/video')->with('danger', 'Data berhasil dihapus');
+        return redirect('/dashboard/video')->with('danger', 'Video dengan judul "' . $judulVideo . '" berhasil dihapus');
     }
 }

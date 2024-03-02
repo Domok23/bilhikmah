@@ -70,7 +70,7 @@ class DashboardPosterController extends Controller
 
         Poster::create($data);
 
-        return redirect('/dashboard/poster')->with('success', 'Data berhasil ditambah');
+        return redirect('/dashboard/poster')->with('success', 'Poster "' . $validatedData['judul'] . '" berhasil ditambah');
     }
 
     /**
@@ -134,7 +134,7 @@ class DashboardPosterController extends Controller
 
         $poster->save();
 
-        return redirect('/dashboard/poster')->with('success', 'Data berhasil diedit');
+        return redirect('/dashboard/poster')->with('success', 'Poster "' . $validatedData['judul'] . '" berhasil diedit');
     }
 
     /**
@@ -146,13 +146,14 @@ class DashboardPosterController extends Controller
     public function destroy($id)
     {
         $poster = Poster::find($id);
+        $judulPoster = $poster->judul;
         $poster->delete();
 
         if ($poster->gambar) {
             Storage::delete($poster->gambar);
         }
 
-        return redirect('/dashboard/poster')->with('danger', 'Data berhasil dihapus');
+        return redirect('/dashboard/poster')->with('danger', 'Poster "' . $judulPoster . '" berhasil dihapus');
     }
 
     function generateRandomString($length = 30) {

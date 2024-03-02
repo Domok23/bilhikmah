@@ -9,8 +9,8 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="/dashboard/video">{{ $title }}</a></li>
-                        <li class="breadcrumb-item active">Tambah</li>
+                        <li class="breadcrumb-item"><a href="/dashboard/video">Dashboard Video</a></li>
+                        <li class="breadcrumb-item active">{{ $title }}</li>
                     </ol>
                 </div>
             </div>
@@ -63,7 +63,7 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="card card-success">
                         <div class="card-header">
                             <h3 class="card-title">Tambah Data Video</h3>
@@ -92,7 +92,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-group col-lg-6">
                                     <label class="mb-0" for="link">Kode Video Youtube</label>
                                     <br>
                                     <button type="button" class="btn badge bg-success mb-2" data-toggle="modal"
@@ -107,10 +107,10 @@
                                     @enderror
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-group col-lg-6">
                                     <label for="id_kategori">Kategori</label>
                                     <br>
-                                    <select class="form-control custom-select col-lg-6" name="id_kategori">
+                                    <select class="form-control custom-select" name="id_kategori">
                                         @foreach ($kategori as $item)
                                         @if (old('id_kategori') == $item->id)
                                         <option value="{{ $item->id }}">{{ $item->judul }}

@@ -4,7 +4,7 @@
 
 <main>
     <div class="container px-0 pt-lg-5">
-        <div id="myCarousel" class="carousel slide bg-success" style="border-radius: 20px;" data-bs-ride="carousel">
+        <div id="myCarousel" class="carousel slide bg-success" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <?php $active = 'active'; ?>
                 @foreach($video as $item)
@@ -17,7 +17,7 @@
             <div class="carousel-inner">
                 @foreach($video as $item)
                 <div class="carousel-item py-lg-4 {{ $loop->first ? 'active' : '' }}">
-                    <div class="d-flex justify-content-center">
+                    <div class="text-center justify-content-center d-flex">
                         <a href="/video/{{ $item->id }}" class="stretched-link">
                             <img style="border-radius: 10px; filter: grayscale(100%);"
                                 src="https://img.youtube.com/vi/{{ $item->link }}/maxresdefault.jpg"></img>
@@ -115,4 +115,20 @@
         <hr class="featurette-divider">
         @endforeach
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+                // Ambil carousel item
+                const carouselItems = document.querySelectorAll('.carousel-item');
+
+                // Loop melalui setiap carousel item
+                carouselItems.forEach((item, index) => {
+                    // Ambil URL gambar latar belakang dari carousel-item
+                    const backgroundUrl = getComputedStyle(document.getElementById('carouselItem' + index)).backgroundImage;
+
+                    // Tetapkan background-image untuk #myCarousel::before
+                    document.getElementById('myCarousel').style.backgroundImage = backgroundUrl;
+                });
+            });
+    </script>
 </main>
