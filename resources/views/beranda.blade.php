@@ -69,7 +69,7 @@
                                 style="width: 200px; height: 200px;">
                         </a>
                     </div>
-                    <p>"{{ $item->judul }}"</p>
+                    <p class="text-light">"{{ $item->judul }}"</p>
                 </div>
                 @endforeach
             </div>
