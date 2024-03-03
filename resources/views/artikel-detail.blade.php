@@ -20,7 +20,8 @@
                     <div class="input-group mb-2">
                         <input type="search" class="form-control me-2 rounded" placeholder="Cari artikel..." name="cari"
                             value="{{ request('cari') }}">
-                        <button class="btn btn-success rounded" type="submit">Cari <i class="fa-duotone fa-magnifying-glass"></i></button>
+                        <button class="btn btn-success rounded" type="submit">Cari <i
+                                class="fa-duotone fa-magnifying-glass"></i></button>
                     </div>
                 </form>
             </div>
@@ -98,7 +99,7 @@
                 </div>
             </div>
         </div>
-        <hr class="featurette-divider">
+        <hr class="featurette-divider mt-4 mb-0 p-0">
     </div>
 </main>
 

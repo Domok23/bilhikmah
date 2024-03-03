@@ -74,8 +74,6 @@
                 @endforeach
             </div>
         </div>
-
-        <hr class="featurette-divider">
         @foreach ($artikel as $key => $item)
         @if($key % 2 == 0)
         <div class="row featurette bg-green-light" style="border-radius: 5px;">
@@ -112,7 +110,7 @@
             </div>
         </div>
         @endif
-        <hr class="featurette-divider">
+        <hr class="featurette-divider m-5">
         @endforeach
     </div>
 </main>

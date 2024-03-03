@@ -82,7 +82,7 @@
             </div>
         </div>
         {!! $video->links('pagination::bootstrap-5') !!}
-        <hr class="featurette-divider">
+        <hr class="featurette-divider m-0 p-0">
     </div>
 </main>
 

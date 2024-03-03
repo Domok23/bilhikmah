@@ -81,7 +81,7 @@
                 </div>
             </div>
         </div>
-        <hr class="featurette-divider">
+        <hr class="featurette-divider mt-4 mb-0 p-0">
     </div>
 </main>
 
