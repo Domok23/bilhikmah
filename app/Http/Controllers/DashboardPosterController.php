@@ -50,9 +50,8 @@ class DashboardPosterController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'judul' => 'unique:posters|required',
-            'deskripsi' => 'required',
             'id_kategori' => 'required',
+            'judul' => 'unique:posters|required',
             'gambar' => 'image|mimes:jpeg,png,jpg,gif,webp|max:2048'
         ]);
 
@@ -102,9 +101,8 @@ class DashboardPosterController extends Controller
     public function update(Request $request, string $id)
     {
         $validatedData = $request->validate([
-            'judul' => 'required',
-            'deskripsi' => 'required',
             'id_kategori' => 'required',
+            'judul' => 'required',
             'gambar' => 'image|mimes:jpeg,png,jpg,gif,webp|file|max:2048'
         ]);
 
@@ -116,7 +114,6 @@ class DashboardPosterController extends Controller
 
         $poster->id_kategori = $validatedData['id_kategori'];
         $poster->judul = $validatedData['judul'];
-        $poster->deskripsi = $validatedData['deskripsi'];
 
         if ($request->hasFile('gambar')) {
             $gambarLama = $poster->gambar;

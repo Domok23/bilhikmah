@@ -47,7 +47,6 @@ class ApiPosterController extends Controller
         $validatedData = $request->validate([
             'id_kategori' => 'required',
             'judul' => 'required',
-            'deskripsi' => 'required',
             'gambar' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
@@ -133,14 +132,12 @@ class ApiPosterController extends Controller
         $validatedData = $request->validate([
             'id_kategori' => 'required',
             'judul' => 'required',
-            'deskripsi' => 'required',
             'gambar' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
         // Menyimpan data yang divalidasi ke dalam model Poster
         $poster->id_kategori = $validatedData['id_kategori'];
         $poster->judul = $validatedData['judul'];
-        $poster->deskripsi = $validatedData['deskripsi'];
 
         if ($request->hasFile('gambar')) {
             $gambarLama = $poster->gambar;

@@ -69,8 +69,7 @@ class Poster extends Model
             );
 
         if ($request->cari) {
-            $query->where('posters.judul', 'like', '%' . $request->cari . '%')
-                ->orWhere('posters.deskripsi', 'like', '%' . $request->cari . '%');
+            $query->where('posters.judul', 'like', '%' . $request->cari . '%');
         }
 
         return $query->paginate(10);

@@ -54,15 +54,6 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="deskripsi">Deskripsi</label>
-                                    <input type="text" class="form-control" id="deskripsi" name="deskripsi"
-                                        placeholder="Masukan deskripsi poster" required value="{{ old('deskripsi') }}">
-                                    @error('deskripsi')
-                                    <div class="text-danger">{{ $message }}</div>
-                                    @enderror
-                                </div>
-
-                                <div class="form-group">
                                     <label for="id_kategori">Kategori</label>
                                     <br>
                                     <select class="form-control custom-select col-lg-6" name="id_kategori">

@@ -17,7 +17,6 @@ class CreatePostersTable extends Migration
             $table->id();
             $table->foreignId('id_kategori')->constrained('kategoris');
             $table->string('judul');
-            $table->string('deskripsi');
             $table->string('gambar');
             $table->timestamps();
         });
