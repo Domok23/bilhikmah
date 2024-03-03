@@ -115,20 +115,4 @@
         <hr class="featurette-divider">
         @endforeach
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-                // Ambil carousel item
-                const carouselItems = document.querySelectorAll('.carousel-item');
-
-                // Loop melalui setiap carousel item
-                carouselItems.forEach((item, index) => {
-                    // Ambil URL gambar latar belakang dari carousel-item
-                    const backgroundUrl = getComputedStyle(document.getElementById('carouselItem' + index)).backgroundImage;
-
-                    // Tetapkan background-image untuk #myCarousel::before
-                    document.getElementById('myCarousel').style.backgroundImage = backgroundUrl;
-                });
-            });
-    </script>
 </main>
