@@ -2,9 +2,7 @@
 </main>
 <!-- FOOTER -->
 <footer class="bg-green-light text-center py-3">
-    <strong>Copyright &copy;
-        <?php echo date("Y"); ?> <a href="/dashboard" class="text-success text-decoration-none"> {{ env('APP_NAME') }}. All rights reserved.</a>
-    </strong>
+    Copyright &copy; <?php echo date("Y"); ?> <a href="/dashboard" class="text-success text-decoration-none"> {{ env('APP_NAME') }}. All rights reserved.</a>
 </footer>
 <script src="/home/js/bootstrap.bundle.min.js"></script>
 <script src="/home/js/jquery.min.js"></script>
