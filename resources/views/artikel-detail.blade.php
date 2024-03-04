@@ -20,7 +20,8 @@
                     <div class="input-group mb-2">
                         <input type="search" class="form-control me-2 rounded" placeholder="Cari artikel..." name="cari"
                             value="{{ request('cari') }}">
-                        <button class="btn btn-success rounded" type="submit">Cari <i
+                        <button class="btn btn-success rounded" type="submit" data-bs-toggle="tooltip"
+                            data-bs-placement="bottom" title="Cari Artikel">Cari <i
                                 class="fa-duotone fa-magnifying-glass"></i></button>
                     </div>
                 </form>
@@ -87,7 +88,8 @@
                             <p class="card-text">{{ $item->kutipan }}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="/artikel/{{ $item->id }}" class="btn btn-outline-success">
+                                    <a href="/artikel/{{ $item->id }}" class="btn btn-outline-success"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom" title="Lihat Detail">
                                         Detail
                                     </a>
                                 </div>

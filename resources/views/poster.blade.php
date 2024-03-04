@@ -19,7 +19,8 @@
                         <div class="input-group mb-3">
                             <input type="search" class="form-control me-2 rounded" placeholder="Cari poster..."
                                 name="cari" value="{{ request('cari') }}">
-                            <button class="btn btn-success rounded" type="submit">Cari <i
+                            <button class="btn btn-success rounded" type="submit" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                title="Cari Poster">Cari <i
                                     class="fa-duotone fa-magnifying-glass"></i></button>
                         </div>
                     </form>
@@ -32,7 +33,8 @@
                     @csrf
                     <div class="row g-3 mb-2">
                         <div class="col-md-3">
-                            <select class="form-select" id="id" name="id">
+                            <select class="form-select" id="id" name="id" data-bs-toggle="tooltip"
+                                data-bs-placement="right" title="Pilih Kategori">
                                 <option selected disabled value="">Pilih Kategori</option>
                                 <option value="" @if (request('id')===null) selected @endif>Semua Kategori</option>
                                 @foreach ($kategori as $item)

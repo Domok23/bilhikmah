@@ -20,7 +20,8 @@
                         <div class="input-group mb-3">
                             <input type="search" class="form-control me-2 rounded" placeholder="Cari bahasa isyarat..."
                                 name="cari" value="{{ request('cari') }}">
-                            <button class="btn btn-success rounded" type="submit">Cari <i
+                            <button class="btn btn-success rounded" type="submit" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                title="Cari Bahasa Isyarat">Cari <i
                                     class="fa-duotone fa-magnifying-glass"></i></button>
                         </div>
                     </form>

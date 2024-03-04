@@ -6,7 +6,8 @@
     <section class="pt-5 text-center container">
         <div class="row py-lg-4 mb-3">
             <div class="col-lg-6 col-md-8 mx-auto">
-                <h2 class="fw-normal text-success"><i class="fa-duotone fa-newspaper me-1"></i><b> Artikel Islami</b></h2>
+                <h2 class="fw-normal text-success"><i class="fa-duotone fa-newspaper me-1"></i><b> Artikel Islami</b>
+                </h2>
             </div>
         </div>
     </section>
@@ -17,9 +18,11 @@
                     <form action="/artikel" method="get">
                         @csrf
                         <div class="input-group mb-3">
-                            <input type="search" class="form-control me-2 rounded" placeholder="Cari artikel..." name="cari"
-                                value="{{ request('cari') }}">
-                            <button class="btn btn-success rounded" type="submit">Cari <i class="fa-duotone fa-magnifying-glass"></i></button>
+                            <input type="search" class="form-control me-2 rounded" placeholder="Cari artikel..."
+                                name="cari" value="{{ request('cari') }}">
+                            <button class="btn btn-success rounded" type="submit" data-bs-toggle="tooltip"
+                                data-bs-placement="bottom" title="Cari Artikel">Cari <i
+                                    class="fa-duotone fa-magnifying-glass"></i></button>
                         </div>
                     </form>
                 </div>
@@ -31,7 +34,8 @@
                     @csrf
                     <div class="row g-3 mb-2">
                         <div class="col-md-3">
-                            <select class="form-select" id="id" name="id">
+                            <select class="form-select" id="id" name="id" data-bs-toggle="tooltip"
+                                data-bs-placement="right" title="Pilih Kategori">
                                 <option selected disabled value="">Pilih Kategori</option>
                                 <option value="" @if (request('id')===null) selected @endif>Semua Kategori</option>
                                 @foreach ($kategori as $item)
@@ -70,7 +74,8 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <a href="/artikel/{{ $item->id }}"
-                                            class="btn btn-outline-success mt-auto align-self-start">
+                                            class="btn btn-outline-success mt-auto align-self-start"
+                                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Lihat Detail">
                                             Detail
                                         </a>
                                     </div>

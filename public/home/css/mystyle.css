@@ -25,7 +25,7 @@ main {
 
 /* CSS untuk mengatur lebar tetap */
 .fixed-width-nav-button {
-  width: 90px;
+  width: 100px;
 }
 
 .carousel-item img {
@@ -88,4 +88,21 @@ main {
 .navbar-nav .nav-link {
   white-space: nowrap;
   /* Mencegah teks untuk melipat ke baris baru */
+}
+
+.tooltip-inner {
+  background-color: #0e9566;
+  opacity: 1 !important;
+}
+.tooltip.bs-tooltip-right .tooltip-arrow::before {
+  border-right-color: #0e9566 !important;
+}
+.tooltip.bs-tooltip-left .tooltip-arrow::before {
+  border-left-color: #0e9566 !important;
+}
+.tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+  border-bottom-color: #0e9566 !important;
+}
+.tooltip.bs-tooltip-top .tooltip-arrow::before {
+  border-top-color: #0e9566 !important;
 }
